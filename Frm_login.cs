@@ -22,8 +22,8 @@ namespace WindowsFormsApp1
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (txt_user.Text=="FELIPE" && txt_password.Text== "lipelipe")
-            {
+           if (txt_user.Text=="FELIPE" && txt_password.Text== "lipelipe")
+           {
                 this.Close();
                 t1 = new Thread(abrirJanela);
                 t1.SetApartmentState(ApartmentState.STA);

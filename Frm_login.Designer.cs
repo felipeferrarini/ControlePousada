@@ -43,7 +43,6 @@
             // txt_user
             // 
             this.txt_user.AccessibleDescription = "sdfsdf";
-            this.txt_user.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_user.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_user.Location = new System.Drawing.Point(596, 215);
             this.txt_user.Margin = new System.Windows.Forms.Padding(10);
