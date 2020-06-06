@@ -16,5 +16,16 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void btn_novaReserva_Click(object sender, EventArgs e)
+        {
+            gb_novaReserva.Visible = true;
+            btn_salvar.Visible = true;
+            btn_cancelar.Visible = true;
+            btn_editar.Enabled = false;
+            btn_consulta.Enabled = false;
+            btn_financeiro.Enabled = false;
+            btn_config.Enabled = false;
+        }
     }
 }
