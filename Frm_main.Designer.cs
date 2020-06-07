@@ -38,7 +38,7 @@
             this.np_qtdPessoas = new System.Windows.Forms.NumericUpDown();
             this.lb_qtdPessoas = new System.Windows.Forms.Label();
             this.lb_saida = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_saida = new System.Windows.Forms.DateTimePicker();
             this.lb_entrada = new System.Windows.Forms.Label();
             this.dtp_entrada = new System.Windows.Forms.DateTimePicker();
             this.lb_email = new System.Windows.Forms.Label();
@@ -61,10 +61,11 @@
             this.np_desconto = new System.Windows.Forms.NumericUpDown();
             this.lb_valorBase = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_valor = new System.Windows.Forms.TextBox();
             this.lb_valor = new System.Windows.Forms.Label();
             this.txt_telefone = new System.Windows.Forms.TextBox();
             this.btn_consultCliente = new System.Windows.Forms.Button();
+            this.cb_pagamento = new System.Windows.Forms.CheckBox();
             this.gb_novaReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).BeginInit();
@@ -91,6 +92,7 @@
             this.btn_salvar.Text = "Salvar";
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Visible = false;
+            this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // btn_cancelar
             // 
@@ -105,10 +107,11 @@
             // 
             // gb_novaReserva
             // 
+            this.gb_novaReserva.Controls.Add(this.cb_pagamento);
             this.gb_novaReserva.Controls.Add(this.btn_consultCliente);
             this.gb_novaReserva.Controls.Add(this.txt_telefone);
             this.gb_novaReserva.Controls.Add(this.lb_valor);
-            this.gb_novaReserva.Controls.Add(this.textBox2);
+            this.gb_novaReserva.Controls.Add(this.txt_valor);
             this.gb_novaReserva.Controls.Add(this.textBox1);
             this.gb_novaReserva.Controls.Add(this.lb_valorBase);
             this.gb_novaReserva.Controls.Add(this.np_desconto);
@@ -119,7 +122,7 @@
             this.gb_novaReserva.Controls.Add(this.np_qtdPessoas);
             this.gb_novaReserva.Controls.Add(this.lb_qtdPessoas);
             this.gb_novaReserva.Controls.Add(this.lb_saida);
-            this.gb_novaReserva.Controls.Add(this.dateTimePicker1);
+            this.gb_novaReserva.Controls.Add(this.dtp_saida);
             this.gb_novaReserva.Controls.Add(this.lb_entrada);
             this.gb_novaReserva.Controls.Add(this.dtp_entrada);
             this.gb_novaReserva.Controls.Add(this.lb_email);
@@ -202,13 +205,13 @@
             this.lb_saida.TabIndex = 15;
             this.lb_saida.Text = "Data de Saída";
             // 
-            // dateTimePicker1
+            // dtp_saida
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(503, 170);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dtp_saida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_saida.Location = new System.Drawing.Point(503, 170);
+            this.dtp_saida.Name = "dtp_saida";
+            this.dtp_saida.Size = new System.Drawing.Size(140, 20);
+            this.dtp_saida.TabIndex = 14;
             // 
             // lb_entrada
             // 
@@ -410,12 +413,12 @@
             this.textBox1.TabIndex = 27;
             this.textBox1.Text = "650,00";
             // 
-            // textBox2
+            // txt_valor
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 364);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 28;
+            this.txt_valor.Location = new System.Drawing.Point(97, 364);
+            this.txt_valor.Name = "txt_valor";
+            this.txt_valor.Size = new System.Drawing.Size(100, 20);
+            this.txt_valor.TabIndex = 28;
             // 
             // lb_valor
             // 
@@ -442,6 +445,16 @@
             this.btn_consultCliente.TabIndex = 31;
             this.btn_consultCliente.Text = "->";
             this.btn_consultCliente.UseVisualStyleBackColor = true;
+            // 
+            // cb_pagamento
+            // 
+            this.cb_pagamento.AutoSize = true;
+            this.cb_pagamento.Location = new System.Drawing.Point(214, 367);
+            this.cb_pagamento.Name = "cb_pagamento";
+            this.cb_pagamento.Size = new System.Drawing.Size(57, 17);
+            this.cb_pagamento.TabIndex = 32;
+            this.cb_pagamento.Text = "Pago?";
+            this.cb_pagamento.UseVisualStyleBackColor = true;
             // 
             // Frm_main
             // 
@@ -496,7 +509,7 @@
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.DateTimePicker dtp_entrada;
         private System.Windows.Forms.Label lb_saida;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_saida;
         private System.Windows.Forms.Label lb_entrada;
         private System.Windows.Forms.NumericUpDown np_qtdPessoas;
         private System.Windows.Forms.Label lb_qtdPessoas;
@@ -508,8 +521,9 @@
         private System.Windows.Forms.Label lb_valorBase;
         private System.Windows.Forms.NumericUpDown np_desconto;
         private System.Windows.Forms.Label lb_valor;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_valor;
         private System.Windows.Forms.TextBox txt_telefone;
         private System.Windows.Forms.Button btn_consultCliente;
+        private System.Windows.Forms.CheckBox cb_pagamento;
     }
 }

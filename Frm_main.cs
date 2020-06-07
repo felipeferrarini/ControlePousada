@@ -16,6 +16,8 @@ using System.Threading;
 using Microsoft.SqlServer.Server;
 using System.Drawing.Printing;
 using ControlePousada;
+using System.Net.Http.Headers;
+using System.Collections.Specialized;
 
 namespace WindowsFormsApp1
 {
@@ -75,6 +77,27 @@ namespace WindowsFormsApp1
                 lp_feriado.Enabled = false;
             }
             
+        }
+
+        private void btn_salvar_Click(object sender, EventArgs e)
+        {
+            reserva novaReserva = new reserva();
+            novaReserva.Numero = Convert.ToInt32(txt_numero.Text);
+            novaReserva.Cliente = txt_cliente.Text;
+            novaReserva.ClienteNome = txt_nome.Text;
+            novaReserva.Telefone = txt_telefone.Text;
+            novaReserva.Cidade = txt_cidade.Text;
+            novaReserva.Email = txt_email.Text;
+            novaReserva.DataEntrada = dtp_entrada.Value;
+            novaReserva.DataSaida = dtp_saida.Value;
+            novaReserva.QtdPessoas = np_qtdPessoas.Value;
+            novaReserva.Feriado = cb_feriado.Checked;
+            novaReserva.FeriadoTipo = lp_feriado.SelectedItem.ToString();
+            novaReserva.Desconto = np_desconto.Value;
+            novaReserva.Valor = Convert.ToDouble(txt_valor.Text);
+            novaReserva.Confirmacao = cb_pagamento.Checked;
+
+            reserva.salvarReserva(novaReserva);
         }
     }
 }

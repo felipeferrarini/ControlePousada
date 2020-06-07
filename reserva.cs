@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Threading;
 using Microsoft.SqlServer.Server;
 using System.Drawing.Printing;
+using WindowsFormsApp1;
 
 namespace ControlePousada
 {
@@ -27,10 +28,10 @@ namespace ControlePousada
         protected string email;
         protected DateTime dataEntrada;
         protected DateTime dataSaida;
-        protected int qtdPessoas;
+        protected decimal qtdPessoas;
         protected bool feriado;
         protected string feriadoTipo;
-        protected double desconto;
+        protected decimal desconto;
         protected double valor;
         protected bool confirmacao;
 
@@ -41,8 +42,8 @@ namespace ControlePousada
         }
         ///Construtor com todos os atributos (para consulta)
         public reserva(int numero, string cliente, string clienteNome, string telefone, string cidade, 
-            string email, DateTime dataEntrada, DateTime dataSaida, bool confirmacao, int qtdPessoas, 
-            bool feriado, string feriadoTipo, double desconto, double valor)
+            string email, DateTime dataEntrada, DateTime dataSaida, bool confirmacao, decimal qtdPessoas, 
+            bool feriado, string feriadoTipo, decimal desconto, double valor)
         {
             this.numero = numero;
             this.cliente = cliente;
@@ -60,6 +61,11 @@ namespace ControlePousada
             this.confirmacao = confirmacao;
         }
         ///Gets e sets
+        public int Numero
+        {
+            get { return numero; }
+            set { numero = value; }
+        }
         public string Cliente
         {
             get { return cliente; }
@@ -95,7 +101,7 @@ namespace ControlePousada
             get { return dataSaida; }
             set { dataSaida = value; }
         }
-        public int QtdPessoas
+        public decimal QtdPessoas
         {
             get { return qtdPessoas; }
             set { qtdPessoas = value; }
@@ -115,7 +121,7 @@ namespace ControlePousada
             get { return confirmacao; }
             set { confirmacao = value; }
         }
-        public double Desconto
+        public decimal Desconto
         {
             get { return desconto; }
             set { desconto = value; }
@@ -135,7 +141,36 @@ namespace ControlePousada
         }
         public static bool salvarReserva (reserva dados)
         {
-
+            StreamWriter bdW;
+            bdW = File.AppendText(Program.pathReserva);
+            bdW.Write(dados.Numero);
+            bdW.Write(";");
+            bdW.Write(dados.Cliente);
+            bdW.Write(";");
+            bdW.Write(dados.ClienteNome);
+            bdW.Write(";");
+            bdW.Write(dados.Telefone);
+            bdW.Write(";");
+            bdW.Write(dados.Cidade);
+            bdW.Write(";");
+            bdW.Write(dados.Email);
+            bdW.Write(";");
+            bdW.Write(dados.DataEntrada);
+            bdW.Write(";");
+            bdW.Write(dados.DataSaida);
+            bdW.Write(";");
+            bdW.Write(dados.QtdPessoas);
+            bdW.Write(";");
+            bdW.Write(dados.Feriado);
+            bdW.Write(";");
+            bdW.Write(dados.FeriadoTipo);
+            bdW.Write(";");
+            bdW.Write(dados.Desconto);
+            bdW.Write(";");
+            bdW.Write(dados.Valor);
+            bdW.Write(";");
+            bdW.Write(dados.Confirmacao);
+            bdW.Close();
             return true;
         }
 
