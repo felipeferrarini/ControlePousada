@@ -29,22 +29,20 @@ namespace ControlePousada
         protected DateTime dataSaida;
         protected int qtdPessoas;
         protected bool feriado;
+        protected string feriadoTipo;
         protected double desconto;
         protected double valor;
         protected bool confirmacao;
 
-        ///Construtor para criação de nova reserva
-        public reserva(string path)
+        ///Construto vazio (Para nova reserva)
+        public reserva()
         {
-            numero = getNextNumber(path);
-            desconto = 0.0;
-            valor = 650.00;
-        }
 
+        }
         ///Construtor com todos os atributos (para consulta)
         public reserva(int numero, string cliente, string clienteNome, string telefone, string cidade, 
             string email, DateTime dataEntrada, DateTime dataSaida, bool confirmacao, int qtdPessoas, 
-            bool feriado, double desconto, double valor)
+            bool feriado, string feriadoTipo, double desconto, double valor)
         {
             this.numero = numero;
             this.cliente = cliente;
@@ -56,6 +54,7 @@ namespace ControlePousada
             this.dataSaida = dataSaida;
             this.qtdPessoas = qtdPessoas;
             this.feriado = feriado;
+            this.feriadoTipo = feriadoTipo;
             this.desconto = desconto;
             this.valor = valor;
             this.confirmacao = confirmacao;
@@ -106,6 +105,11 @@ namespace ControlePousada
             get { return feriado; }
             set { feriado = value; }
         }
+        public string FeriadoTipo
+        {
+            get { return feriadoTipo; }
+            set { feriadoTipo = value; }
+        }
         public bool Confirmacao
         {
             get { return confirmacao; }
@@ -128,6 +132,11 @@ namespace ControlePousada
             int nextNumber = File.ReadLines(path).Count();
             nextNumber++;
             return nextNumber;
+        }
+        public static bool salvarReserva (reserva dados)
+        {
+
+            return true;
         }
 
     }
