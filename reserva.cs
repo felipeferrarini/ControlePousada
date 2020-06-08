@@ -33,7 +33,7 @@ namespace ControlePousada
         protected string feriadoTipo;
         protected decimal desconto;
         protected double valor;
-        protected bool confirmacao;
+        protected bool pago;
 
         ///Construto vazio (Para nova reserva)
         public reserva()
@@ -42,7 +42,7 @@ namespace ControlePousada
         }
         ///Construtor com todos os atributos (para consulta)
         public reserva(int numero, string cliente, string clienteNome, string telefone, string cidade, 
-            string email, DateTime dataEntrada, DateTime dataSaida, bool confirmacao, decimal qtdPessoas, 
+            string email, DateTime dataEntrada, DateTime dataSaida, bool pago, decimal qtdPessoas, 
             bool feriado, string feriadoTipo, decimal desconto, double valor)
         {
             this.numero = numero;
@@ -58,7 +58,7 @@ namespace ControlePousada
             this.feriadoTipo = feriadoTipo;
             this.desconto = desconto;
             this.valor = valor;
-            this.confirmacao = confirmacao;
+            this.pago = pago;
         }
         ///Gets e sets
         public int Numero
@@ -116,10 +116,10 @@ namespace ControlePousada
             get { return feriadoTipo; }
             set { feriadoTipo = value; }
         }
-        public bool Confirmacao
+        public bool Pago
         {
-            get { return confirmacao; }
-            set { confirmacao = value; }
+            get { return pago; }
+            set { pago = value; }
         }
         public decimal Desconto
         {
@@ -169,7 +169,7 @@ namespace ControlePousada
             bdW.Write(";");
             bdW.Write(dados.Valor);
             bdW.Write(";");
-            bdW.Write(dados.Confirmacao);
+            bdW.WriteLine(dados.Pago);
             bdW.Close();
             return true;
         }

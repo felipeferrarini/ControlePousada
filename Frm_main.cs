@@ -18,6 +18,7 @@ using System.Drawing.Printing;
 using ControlePousada;
 using System.Net.Http.Headers;
 using System.Collections.Specialized;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
@@ -29,11 +30,11 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+
+        ///Funções Reserva
         private void btn_novaReserva_Click(object sender, EventArgs e)
         {
             gb_novaReserva.Visible = true;
-            btn_salvar.Visible = true;
-            btn_cancelar.Visible = true;
             btn_reserva.Enabled = false;
             btn_financeiro.Enabled = false;
             btn_config.Enabled = false;
@@ -79,11 +80,11 @@ namespace WindowsFormsApp1
             
         }
 
-        private void btn_salvar_Click(object sender, EventArgs e)
+        private void btn_salvarReserva_Click(object sender, EventArgs e)
         {
             reserva novaReserva = new reserva();
             novaReserva.Numero = Convert.ToInt32(txt_numero.Text);
-            novaReserva.Cliente = txt_cliente.Text;
+            novaReserva.Cliente = Regex.Replace(txt_cliente.Text, "[\\-\\,\\.\\ ]", "");
             novaReserva.ClienteNome = txt_nome.Text;
             novaReserva.Telefone = txt_telefone.Text;
             novaReserva.Cidade = txt_cidade.Text;
@@ -95,9 +96,34 @@ namespace WindowsFormsApp1
             novaReserva.FeriadoTipo = lp_feriado.SelectedItem.ToString();
             novaReserva.Desconto = np_desconto.Value;
             novaReserva.Valor = Convert.ToDouble(txt_valor.Text);
-            novaReserva.Confirmacao = cb_pagamento.Checked;
+            novaReserva.Pago = cb_pagamento.Checked;
 
             reserva.salvarReserva(novaReserva);
+        }
+
+        private void cb_pagamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_pagamento.Checked)
+            {
+                dtp_dataPag.Enabled = true;
+            }
+            else
+            {
+                dtp_dataPag.Enabled = false;
+            }
+        }
+
+        ///Funções Cliente
+
+        private void btn_newCliente_Click(object sender, EventArgs e)
+        {
+            btn_novaReserva.Enabled = false;
+            btn_reserva.Enabled = false;
+            btn_financeiro.Enabled = false;
+            btn_cliente.Enabled = false;
+            btn_config.Enabled = false;
+            gb_clienteCadastro.Visible = true;
+
         }
     }
 }
