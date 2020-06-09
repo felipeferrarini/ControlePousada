@@ -22,26 +22,12 @@ using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
-    public partial class Frm_main : Form
+    public partial class Frm_novaReserva : Form
     {
 
-        public Frm_main()
+        public Frm_novaReserva()
         {
             InitializeComponent();
-        }
-
-
-        ///Funções Reserva
-        private void btn_novaReserva_Click(object sender, EventArgs e)
-        {
-            gb_novaReserva.Visible = true;
-            btn_reserva.Enabled = false;
-            btn_financeiro.Enabled = false;
-            btn_config.Enabled = false;
-            btn_newCliente.Enabled = false;
-            btn_config.Enabled = false;
-            btn_cliente.Enabled = false;
-
             txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
         }
 
@@ -82,23 +68,36 @@ namespace WindowsFormsApp1
 
         private void btn_salvarReserva_Click(object sender, EventArgs e)
         {
-            reserva novaReserva = new reserva();
-            novaReserva.Numero = Convert.ToInt32(txt_numero.Text);
-            novaReserva.Cliente = Regex.Replace(txt_cliente.Text, "[\\-\\,\\.\\ ]", "");
-            novaReserva.ClienteNome = txt_nome.Text;
-            novaReserva.Telefone = txt_telefone.Text;
-            novaReserva.Cidade = txt_cidade.Text;
-            novaReserva.Email = txt_email.Text;
-            novaReserva.DataEntrada = dtp_entrada.Value;
-            novaReserva.DataSaida = dtp_saida.Value;
-            novaReserva.QtdPessoas = np_qtdPessoas.Value;
-            novaReserva.Feriado = cb_feriado.Checked;
-            novaReserva.FeriadoTipo = lp_feriado.SelectedItem.ToString();
-            novaReserva.Desconto = np_desconto.Value;
-            novaReserva.Valor = Convert.ToDouble(txt_valor.Text);
-            novaReserva.Pago = cb_pagamento.Checked;
+            try
+            {
+                reserva novaReserva = new reserva();
+                novaReserva.Numero = Convert.ToInt32(txt_numero.Text);
+                novaReserva.Cliente = Regex.Replace(txt_cliente.Text, "[\\-\\,\\.\\ ]", "");
+                novaReserva.ClienteNome = txt_nome.Text;
+                novaReserva.Telefone = txt_telefone.Text;
+                novaReserva.Cidade = txt_cidade.Text;
+                novaReserva.Email = txt_email.Text;
+                novaReserva.DataEntrada = dtp_entrada.Value;
+                novaReserva.DataSaida = dtp_saida.Value;
+                novaReserva.QtdPessoas = np_qtdPessoas.Value;
+                novaReserva.Feriado = cb_feriado.Checked;
+                novaReserva.FeriadoTipo = lp_feriado.SelectedItem.ToString();
+                novaReserva.Desconto = np_desconto.Value;
+                novaReserva.Valor = Convert.ToDouble(txt_valor.Text);
+                novaReserva.Pago = cb_pagamento.Checked;
+                reserva.salvarReserva(novaReserva);
+            }
+            catch(System.NullReferenceException erro)
+            {
+                DialogResult info;
+                info = MessageBox.Show("Preencha todos os dados!", "Erro");
 
-            reserva.salvarReserva(novaReserva);
+            }
+            catch(System.FormatException erro2)
+            {
+                DialogResult info;
+                info = MessageBox.Show("Preencha todos os dados corretamente!", "Erro");
+            }
         }
 
         private void cb_pagamento_CheckedChanged(object sender, EventArgs e)
@@ -113,17 +112,9 @@ namespace WindowsFormsApp1
             }
         }
 
-        ///Funções Cliente
-
-        private void btn_newCliente_Click(object sender, EventArgs e)
+        private void btn_cancelarReserva_Click(object sender, EventArgs e)
         {
-            btn_novaReserva.Enabled = false;
-            btn_reserva.Enabled = false;
-            btn_financeiro.Enabled = false;
-            btn_cliente.Enabled = false;
-            btn_config.Enabled = false;
-            gb_clienteCadastro.Visible = true;
-
+            Close();
         }
     }
 }

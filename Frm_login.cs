@@ -20,10 +20,26 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+
+        private void abrirJanela(object obj)
+        {
+            Application.Run(new MDIMain());
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
-           if (txt_user.Text=="FELIPE" && txt_password.Text== "123456")
-           {
+            if (Mtxt_user.Text == "FELIPE" && Mtxt_password.Text == "123456")
+            {
                 this.Close();
                 t1 = new Thread(abrirJanela);
                 t1.SetApartmentState(ApartmentState.STA);
@@ -34,10 +50,6 @@ namespace WindowsFormsApp1
                 DialogResult info;
                 info = MessageBox.Show("Usuário ou senha incorretos", "Erro");
             }
-        }
-        private void abrirJanela(object obj)
-        {
-            Application.Run(new Frm_main());
         }
     }
 }

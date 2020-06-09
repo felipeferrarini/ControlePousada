@@ -144,6 +144,7 @@ namespace WindowsFormsApp1
             bdW.Write(cliente.cidade);
             bdW.Write(";");
             bdW.WriteLine(cliente.estado);
+            bdW.Close();
             return true;
         }
     }
@@ -200,6 +201,7 @@ namespace WindowsFormsApp1
             bdW.Write(cliente.razaoSocial);
             bdW.Write(";");
             bdW.WriteLine(cliente.desconto);
+            bdW.Close();
             return true;
         }
     }
