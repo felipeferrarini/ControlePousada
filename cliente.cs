@@ -12,6 +12,7 @@ using System.Threading;
 using Microsoft.SqlServer.Server;
 using System.Drawing.Printing;
 using WindowsFormsApp1;
+using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
@@ -99,7 +100,7 @@ namespace WindowsFormsApp1
             foreach (var element in bd)
             {
                 string[] line = element.Split(';');
-                if (line[1] == doc)
+                if (line[0] == doc)
                 {
                     return line;
                 }
@@ -117,6 +118,20 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        public clienteCpf(string[] dados)
+        {
+            documento = dados[0];
+            tipo = dados[1];
+            nome = dados[2];
+            telefone = dados[3];
+            email = dados[4];
+            endereço = dados[5];
+            bairro = dados[6];
+            cidade = dados[7];
+            estado = dados[8];
+        }
+
         public string Documento
         {
             get { return documento; }
@@ -158,6 +173,22 @@ namespace WindowsFormsApp1
         public clienteCnpj()
         {
 
+        }
+
+        public clienteCnpj(string[] dados)
+        {
+            documento = dados[0];
+            tipo = dados[1];
+            nome = dados[2];
+            telefone = dados[3];
+            email = dados[4];
+            endereço = dados[5];
+            bairro = dados[6];
+            cidade = dados[7];
+            estado = dados[8];
+            razaoSocial = dados[9];
+            desconto = Convert.ToDecimal(dados[10]);
+            
         }
 
         public string Documento

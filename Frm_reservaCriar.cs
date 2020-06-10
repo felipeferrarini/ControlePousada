@@ -22,13 +22,34 @@ using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
-    public partial class Frm_novaReserva : Form
+    public partial class Frm_reservaCriar : Form
     {
 
-        public Frm_novaReserva()
+        public Frm_reservaCriar()
         {
             InitializeComponent();
             txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
+        }
+        public Frm_reservaCriar(string numero)
+        {
+            InitializeComponent();
+            reserva novaReserva = new reserva(reserva.retornaReserva(Convert.ToInt32(numero)));
+            txt_numero.Text = novaReserva.Numero.ToString();
+            txt_cliente.Text = novaReserva.Cliente;
+            txt_nome.Text = novaReserva.ClienteNome;
+            txt_telefone.Text = novaReserva.Telefone;
+            txt_cidade.Text = novaReserva.Cidade;
+            txt_email.Text = novaReserva.Email;
+            dtp_entrada.Value = novaReserva.DataEntrada;
+            dtp_saida.Value = novaReserva.DataSaida;
+            np_qtdPessoas.Value = novaReserva.QtdPessoas;
+            cb_feriado.Checked = novaReserva.Feriado;
+            lp_feriado.SelectedItem = novaReserva.FeriadoTipo;
+            np_desconto.Value = novaReserva.Desconto;
+            txt_valor.Text = novaReserva.Valor.ToString();
+            cb_pagamento.Checked = novaReserva.Pago;
+            dtp_dataPag.Value = novaReserva.DataPago;
+
         }
 
         private void txt_cliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,6 +106,7 @@ namespace WindowsFormsApp1
                 novaReserva.Desconto = np_desconto.Value;
                 novaReserva.Valor = Convert.ToDouble(txt_valor.Text);
                 novaReserva.Pago = cb_pagamento.Checked;
+                novaReserva.DataPago = dtp_dataPag.Value;
                 reserva.salvarReserva(novaReserva);
             }
             catch(System.NullReferenceException erro)
@@ -115,6 +137,39 @@ namespace WindowsFormsApp1
         private void btn_cancelarReserva_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_consultCliente_Click(object sender, EventArgs e)
+        {
+            if (txt_cliente.MaskCompleted)
+            {
+                string doc = Regex.Replace(txt_cliente.Text, "[\\-\\,\\.]", "");
+                if (cliente.clienteExiste(doc))
+                {
+                    if (doc.Length == 11)
+                    {
+
+                        string[] dados = cliente.retornaAtributos(doc);
+                        txt_nome.Text = dados[0];
+                        clienteCpf client = new clienteCpf(dados);
+                        txt_nome.Text = client.Nome;
+                        txt_telefone.Text = client.Telefone;
+                        txt_cidade.Text = client.Cidade;
+                        txt_email.Text = client.Email;
+                    }
+                    else
+                    {
+                        string[] dados = cliente.retornaAtributos(doc);
+                        txt_nome.Text = dados[0];
+                        clienteCnpj client = new clienteCnpj(dados);
+                        txt_nome.Text = client.Nome;
+                        txt_telefone.Text = client.Telefone;
+                        txt_cidade.Text = client.Cidade;
+                        txt_email.Text = client.Email;
+                        np_desconto.Value = client.Desconto;
+                    }
+                }
+            }
         }
     }
 }

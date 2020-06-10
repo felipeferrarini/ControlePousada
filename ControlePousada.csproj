@@ -208,11 +208,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cliente.cs" />
-    <Compile Include="Frm_cadastroCliente.cs">
+    <Compile Include="Frm_clienteCriar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_cadastroCliente.Designer.cs">
-      <DependentUpon>Frm_cadastroCliente.cs</DependentUpon>
+    <Compile Include="Frm_clienteCriar.Designer.cs">
+      <DependentUpon>Frm_clienteCriar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_reservaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_reservaConsulta.Designer.cs">
+      <DependentUpon>Frm_reservaConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="MDIMain.cs">
       <SubType>Form</SubType>
@@ -232,22 +238,25 @@
     <Compile Include="Frm_login.Designer.cs">
       <DependentUpon>Frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_NovaReserva.cs">
+    <Compile Include="Frm_reservaCriar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_NovaReserva.Designer.cs">
-      <DependentUpon>Frm_NovaReserva.cs</DependentUpon>
+    <Compile Include="Frm_reservaCriar.Designer.cs">
+      <DependentUpon>Frm_reservaCriar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frm_cadastroCliente.resx">
-      <DependentUpon>Frm_cadastroCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_clienteCriar.resx">
+      <DependentUpon>Frm_clienteCriar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_login.resx">
       <DependentUpon>Frm_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_NovaReserva.resx">
-      <DependentUpon>Frm_NovaReserva.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_reservaConsulta.resx">
+      <DependentUpon>Frm_reservaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_reservaCriar.resx">
+      <DependentUpon>Frm_reservaCriar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIMain.resx">
       <DependentUpon>MDIMain.cs</DependentUpon>

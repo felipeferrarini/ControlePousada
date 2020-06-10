@@ -111,6 +111,7 @@
             this.btn_reserva.TabIndex = 13;
             this.btn_reserva.Text = "Consultar/Editar Reserva";
             this.btn_reserva.UseVisualStyleBackColor = false;
+            this.btn_reserva.Click += new System.EventHandler(this.btn_reserva_Click);
             // 
             // btn_config
             // 
@@ -148,7 +149,7 @@
             this.lb_title.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lb_title.Location = new System.Drawing.Point(12, 9);
+            this.lb_title.Location = new System.Drawing.Point(42, 9);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(215, 25);
             this.lb_title.TabIndex = 2;

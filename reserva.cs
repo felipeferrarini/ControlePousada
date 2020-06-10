@@ -14,6 +14,7 @@ using System.Threading;
 using Microsoft.SqlServer.Server;
 using System.Drawing.Printing;
 using WindowsFormsApp1;
+using Newtonsoft.Json.Linq;
 
 namespace ControlePousada
 {
@@ -34,6 +35,7 @@ namespace ControlePousada
         protected decimal desconto;
         protected double valor;
         protected bool pago;
+        protected DateTime dataPago;
 
         ///Construto vazio (Para nova reserva)
         public reserva()
@@ -41,24 +43,23 @@ namespace ControlePousada
 
         }
         ///Construtor com todos os atributos (para consulta)
-        public reserva(int numero, string cliente, string clienteNome, string telefone, string cidade, 
-            string email, DateTime dataEntrada, DateTime dataSaida, bool pago, decimal qtdPessoas, 
-            bool feriado, string feriadoTipo, decimal desconto, double valor)
+        public reserva(string[] dados)
         {
-            this.numero = numero;
-            this.cliente = cliente;
-            this.clienteNome = clienteNome;
-            this.telefone = telefone;
-            this.cidade = cidade;
-            this.email = email;
-            this.dataEntrada = dataEntrada;
-            this.dataSaida = dataSaida;
-            this.qtdPessoas = qtdPessoas;
-            this.feriado = feriado;
-            this.feriadoTipo = feriadoTipo;
-            this.desconto = desconto;
-            this.valor = valor;
-            this.pago = pago;
+            Numero = Convert.ToInt32(dados[0]);
+            Cliente = dados[1];
+            ClienteNome = dados[2];
+            Telefone = dados[3];
+            Cidade = dados[4];
+            Email = dados[5];
+            DataEntrada = DateTime.Parse(dados[6]);
+            DataSaida = DateTime.Parse(dados[7]);
+            QtdPessoas = Convert.ToInt32(dados[8]);
+            Feriado = bool.Parse(dados[9]);
+            FeriadoTipo = dados[10];
+            Desconto = Convert.ToDecimal(dados[11]);
+            Valor = Convert.ToInt32(dados[12]);
+            Pago = bool.Parse(dados[13]);
+            DataPago = DateTime.Parse(dados[14]);
         }
         ///Gets e sets
         public int Numero
@@ -131,6 +132,11 @@ namespace ControlePousada
             get { return valor; }
             set { valor = value; }
         }
+        public DateTime DataPago
+        {
+            get { return dataPago; }
+            set { dataPago = value; }
+        }
 
         ///Funções Staticas
         public static int getNextNumber (string path)
@@ -169,9 +175,26 @@ namespace ControlePousada
             bdW.Write(";");
             bdW.Write(dados.Valor);
             bdW.Write(";");
-            bdW.WriteLine(dados.Pago);
+            bdW.Write(dados.Pago);
+            bdW.Write(";");
+            bdW.WriteLine(dados.DataPago);
             bdW.Close();
             return true;
+        }
+
+        public static string[] retornaReserva(int numero)
+        {
+            string[] bd = File.ReadAllLines(Program.pathReserva);
+            foreach (var element in bd)
+            {
+                string[] line = element.Split(';');
+                if (line[0] == numero.ToString())
+                {
+                    return line;
+                }
+            }
+            string[] erro = { "err" };
+            return erro;
         }
 
     }

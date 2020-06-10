@@ -11,10 +11,10 @@ using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
-    public partial class Frm_cadastroCliente : Form
+    public partial class Frm_clienteCriar : Form
     {
         private string tipo;
-        public Frm_cadastroCliente()
+        public Frm_clienteCriar()
         {
             InitializeComponent();
         }

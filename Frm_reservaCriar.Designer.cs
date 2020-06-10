@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Frm_novaReserva
+    partial class Frm_reservaCriar
     {
         /// <summary>
         /// Required designer variable.
@@ -101,6 +101,7 @@
             this.btn_consultCliente.TabIndex = 63;
             this.btn_consultCliente.Text = "->";
             this.btn_consultCliente.UseVisualStyleBackColor = true;
+            this.btn_consultCliente.Click += new System.EventHandler(this.btn_consultCliente_Click);
             // 
             // txt_telefone
             // 
@@ -358,7 +359,7 @@
             this.txt_numero.TabIndex = 35;
             this.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // Frm_novaReserva
+            // Frm_reservaCriar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -398,7 +399,7 @@
             this.Controls.Add(this.lb_numero);
             this.Controls.Add(this.txt_numero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Frm_novaReserva";
+            this.Name = "Frm_reservaCriar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Controle de Pousada";
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).EndInit();

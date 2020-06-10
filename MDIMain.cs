@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
 
         private void btn_novaReserva_Click(object sender, EventArgs e)
         {
-            AbrirFormNoPanel(new Frm_novaReserva());
+            AbrirFormNoPanel(new Frm_reservaCriar());
             btn_cliente.Enabled = false;
             btn_config.Enabled = false;
             btn_newCliente.Enabled = false;
@@ -85,12 +85,17 @@ namespace WindowsFormsApp1
 
         private void btn_newCliente_Click(object sender, EventArgs e)
         {
-            AbrirFormNoPanel(new Frm_cadastroCliente());
+            AbrirFormNoPanel(new Frm_clienteCriar());
             btn_cliente.Enabled = false;
             btn_config.Enabled = false;
             btn_novaReserva.Enabled = false;
             btn_reserva.Enabled = false;
             btn_financeiro.Enabled = false;
+        }
+
+        private void btn_reserva_Click(object sender, EventArgs e)
+        {
+            AbrirFormNoPanel(new Frm_reservaConsulta());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Frm_cadastroCliente
+    partial class Frm_clienteCriar
     {
         /// <summary>
         /// Required designer variable.
