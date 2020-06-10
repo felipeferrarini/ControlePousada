@@ -97,5 +97,10 @@ namespace WindowsFormsApp1
         {
             AbrirFormNoPanel(new Frm_reservaConsulta());
         }
+
+        private void btn_cliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormNoPanel(new Frm_clienteConsulta());
+        }
     }
 }

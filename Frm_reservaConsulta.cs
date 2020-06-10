@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -47,7 +48,7 @@ namespace WindowsFormsApp1
 
                 DataRow Linha = db.NewRow();
                 Linha["Número"] = dados.Numero;
-                Linha["CPF/CNPJ"] = dados.Cliente;
+                Linha["CPF/CNPJ"] = dados.Cliente.Length==11?Convert.ToUInt64(dados.Cliente).ToString(@"000\.000\.000\-00"): Convert.ToUInt64(dados.Cliente).ToString(@"00\.000\.000\/0000\-00");
                 Linha["Nome"] = dados.ClienteNome;
                 Linha["Telefone"] = dados.Telefone;
                 Linha["Cidade"] = dados.Cidade;

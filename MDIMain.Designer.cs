@@ -35,17 +35,18 @@
             this.btn_config = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_title = new System.Windows.Forms.Label();
-            this.btn_minimizar = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_novaReserva = new System.Windows.Forms.Button();
             this.panelForms = new System.Windows.Forms.Panel();
+            this.btn_minimizar = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_cliente
             // 
             this.btn_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cliente.FlatAppearance.BorderSize = 0;
             this.btn_cliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
@@ -59,10 +60,12 @@
             this.btn_cliente.TabIndex = 18;
             this.btn_cliente.Text = "Consultar/Editar Cliente";
             this.btn_cliente.UseVisualStyleBackColor = false;
+            this.btn_cliente.Click += new System.EventHandler(this.btn_cliente_Click);
             // 
             // btn_newCliente
             // 
             this.btn_newCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_newCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_newCliente.FlatAppearance.BorderSize = 0;
             this.btn_newCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_newCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
@@ -81,6 +84,7 @@
             // btn_financeiro
             // 
             this.btn_financeiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_financeiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_financeiro.FlatAppearance.BorderSize = 0;
             this.btn_financeiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_financeiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
@@ -98,6 +102,7 @@
             // btn_reserva
             // 
             this.btn_reserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_reserva.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_reserva.FlatAppearance.BorderSize = 0;
             this.btn_reserva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_reserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
@@ -116,6 +121,7 @@
             // btn_config
             // 
             this.btn_config.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_config.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_config.FlatAppearance.BorderSize = 0;
             this.btn_config.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_config.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
@@ -155,40 +161,6 @@
             this.lb_title.TabIndex = 2;
             this.lb_title.Text = "Controle de Pousada";
             // 
-            // btn_minimizar
-            // 
-            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_minimizar.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.min;
-            this.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_minimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_minimizar.FlatAppearance.BorderSize = 0;
-            this.btn_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimizar.Location = new System.Drawing.Point(831, 4);
-            this.btn_minimizar.Name = "btn_minimizar";
-            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
-            this.btn_minimizar.TabIndex = 1;
-            this.btn_minimizar.UseVisualStyleBackColor = true;
-            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.close;
-            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_close.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Location = new System.Drawing.Point(867, 4);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(30, 30);
-            this.btn_close.TabIndex = 0;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -201,6 +173,7 @@
             // btn_novaReserva
             // 
             this.btn_novaReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_novaReserva.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_novaReserva.FlatAppearance.BorderSize = 0;
             this.btn_novaReserva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_novaReserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
@@ -224,6 +197,42 @@
             this.panelForms.Size = new System.Drawing.Size(730, 550);
             this.panelForms.TabIndex = 21;
             this.panelForms.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panelForms_ControlRemoved);
+            // 
+            // btn_minimizar
+            // 
+            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_minimizar.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.min;
+            this.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.btn_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimizar.Location = new System.Drawing.Point(831, 4);
+            this.btn_minimizar.Name = "btn_minimizar";
+            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
+            this.btn_minimizar.TabIndex = 1;
+            this.btn_minimizar.UseVisualStyleBackColor = true;
+            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_close.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.close;
+            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_close.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Location = new System.Drawing.Point(867, 4);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(30, 30);
+            this.btn_close.TabIndex = 0;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // MDIMain
             // 

@@ -193,7 +193,7 @@ namespace ControlePousada
                     return line;
                 }
             }
-            string[] erro = { "err" };
+            string[] erro = { "erro" };
             return erro;
         }
 

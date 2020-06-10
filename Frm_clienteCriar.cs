@@ -19,6 +19,43 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        public Frm_clienteCriar(string doc)
+        {
+            InitializeComponent();
+
+
+            if (doc.Length == 11)
+            {
+                
+                clienteCpf clinetes = new clienteCpf(cliente.retornaAtributos(doc));
+                rb_cpf.Checked = true;
+                txt_cliente.Text = clinetes.Documento;
+                txt_nome.Text = clinetes.Nome;
+                txt_telefone.Text =clinetes.Telefone;
+                txt_email.Text = clinetes.Email;
+                txt_logradouro.Text = clinetes.Endereço;
+                txt_bairro.Text = clinetes.Bairro;
+                txt_cidade.Text = clinetes.Cidade;
+                lp_estado.SelectedItem = clinetes.Estado;
+            }
+            else
+            {
+                clienteCnpj clinetes = new clienteCnpj(cliente.retornaAtributos(doc));
+                rb_cnpj.Checked = true;
+                txt_cliente.Text = clinetes.Documento;
+                txt_nome.Text = clinetes.Nome;
+                txt_telefone.Text = clinetes.Telefone;
+                txt_email.Text = clinetes.Email;
+                txt_logradouro.Text = clinetes.Endereço;
+                txt_bairro.Text = clinetes.Bairro;
+                txt_cidade.Text = clinetes.Cidade;
+                lp_estado.SelectedItem = clinetes.Estado;
+                txt_social.Text = clinetes.RazaoSocial;
+                np_desconto.Value = clinetes.Desconto;
+                
+            }
+        }
+
         private void btn_cancelarReserva_Click(object sender, EventArgs e)
         {
             Close();
@@ -55,7 +92,7 @@ namespace WindowsFormsApp1
         private void rb_cnpj_CheckedChanged(object sender, EventArgs e)
         {
             np_desconto.Enabled = true;
-            tipo = rb_cpf.Text;
+            tipo = rb_cnpj.Text;
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)
@@ -80,7 +117,7 @@ namespace WindowsFormsApp1
                 {
                     clienteCnpj cliente = new clienteCnpj();
                     cliente.Tipo = tipo;
-                    cliente.Documento = Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-]", "");
+                    cliente.Documento = Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-\\/]", "");
                     cliente.Nome = txt_nome.Text;
                     cliente.Telefone = txt_telefone.Text;
                     cliente.Email = txt_email.Text;
