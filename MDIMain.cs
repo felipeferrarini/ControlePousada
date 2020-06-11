@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace WindowsFormsApp1
 {
@@ -72,9 +73,22 @@ namespace WindowsFormsApp1
             panelForms.Tag = janela;
             janela.Show();
         }
+        private void escondePanelMenu()
+        {
+            if (panelMenu.Width == 242)
+            {
+                for (int i = 242; i >= 50; i = i - 24)
+                {
+
+                    panelMenu.Width = i;
+                }
+            }
+        }
 
         private void btn_novaReserva_Click(object sender, EventArgs e)
         {
+            lb_menuTitle.Text = btn_novaReserva.Text;
+            escondePanelMenu();
             AbrirFormNoPanel(new Frm_reservaCriar());
             btn_cliente.Enabled = false;
             btn_config.Enabled = false;
@@ -85,6 +99,8 @@ namespace WindowsFormsApp1
 
         private void btn_newCliente_Click(object sender, EventArgs e)
         {
+            lb_menuTitle.Text = btn_newCliente.Text;
+            escondePanelMenu();
             AbrirFormNoPanel(new Frm_clienteCriar());
             btn_cliente.Enabled = false;
             btn_config.Enabled = false;
@@ -95,12 +111,48 @@ namespace WindowsFormsApp1
 
         private void btn_reserva_Click(object sender, EventArgs e)
         {
+            lb_menuTitle.Text = btn_reserva.Text;
+            escondePanelMenu();
             AbrirFormNoPanel(new Frm_reservaConsulta());
         }
 
         private void btn_cliente_Click(object sender, EventArgs e)
         {
+            lb_menuTitle.Text = btn_cliente.Text;
+            escondePanelMenu();
             AbrirFormNoPanel(new Frm_clienteConsulta());
+        }
+
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+            if(panelMenu.Width == 242)
+            {
+                for (int i = 242; i >= 50; i = i - 24)
+                {
+
+                    panelMenu.Width = i;
+                    
+                }
+            }
+            else
+            {
+                for (int i = 50; i < 243; i = i + 24)
+                {
+
+                    panelMenu.Width = i;
+                }
+            }
+        }
+
+        private void btn_newCliente_MouseHover(object sender, EventArgs e)
+        {
+            if (panelMenu.Width != 242)
+            {
+                for (int i = 50; i < 243; i = i + 24)
+                {
+                    panelMenu.Width = i;
+                }
+            }
         }
     }
 }

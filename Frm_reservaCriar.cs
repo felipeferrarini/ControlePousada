@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
             {
                 if (txt_cliente.MaskCompleted)
                 {
-                    txt_cliente.Mask = "00.000.000/0000-00";
+                    txt_cliente.Mask = "00,000,000/0000-00";
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
             {
                 if (!int.TryParse(txt_cliente.Text.Substring(13, 1), out int result2))
                 {
-                    txt_cliente.Mask = "000.000.000-00";
+                    txt_cliente.Mask = "000,000,000-00";
                 }
             }
         }
@@ -89,36 +89,56 @@ namespace WindowsFormsApp1
 
         private void btn_salvarReserva_Click(object sender, EventArgs e)
         {
+            NullReferenceException dadoVazio = new NullReferenceException();
+            FormatException erroPessoas = new FormatException("A quantidade de Pessoas não pode ser Zero!");
+
             try
             {
                 reserva novaReserva = new reserva();
                 novaReserva.Numero = Convert.ToInt32(txt_numero.Text);
-                novaReserva.Cliente = Regex.Replace(txt_cliente.Text, "[\\-\\,\\.\\ ]", "");
+                novaReserva.Cliente = txt_cliente.MaskCompleted ? Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-]", "") : throw dadoVazio;
                 novaReserva.ClienteNome = txt_nome.Text;
                 novaReserva.Telefone = txt_telefone.Text;
                 novaReserva.Cidade = txt_cidade.Text;
                 novaReserva.Email = txt_email.Text;
                 novaReserva.DataEntrada = dtp_entrada.Value;
                 novaReserva.DataSaida = dtp_saida.Value;
-                novaReserva.QtdPessoas = np_qtdPessoas.Value;
+                novaReserva.QtdPessoas = np_qtdPessoas.Value > 0 ? np_qtdPessoas.Value : throw erroPessoas;
                 novaReserva.Feriado = cb_feriado.Checked;
-                novaReserva.FeriadoTipo = lp_feriado.SelectedItem.ToString();
+                novaReserva.FeriadoTipo = cb_feriado.Checked?lp_feriado.SelectedItem.ToString():"Nenhum";
                 novaReserva.Desconto = np_desconto.Value;
                 novaReserva.Valor = Convert.ToDouble(txt_valor.Text);
                 novaReserva.Pago = cb_pagamento.Checked;
                 novaReserva.DataPago = dtp_dataPag.Value;
                 reserva.salvarReserva(novaReserva);
+
+
+                txt_numero.Text = "";
+                txt_cliente.Text = "";
+                txt_nome.Text = "";
+                txt_telefone.Text = "";
+                txt_cidade.Text = "";
+                txt_email.Text = "";
+                dtp_entrada.Value = DateTime.Now;
+                dtp_saida.Value = DateTime.Now;
+                np_qtdPessoas.Value = 0;
+                cb_feriado.Checked = false;
+                lp_feriado.SelectedItem = "";
+                np_desconto.Value = 0;
+                txt_valor.Text = "";
+                cb_pagamento.Checked = false;
+                dtp_dataPag.Value = DateTime.Now;
+
+                MessageBox.Show("Reserva Salva com Sucesso!", "Alerta");
             }
-            catch(System.NullReferenceException erro)
+            catch(NullReferenceException)
             {
-                DialogResult info;
-                info = MessageBox.Show("Preencha todos os dados!", "Erro");
+                MessageBox.Show("Preencha todos os dados!", "Erro");
 
             }
-            catch(System.FormatException erro2)
+            catch(FormatException erro)
             {
-                DialogResult info;
-                info = MessageBox.Show("Preencha todos os dados corretamente!", "Erro");
+                MessageBox.Show(erro.Message, "Erro");
             }
         }
 
@@ -169,6 +189,21 @@ namespace WindowsFormsApp1
                         np_desconto.Value = client.Desconto;
                     }
                 }
+            }
+        }
+
+        private void np_desconto_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (np_desconto.Value > 15)
+                {
+                    txt_valor.Text = ((txt_valorBase.Value - 15) * 50 + txt_valorBase.Value).ToString() + ",00";
+                }
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Digite apenas números no 'Valor Base'!", "Erro");
             }
         }
     }

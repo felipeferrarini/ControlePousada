@@ -31,13 +31,11 @@
             this.lb_DataPag = new System.Windows.Forms.Label();
             this.dtp_dataPag = new System.Windows.Forms.DateTimePicker();
             this.cb_pagamento = new System.Windows.Forms.CheckBox();
-            this.btn_consultCliente = new System.Windows.Forms.Button();
             this.txt_telefone = new System.Windows.Forms.TextBox();
             this.lb_valor = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.txt_valor = new System.Windows.Forms.TextBox();
             this.btn_salvarReserva = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lb_valorBase = new System.Windows.Forms.Label();
             this.np_desconto = new System.Windows.Forms.NumericUpDown();
             this.lb_desconto = new System.Windows.Forms.Label();
@@ -58,136 +56,150 @@
             this.lb_nome = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.lb_cliente = new System.Windows.Forms.Label();
-            this.lb_numero = new System.Windows.Forms.Label();
             this.txt_numero = new System.Windows.Forms.TextBox();
+            this.gb_numero = new System.Windows.Forms.GroupBox();
+            this.gb_gerais = new System.Windows.Forms.GroupBox();
+            this.gb_financeiro = new System.Windows.Forms.GroupBox();
+            this.btn_consultCliente = new System.Windows.Forms.Button();
+            this.txt_valorBase = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).BeginInit();
+            this.gb_numero.SuspendLayout();
+            this.gb_gerais.SuspendLayout();
+            this.gb_financeiro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_valorBase)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_DataPag
             // 
             this.lb_DataPag.AutoSize = true;
-            this.lb_DataPag.Location = new System.Drawing.Point(538, 385);
+            this.lb_DataPag.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_DataPag.Location = new System.Drawing.Point(15, 118);
             this.lb_DataPag.Name = "lb_DataPag";
-            this.lb_DataPag.Size = new System.Drawing.Size(102, 13);
+            this.lb_DataPag.Size = new System.Drawing.Size(123, 16);
             this.lb_DataPag.TabIndex = 66;
             this.lb_DataPag.Text = "Data do Pagamento";
             // 
             // dtp_dataPag
             // 
             this.dtp_dataPag.Enabled = false;
+            this.dtp_dataPag.Font = new System.Drawing.Font("Arial", 11.25F);
             this.dtp_dataPag.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_dataPag.Location = new System.Drawing.Point(541, 401);
+            this.dtp_dataPag.Location = new System.Drawing.Point(140, 111);
             this.dtp_dataPag.Name = "dtp_dataPag";
-            this.dtp_dataPag.Size = new System.Drawing.Size(140, 20);
+            this.dtp_dataPag.Size = new System.Drawing.Size(163, 25);
             this.dtp_dataPag.TabIndex = 65;
             // 
             // cb_pagamento
             // 
             this.cb_pagamento.AutoSize = true;
-            this.cb_pagamento.Location = new System.Drawing.Point(448, 385);
+            this.cb_pagamento.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cb_pagamento.Location = new System.Drawing.Point(16, 88);
             this.cb_pagamento.Name = "cb_pagamento";
-            this.cb_pagamento.Size = new System.Drawing.Size(84, 17);
+            this.cb_pagamento.Size = new System.Drawing.Size(97, 20);
             this.cb_pagamento.TabIndex = 64;
             this.cb_pagamento.Text = "Valor Pago?";
             this.cb_pagamento.UseVisualStyleBackColor = true;
             this.cb_pagamento.CheckedChanged += new System.EventHandler(this.cb_pagamento_CheckedChanged);
             // 
-            // btn_consultCliente
-            // 
-            this.btn_consultCliente.Location = new System.Drawing.Point(189, 150);
-            this.btn_consultCliente.Name = "btn_consultCliente";
-            this.btn_consultCliente.Size = new System.Drawing.Size(25, 23);
-            this.btn_consultCliente.TabIndex = 63;
-            this.btn_consultCliente.Text = "->";
-            this.btn_consultCliente.UseVisualStyleBackColor = true;
-            this.btn_consultCliente.Click += new System.EventHandler(this.btn_consultCliente_Click);
-            // 
             // txt_telefone
             // 
-            this.txt_telefone.Location = new System.Drawing.Point(541, 152);
+            this.txt_telefone.BackColor = System.Drawing.Color.White;
+            this.txt_telefone.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_telefone.Location = new System.Drawing.Point(551, 47);
             this.txt_telefone.Name = "txt_telefone";
             this.txt_telefone.ReadOnly = true;
-            this.txt_telefone.Size = new System.Drawing.Size(140, 20);
+            this.txt_telefone.Size = new System.Drawing.Size(168, 25);
             this.txt_telefone.TabIndex = 62;
             // 
             // lb_valor
             // 
             this.lb_valor.AutoSize = true;
-            this.lb_valor.Location = new System.Drawing.Point(45, 404);
+            this.lb_valor.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_valor.Location = new System.Drawing.Point(513, 118);
             this.lb_valor.Name = "lb_valor";
-            this.lb_valor.Size = new System.Drawing.Size(84, 13);
+            this.lb_valor.Size = new System.Drawing.Size(100, 16);
             this.lb_valor.TabIndex = 61;
             this.lb_valor.Text = "Valor Total (R$):";
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.Location = new System.Drawing.Point(572, 472);
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelar.Location = new System.Drawing.Point(666, 500);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(132, 38);
             this.btn_cancelar.TabIndex = 38;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelarReserva_Click);
             // 
             // txt_valor
             // 
-            this.txt_valor.Location = new System.Drawing.Point(135, 401);
+            this.txt_valor.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_valor.Location = new System.Drawing.Point(619, 114);
             this.txt_valor.Name = "txt_valor";
-            this.txt_valor.Size = new System.Drawing.Size(100, 20);
+            this.txt_valor.Size = new System.Drawing.Size(100, 25);
             this.txt_valor.TabIndex = 60;
             // 
             // btn_salvarReserva
             // 
-            this.btn_salvarReserva.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_salvarReserva.Location = new System.Drawing.Point(409, 472);
+            this.btn_salvarReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_salvarReserva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_salvarReserva.FlatAppearance.BorderSize = 0;
+            this.btn_salvarReserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_salvarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salvarReserva.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salvarReserva.ForeColor = System.Drawing.Color.White;
+            this.btn_salvarReserva.Location = new System.Drawing.Point(503, 500);
             this.btn_salvarReserva.Name = "btn_salvarReserva";
             this.btn_salvarReserva.Size = new System.Drawing.Size(132, 38);
             this.btn_salvarReserva.TabIndex = 37;
             this.btn_salvarReserva.Text = "Salvar";
-            this.btn_salvarReserva.UseVisualStyleBackColor = true;
+            this.btn_salvarReserva.UseVisualStyleBackColor = false;
             this.btn_salvarReserva.Click += new System.EventHandler(this.btn_salvarReserva_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(394, 263);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 59;
-            this.textBox1.Text = "700,00";
             // 
             // lb_valorBase
             // 
             this.lb_valorBase.AutoSize = true;
-            this.lb_valorBase.Location = new System.Drawing.Point(391, 248);
+            this.lb_valorBase.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_valorBase.Location = new System.Drawing.Point(13, 29);
             this.lb_valorBase.Name = "lb_valorBase";
-            this.lb_valorBase.Size = new System.Drawing.Size(84, 13);
+            this.lb_valorBase.Size = new System.Drawing.Size(103, 16);
             this.lb_valorBase.TabIndex = 58;
             this.lb_valorBase.Text = "Valor Base (R$):";
             // 
             // np_desconto
             // 
-            this.np_desconto.Location = new System.Drawing.Point(541, 262);
+            this.np_desconto.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.np_desconto.Location = new System.Drawing.Point(163, 49);
             this.np_desconto.Name = "np_desconto";
-            this.np_desconto.Size = new System.Drawing.Size(140, 20);
+            this.np_desconto.Size = new System.Drawing.Size(140, 25);
             this.np_desconto.TabIndex = 57;
+            this.np_desconto.ValueChanged += new System.EventHandler(this.np_desconto_ValueChanged);
             // 
             // lb_desconto
             // 
             this.lb_desconto.AutoSize = true;
-            this.lb_desconto.Location = new System.Drawing.Point(538, 247);
+            this.lb_desconto.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_desconto.Location = new System.Drawing.Point(160, 30);
             this.lb_desconto.Name = "lb_desconto";
-            this.lb_desconto.Size = new System.Drawing.Size(73, 13);
+            this.lb_desconto.Size = new System.Drawing.Size(91, 16);
             this.lb_desconto.TabIndex = 56;
             this.lb_desconto.Text = "Desconto (%):";
             // 
             // txt_cliente
             // 
-            this.txt_cliente.Location = new System.Drawing.Point(47, 151);
-            this.txt_cliente.Mask = "000.000.000-00";
+            this.txt_cliente.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_cliente.Location = new System.Drawing.Point(16, 47);
+            this.txt_cliente.Mask = "000,000,000-00";
             this.txt_cliente.Name = "txt_cliente";
-            this.txt_cliente.Size = new System.Drawing.Size(136, 20);
+            this.txt_cliente.Size = new System.Drawing.Size(136, 25);
             this.txt_cliente.TabIndex = 55;
             this.txt_cliente.TextChanged += new System.EventHandler(this.txt_cliente_TextChanged);
             this.txt_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cliente_KeyPress);
@@ -195,6 +207,7 @@
             // lp_feriado
             // 
             this.lp_feriado.Enabled = false;
+            this.lp_feriado.Font = new System.Drawing.Font("Arial", 11.25F);
             this.lp_feriado.FormattingEnabled = true;
             this.lp_feriado.Items.AddRange(new object[] {
             "Carnaval",
@@ -202,18 +215,19 @@
             "Corpus Christ",
             "Natal",
             "Reveion"});
-            this.lp_feriado.Location = new System.Drawing.Point(220, 262);
+            this.lp_feriado.Location = new System.Drawing.Point(553, 151);
             this.lp_feriado.Name = "lp_feriado";
-            this.lp_feriado.Size = new System.Drawing.Size(168, 21);
+            this.lp_feriado.Size = new System.Drawing.Size(166, 25);
             this.lp_feriado.TabIndex = 54;
             this.lp_feriado.Text = "Selecione";
             // 
             // cb_feriado
             // 
             this.cb_feriado.AutoSize = true;
-            this.cb_feriado.Location = new System.Drawing.Point(221, 245);
+            this.cb_feriado.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cb_feriado.Location = new System.Drawing.Point(553, 129);
             this.cb_feriado.Name = "cb_feriado";
-            this.cb_feriado.Size = new System.Drawing.Size(67, 17);
+            this.cb_feriado.Size = new System.Drawing.Size(77, 20);
             this.cb_feriado.TabIndex = 53;
             this.cb_feriado.Text = "Feriado?";
             this.cb_feriado.UseVisualStyleBackColor = true;
@@ -221,191 +235,272 @@
             // 
             // np_qtdPessoas
             // 
-            this.np_qtdPessoas.Location = new System.Drawing.Point(48, 263);
+            this.np_qtdPessoas.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.np_qtdPessoas.Location = new System.Drawing.Point(551, 98);
             this.np_qtdPessoas.Name = "np_qtdPessoas";
-            this.np_qtdPessoas.Size = new System.Drawing.Size(166, 20);
+            this.np_qtdPessoas.Size = new System.Drawing.Size(168, 25);
             this.np_qtdPessoas.TabIndex = 52;
             // 
             // lb_qtdPessoas
             // 
             this.lb_qtdPessoas.AutoSize = true;
-            this.lb_qtdPessoas.Location = new System.Drawing.Point(45, 246);
+            this.lb_qtdPessoas.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_qtdPessoas.Location = new System.Drawing.Point(550, 79);
             this.lb_qtdPessoas.Name = "lb_qtdPessoas";
-            this.lb_qtdPessoas.Size = new System.Drawing.Size(123, 13);
+            this.lb_qtdPessoas.Size = new System.Drawing.Size(151, 16);
             this.lb_qtdPessoas.TabIndex = 51;
             this.lb_qtdPessoas.Text = "Quantidade de Pessoas:";
             // 
             // lb_saida
             // 
             this.lb_saida.AutoSize = true;
-            this.lb_saida.Location = new System.Drawing.Point(538, 191);
+            this.lb_saida.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_saida.Location = new System.Drawing.Point(283, 132);
             this.lb_saida.Name = "lb_saida";
-            this.lb_saida.Size = new System.Drawing.Size(77, 13);
+            this.lb_saida.Size = new System.Drawing.Size(90, 16);
             this.lb_saida.TabIndex = 50;
             this.lb_saida.Text = "Data de Saída";
             // 
             // dtp_saida
             // 
+            this.dtp_saida.Font = new System.Drawing.Font("Arial", 11.25F);
             this.dtp_saida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_saida.Location = new System.Drawing.Point(541, 207);
+            this.dtp_saida.Location = new System.Drawing.Point(286, 151);
             this.dtp_saida.Name = "dtp_saida";
-            this.dtp_saida.Size = new System.Drawing.Size(140, 20);
+            this.dtp_saida.Size = new System.Drawing.Size(259, 25);
             this.dtp_saida.TabIndex = 49;
             // 
             // lb_entrada
             // 
             this.lb_entrada.AutoSize = true;
-            this.lb_entrada.Location = new System.Drawing.Point(391, 191);
+            this.lb_entrada.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_entrada.Location = new System.Drawing.Point(13, 132);
             this.lb_entrada.Name = "lb_entrada";
-            this.lb_entrada.Size = new System.Drawing.Size(85, 13);
+            this.lb_entrada.Size = new System.Drawing.Size(102, 16);
             this.lb_entrada.TabIndex = 48;
             this.lb_entrada.Text = "Data de Entrada";
             // 
             // dtp_entrada
             // 
+            this.dtp_entrada.Font = new System.Drawing.Font("Arial", 11.25F);
             this.dtp_entrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_entrada.Location = new System.Drawing.Point(394, 207);
+            this.dtp_entrada.Location = new System.Drawing.Point(16, 151);
             this.dtp_entrada.Name = "dtp_entrada";
-            this.dtp_entrada.Size = new System.Drawing.Size(141, 20);
+            this.dtp_entrada.Size = new System.Drawing.Size(264, 25);
             this.dtp_entrada.TabIndex = 47;
             // 
             // lb_email
             // 
             this.lb_email.AutoSize = true;
-            this.lb_email.Location = new System.Drawing.Point(219, 191);
+            this.lb_email.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_email.Location = new System.Drawing.Point(284, 79);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(38, 13);
+            this.lb_email.Size = new System.Drawing.Size(49, 16);
             this.lb_email.TabIndex = 46;
             this.lb_email.Text = "E-mail:";
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(221, 207);
+            this.txt_email.BackColor = System.Drawing.Color.White;
+            this.txt_email.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_email.Location = new System.Drawing.Point(286, 98);
             this.txt_email.Name = "txt_email";
             this.txt_email.ReadOnly = true;
-            this.txt_email.Size = new System.Drawing.Size(167, 20);
+            this.txt_email.Size = new System.Drawing.Size(259, 25);
             this.txt_email.TabIndex = 45;
-            this.txt_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lb_cidade
             // 
             this.lb_cidade.AutoSize = true;
-            this.lb_cidade.Location = new System.Drawing.Point(45, 191);
+            this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_cidade.Location = new System.Drawing.Point(15, 79);
             this.lb_cidade.Name = "lb_cidade";
-            this.lb_cidade.Size = new System.Drawing.Size(43, 13);
+            this.lb_cidade.Size = new System.Drawing.Size(52, 16);
             this.lb_cidade.TabIndex = 44;
             this.lb_cidade.Text = "Cidade:";
             // 
             // txt_cidade
             // 
-            this.txt_cidade.Location = new System.Drawing.Point(47, 207);
+            this.txt_cidade.BackColor = System.Drawing.Color.White;
+            this.txt_cidade.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_cidade.Location = new System.Drawing.Point(16, 98);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.ReadOnly = true;
-            this.txt_cidade.Size = new System.Drawing.Size(167, 20);
+            this.txt_cidade.Size = new System.Drawing.Size(264, 25);
             this.txt_cidade.TabIndex = 43;
-            this.txt_cidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lb_telefone
             // 
             this.lb_telefone.AutoSize = true;
-            this.lb_telefone.Location = new System.Drawing.Point(538, 135);
+            this.lb_telefone.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_telefone.Location = new System.Drawing.Point(548, 26);
             this.lb_telefone.Name = "lb_telefone";
-            this.lb_telefone.Size = new System.Drawing.Size(52, 13);
+            this.lb_telefone.Size = new System.Drawing.Size(59, 16);
             this.lb_telefone.TabIndex = 42;
             this.lb_telefone.Text = "Telefone:";
             // 
             // lb_nome
             // 
             this.lb_nome.AutoSize = true;
-            this.lb_nome.Location = new System.Drawing.Point(218, 135);
+            this.lb_nome.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_nome.Location = new System.Drawing.Point(190, 27);
             this.lb_nome.Name = "lb_nome";
-            this.lb_nome.Size = new System.Drawing.Size(88, 13);
+            this.lb_nome.Size = new System.Drawing.Size(108, 16);
             this.lb_nome.TabIndex = 41;
             this.lb_nome.Text = "Nome do Cliente:";
             // 
             // txt_nome
             // 
-            this.txt_nome.Location = new System.Drawing.Point(220, 151);
+            this.txt_nome.BackColor = System.Drawing.Color.White;
+            this.txt_nome.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_nome.Location = new System.Drawing.Point(191, 47);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.ReadOnly = true;
-            this.txt_nome.Size = new System.Drawing.Size(315, 20);
+            this.txt_nome.Size = new System.Drawing.Size(354, 25);
             this.txt_nome.TabIndex = 40;
-            this.txt_nome.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lb_cliente
             // 
             this.lb_cliente.AutoSize = true;
-            this.lb_cliente.Location = new System.Drawing.Point(45, 135);
+            this.lb_cliente.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_cliente.Location = new System.Drawing.Point(13, 28);
             this.lb_cliente.Name = "lb_cliente";
-            this.lb_cliente.Size = new System.Drawing.Size(62, 13);
+            this.lb_cliente.Size = new System.Drawing.Size(75, 16);
             this.lb_cliente.TabIndex = 39;
             this.lb_cliente.Text = "CPF/CNPJ:";
             // 
-            // lb_numero
-            // 
-            this.lb_numero.AutoSize = true;
-            this.lb_numero.Location = new System.Drawing.Point(44, 53);
-            this.lb_numero.Name = "lb_numero";
-            this.lb_numero.Size = new System.Drawing.Size(105, 13);
-            this.lb_numero.TabIndex = 36;
-            this.lb_numero.Text = "Número da Reserva:";
-            // 
             // txt_numero
             // 
-            this.txt_numero.Location = new System.Drawing.Point(47, 69);
+            this.txt_numero.BackColor = System.Drawing.Color.White;
+            this.txt_numero.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_numero.Location = new System.Drawing.Point(18, 24);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.ReadOnly = true;
-            this.txt_numero.Size = new System.Drawing.Size(100, 20);
+            this.txt_numero.Size = new System.Drawing.Size(100, 25);
             this.txt_numero.TabIndex = 35;
-            this.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // gb_numero
+            // 
+            this.gb_numero.Controls.Add(this.txt_numero);
+            this.gb_numero.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_numero.Location = new System.Drawing.Point(39, 34);
+            this.gb_numero.Name = "gb_numero";
+            this.gb_numero.Size = new System.Drawing.Size(759, 65);
+            this.gb_numero.TabIndex = 67;
+            this.gb_numero.TabStop = false;
+            this.gb_numero.Text = "Número da Reserva";
+            // 
+            // gb_gerais
+            // 
+            this.gb_gerais.Controls.Add(this.txt_cliente);
+            this.gb_gerais.Controls.Add(this.lb_cliente);
+            this.gb_gerais.Controls.Add(this.txt_nome);
+            this.gb_gerais.Controls.Add(this.lb_nome);
+            this.gb_gerais.Controls.Add(this.lb_telefone);
+            this.gb_gerais.Controls.Add(this.btn_consultCliente);
+            this.gb_gerais.Controls.Add(this.txt_cidade);
+            this.gb_gerais.Controls.Add(this.txt_telefone);
+            this.gb_gerais.Controls.Add(this.lb_cidade);
+            this.gb_gerais.Controls.Add(this.txt_email);
+            this.gb_gerais.Controls.Add(this.lb_email);
+            this.gb_gerais.Controls.Add(this.dtp_entrada);
+            this.gb_gerais.Controls.Add(this.lb_entrada);
+            this.gb_gerais.Controls.Add(this.dtp_saida);
+            this.gb_gerais.Controls.Add(this.lb_saida);
+            this.gb_gerais.Controls.Add(this.lb_qtdPessoas);
+            this.gb_gerais.Controls.Add(this.np_qtdPessoas);
+            this.gb_gerais.Controls.Add(this.cb_feriado);
+            this.gb_gerais.Controls.Add(this.lp_feriado);
+            this.gb_gerais.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_gerais.Location = new System.Drawing.Point(39, 106);
+            this.gb_gerais.Name = "gb_gerais";
+            this.gb_gerais.Size = new System.Drawing.Size(759, 206);
+            this.gb_gerais.TabIndex = 68;
+            this.gb_gerais.TabStop = false;
+            this.gb_gerais.Text = "Dados Gerais";
+            // 
+            // gb_financeiro
+            // 
+            this.gb_financeiro.Controls.Add(this.txt_valorBase);
+            this.gb_financeiro.Controls.Add(this.txt_valor);
+            this.gb_financeiro.Controls.Add(this.np_desconto);
+            this.gb_financeiro.Controls.Add(this.lb_valorBase);
+            this.gb_financeiro.Controls.Add(this.lb_DataPag);
+            this.gb_financeiro.Controls.Add(this.lb_desconto);
+            this.gb_financeiro.Controls.Add(this.dtp_dataPag);
+            this.gb_financeiro.Controls.Add(this.lb_valor);
+            this.gb_financeiro.Controls.Add(this.cb_pagamento);
+            this.gb_financeiro.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_financeiro.Location = new System.Drawing.Point(39, 321);
+            this.gb_financeiro.Name = "gb_financeiro";
+            this.gb_financeiro.Size = new System.Drawing.Size(759, 155);
+            this.gb_financeiro.TabIndex = 69;
+            this.gb_financeiro.TabStop = false;
+            this.gb_financeiro.Text = "Dados Financeiros";
+            // 
+            // btn_consultCliente
+            // 
+            this.btn_consultCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_consultCliente.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.pesquisa;
+            this.btn_consultCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_consultCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_consultCliente.FlatAppearance.BorderSize = 0;
+            this.btn_consultCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_consultCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_consultCliente.Font = new System.Drawing.Font("Arial", 8F);
+            this.btn_consultCliente.Location = new System.Drawing.Point(158, 46);
+            this.btn_consultCliente.Name = "btn_consultCliente";
+            this.btn_consultCliente.Size = new System.Drawing.Size(25, 26);
+            this.btn_consultCliente.TabIndex = 63;
+            this.btn_consultCliente.UseVisualStyleBackColor = false;
+            this.btn_consultCliente.Click += new System.EventHandler(this.btn_consultCliente_Click);
+            // 
+            // txt_valorBase
+            // 
+            this.txt_valorBase.DecimalPlaces = 2;
+            this.txt_valorBase.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_valorBase.Location = new System.Drawing.Point(16, 49);
+            this.txt_valorBase.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.txt_valorBase.Name = "txt_valorBase";
+            this.txt_valorBase.Size = new System.Drawing.Size(120, 25);
+            this.txt_valorBase.TabIndex = 70;
+            this.txt_valorBase.Value = new decimal(new int[] {
+            70000,
+            0,
+            0,
+            131072});
             // 
             // Frm_reservaCriar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(730, 550);
-            this.Controls.Add(this.lb_DataPag);
-            this.Controls.Add(this.dtp_dataPag);
-            this.Controls.Add(this.cb_pagamento);
-            this.Controls.Add(this.btn_consultCliente);
-            this.Controls.Add(this.txt_telefone);
-            this.Controls.Add(this.lb_valor);
+            this.ClientSize = new System.Drawing.Size(840, 550);
+            this.Controls.Add(this.gb_financeiro);
+            this.Controls.Add(this.gb_gerais);
+            this.Controls.Add(this.gb_numero);
             this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.txt_valor);
             this.Controls.Add(this.btn_salvarReserva);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lb_valorBase);
-            this.Controls.Add(this.np_desconto);
-            this.Controls.Add(this.lb_desconto);
-            this.Controls.Add(this.txt_cliente);
-            this.Controls.Add(this.lp_feriado);
-            this.Controls.Add(this.cb_feriado);
-            this.Controls.Add(this.np_qtdPessoas);
-            this.Controls.Add(this.lb_qtdPessoas);
-            this.Controls.Add(this.lb_saida);
-            this.Controls.Add(this.dtp_saida);
-            this.Controls.Add(this.lb_entrada);
-            this.Controls.Add(this.dtp_entrada);
-            this.Controls.Add(this.lb_email);
-            this.Controls.Add(this.txt_email);
-            this.Controls.Add(this.lb_cidade);
-            this.Controls.Add(this.txt_cidade);
-            this.Controls.Add(this.lb_telefone);
-            this.Controls.Add(this.lb_nome);
-            this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.lb_cliente);
-            this.Controls.Add(this.lb_numero);
-            this.Controls.Add(this.txt_numero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_reservaCriar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Controle de Pousada";
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).EndInit();
+            this.gb_numero.ResumeLayout(false);
+            this.gb_numero.PerformLayout();
+            this.gb_gerais.ResumeLayout(false);
+            this.gb_gerais.PerformLayout();
+            this.gb_financeiro.ResumeLayout(false);
+            this.gb_financeiro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_valorBase)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -420,7 +515,6 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.TextBox txt_valor;
         private System.Windows.Forms.Button btn_salvarReserva;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lb_valorBase;
         private System.Windows.Forms.NumericUpDown np_desconto;
         private System.Windows.Forms.Label lb_desconto;
@@ -441,7 +535,10 @@
         private System.Windows.Forms.Label lb_nome;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label lb_cliente;
-        private System.Windows.Forms.Label lb_numero;
         private System.Windows.Forms.TextBox txt_numero;
+        private System.Windows.Forms.GroupBox gb_numero;
+        private System.Windows.Forms.GroupBox gb_gerais;
+        private System.Windows.Forms.GroupBox gb_financeiro;
+        private System.Windows.Forms.NumericUpDown txt_valorBase;
     }
 }

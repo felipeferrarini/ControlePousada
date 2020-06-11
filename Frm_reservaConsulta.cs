@@ -25,11 +25,9 @@ namespace WindowsFormsApp1
             DataTable db = new DataTable();
             
             db.Columns.Add("Número", typeof(string));
-            db.Columns.Add("CPF/CNPJ", typeof(string));
             db.Columns.Add("Nome", typeof(string));
             db.Columns.Add("Telefone", typeof(string));
             db.Columns.Add("Cidade", typeof(string));
-            db.Columns.Add("E-mail", typeof(string));
             db.Columns.Add("Data de Entrada", typeof(string));
             db.Columns.Add("Data de Saída", typeof(string));
             db.Columns.Add("Qtd de Pessoas", typeof(string));
@@ -48,11 +46,9 @@ namespace WindowsFormsApp1
 
                 DataRow Linha = db.NewRow();
                 Linha["Número"] = dados.Numero;
-                Linha["CPF/CNPJ"] = dados.Cliente.Length==11?Convert.ToUInt64(dados.Cliente).ToString(@"000\.000\.000\-00"): Convert.ToUInt64(dados.Cliente).ToString(@"00\.000\.000\/0000\-00");
                 Linha["Nome"] = dados.ClienteNome;
                 Linha["Telefone"] = dados.Telefone;
                 Linha["Cidade"] = dados.Cidade;
-                Linha["E-mail"] = dados.Email;
                 Linha["Data de Entrada"] = dados.DataEntrada;
                 Linha["Data de Saída"] = dados.DataSaida;
                 Linha["Qtd de Pessoas"] = dados.QtdPessoas;
