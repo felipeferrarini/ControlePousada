@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace controlePousada
 {
     partial class Frm_reservaCriar
     {
@@ -34,7 +34,6 @@
             this.txt_telefone = new System.Windows.Forms.TextBox();
             this.lb_valor = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.txt_valor = new System.Windows.Forms.TextBox();
             this.btn_salvarReserva = new System.Windows.Forms.Button();
             this.lb_valorBase = new System.Windows.Forms.Label();
             this.np_desconto = new System.Windows.Forms.NumericUpDown();
@@ -59,14 +58,16 @@
             this.txt_numero = new System.Windows.Forms.TextBox();
             this.gb_numero = new System.Windows.Forms.GroupBox();
             this.gb_gerais = new System.Windows.Forms.GroupBox();
-            this.gb_financeiro = new System.Windows.Forms.GroupBox();
             this.btn_consultCliente = new System.Windows.Forms.Button();
+            this.gb_financeiro = new System.Windows.Forms.GroupBox();
+            this.txt_valor = new System.Windows.Forms.NumericUpDown();
             this.txt_valorBase = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).BeginInit();
             this.gb_numero.SuspendLayout();
             this.gb_gerais.SuspendLayout();
             this.gb_financeiro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_valor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valorBase)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +107,7 @@
             // 
             this.txt_telefone.BackColor = System.Drawing.Color.White;
             this.txt_telefone.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_telefone.Location = new System.Drawing.Point(551, 47);
+            this.txt_telefone.Location = new System.Drawing.Point(16, 98);
             this.txt_telefone.Name = "txt_telefone";
             this.txt_telefone.ReadOnly = true;
             this.txt_telefone.Size = new System.Drawing.Size(168, 25);
@@ -139,14 +140,6 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelarReserva_Click);
             // 
-            // txt_valor
-            // 
-            this.txt_valor.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_valor.Location = new System.Drawing.Point(619, 114);
-            this.txt_valor.Name = "txt_valor";
-            this.txt_valor.Size = new System.Drawing.Size(100, 25);
-            this.txt_valor.TabIndex = 60;
-            // 
             // btn_salvarReserva
             // 
             this.btn_salvarReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -168,7 +161,7 @@
             // 
             this.lb_valorBase.AutoSize = true;
             this.lb_valorBase.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lb_valorBase.Location = new System.Drawing.Point(13, 29);
+            this.lb_valorBase.Location = new System.Drawing.Point(188, 28);
             this.lb_valorBase.Name = "lb_valorBase";
             this.lb_valorBase.Size = new System.Drawing.Size(103, 16);
             this.lb_valorBase.TabIndex = 58;
@@ -177,7 +170,7 @@
             // np_desconto
             // 
             this.np_desconto.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.np_desconto.Location = new System.Drawing.Point(163, 49);
+            this.np_desconto.Location = new System.Drawing.Point(526, 49);
             this.np_desconto.Name = "np_desconto";
             this.np_desconto.Size = new System.Drawing.Size(140, 25);
             this.np_desconto.TabIndex = 57;
@@ -187,7 +180,7 @@
             // 
             this.lb_desconto.AutoSize = true;
             this.lb_desconto.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lb_desconto.Location = new System.Drawing.Point(160, 30);
+            this.lb_desconto.Location = new System.Drawing.Point(523, 30);
             this.lb_desconto.Name = "lb_desconto";
             this.lb_desconto.Size = new System.Drawing.Size(91, 16);
             this.lb_desconto.TabIndex = 56;
@@ -201,6 +194,7 @@
             this.txt_cliente.Name = "txt_cliente";
             this.txt_cliente.Size = new System.Drawing.Size(136, 25);
             this.txt_cliente.TabIndex = 55;
+            this.txt_cliente.Click += new System.EventHandler(this.txt_cliente_Click);
             this.txt_cliente.TextChanged += new System.EventHandler(this.txt_cliente_TextChanged);
             this.txt_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cliente_KeyPress);
             // 
@@ -209,23 +203,18 @@
             this.lp_feriado.Enabled = false;
             this.lp_feriado.Font = new System.Drawing.Font("Arial", 11.25F);
             this.lp_feriado.FormattingEnabled = true;
-            this.lp_feriado.Items.AddRange(new object[] {
-            "Carnaval",
-            "Páscoa",
-            "Corpus Christ",
-            "Natal",
-            "Reveion"});
-            this.lp_feriado.Location = new System.Drawing.Point(553, 151);
+            this.lp_feriado.Location = new System.Drawing.Point(16, 48);
             this.lp_feriado.Name = "lp_feriado";
-            this.lp_feriado.Size = new System.Drawing.Size(166, 25);
+            this.lp_feriado.Size = new System.Drawing.Size(169, 25);
             this.lp_feriado.TabIndex = 54;
             this.lp_feriado.Text = "Selecione";
+            this.lp_feriado.SelectedIndexChanged += new System.EventHandler(this.lp_feriado_SelectedIndexChanged);
             // 
             // cb_feriado
             // 
             this.cb_feriado.AutoSize = true;
             this.cb_feriado.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.cb_feriado.Location = new System.Drawing.Point(553, 129);
+            this.cb_feriado.Location = new System.Drawing.Point(16, 26);
             this.cb_feriado.Name = "cb_feriado";
             this.cb_feriado.Size = new System.Drawing.Size(77, 20);
             this.cb_feriado.TabIndex = 53;
@@ -236,16 +225,22 @@
             // np_qtdPessoas
             // 
             this.np_qtdPessoas.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.np_qtdPessoas.Location = new System.Drawing.Point(551, 98);
+            this.np_qtdPessoas.Location = new System.Drawing.Point(352, 48);
+            this.np_qtdPessoas.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.np_qtdPessoas.Name = "np_qtdPessoas";
             this.np_qtdPessoas.Size = new System.Drawing.Size(168, 25);
             this.np_qtdPessoas.TabIndex = 52;
+            this.np_qtdPessoas.ValueChanged += new System.EventHandler(this.np_qtdPessoas_ValueChanged);
             // 
             // lb_qtdPessoas
             // 
             this.lb_qtdPessoas.AutoSize = true;
             this.lb_qtdPessoas.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lb_qtdPessoas.Location = new System.Drawing.Point(550, 79);
+            this.lb_qtdPessoas.Location = new System.Drawing.Point(351, 29);
             this.lb_qtdPessoas.Name = "lb_qtdPessoas";
             this.lb_qtdPessoas.Size = new System.Drawing.Size(151, 16);
             this.lb_qtdPessoas.TabIndex = 51;
@@ -293,7 +288,7 @@
             // 
             this.lb_email.AutoSize = true;
             this.lb_email.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lb_email.Location = new System.Drawing.Point(284, 79);
+            this.lb_email.Location = new System.Drawing.Point(458, 79);
             this.lb_email.Name = "lb_email";
             this.lb_email.Size = new System.Drawing.Size(49, 16);
             this.lb_email.TabIndex = 46;
@@ -303,7 +298,7 @@
             // 
             this.txt_email.BackColor = System.Drawing.Color.White;
             this.txt_email.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_email.Location = new System.Drawing.Point(286, 98);
+            this.txt_email.Location = new System.Drawing.Point(460, 98);
             this.txt_email.Name = "txt_email";
             this.txt_email.ReadOnly = true;
             this.txt_email.Size = new System.Drawing.Size(259, 25);
@@ -313,7 +308,7 @@
             // 
             this.lb_cidade.AutoSize = true;
             this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lb_cidade.Location = new System.Drawing.Point(15, 79);
+            this.lb_cidade.Location = new System.Drawing.Point(189, 79);
             this.lb_cidade.Name = "lb_cidade";
             this.lb_cidade.Size = new System.Drawing.Size(52, 16);
             this.lb_cidade.TabIndex = 44;
@@ -323,17 +318,17 @@
             // 
             this.txt_cidade.BackColor = System.Drawing.Color.White;
             this.txt_cidade.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_cidade.Location = new System.Drawing.Point(16, 98);
+            this.txt_cidade.Location = new System.Drawing.Point(191, 98);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.ReadOnly = true;
-            this.txt_cidade.Size = new System.Drawing.Size(264, 25);
+            this.txt_cidade.Size = new System.Drawing.Size(263, 25);
             this.txt_cidade.TabIndex = 43;
             // 
             // lb_telefone
             // 
             this.lb_telefone.AutoSize = true;
             this.lb_telefone.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lb_telefone.Location = new System.Drawing.Point(548, 26);
+            this.lb_telefone.Location = new System.Drawing.Point(13, 79);
             this.lb_telefone.Name = "lb_telefone";
             this.lb_telefone.Size = new System.Drawing.Size(59, 16);
             this.lb_telefone.TabIndex = 42;
@@ -356,7 +351,7 @@
             this.txt_nome.Location = new System.Drawing.Point(191, 47);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.ReadOnly = true;
-            this.txt_nome.Size = new System.Drawing.Size(354, 25);
+            this.txt_nome.Size = new System.Drawing.Size(528, 25);
             this.txt_nome.TabIndex = 40;
             // 
             // lb_cliente
@@ -407,10 +402,6 @@
             this.gb_gerais.Controls.Add(this.lb_entrada);
             this.gb_gerais.Controls.Add(this.dtp_saida);
             this.gb_gerais.Controls.Add(this.lb_saida);
-            this.gb_gerais.Controls.Add(this.lb_qtdPessoas);
-            this.gb_gerais.Controls.Add(this.np_qtdPessoas);
-            this.gb_gerais.Controls.Add(this.cb_feriado);
-            this.gb_gerais.Controls.Add(this.lp_feriado);
             this.gb_gerais.Font = new System.Drawing.Font("Arial", 9.75F);
             this.gb_gerais.Location = new System.Drawing.Point(39, 106);
             this.gb_gerais.Name = "gb_gerais";
@@ -419,29 +410,10 @@
             this.gb_gerais.TabStop = false;
             this.gb_gerais.Text = "Dados Gerais";
             // 
-            // gb_financeiro
-            // 
-            this.gb_financeiro.Controls.Add(this.txt_valorBase);
-            this.gb_financeiro.Controls.Add(this.txt_valor);
-            this.gb_financeiro.Controls.Add(this.np_desconto);
-            this.gb_financeiro.Controls.Add(this.lb_valorBase);
-            this.gb_financeiro.Controls.Add(this.lb_DataPag);
-            this.gb_financeiro.Controls.Add(this.lb_desconto);
-            this.gb_financeiro.Controls.Add(this.dtp_dataPag);
-            this.gb_financeiro.Controls.Add(this.lb_valor);
-            this.gb_financeiro.Controls.Add(this.cb_pagamento);
-            this.gb_financeiro.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.gb_financeiro.Location = new System.Drawing.Point(39, 321);
-            this.gb_financeiro.Name = "gb_financeiro";
-            this.gb_financeiro.Size = new System.Drawing.Size(759, 155);
-            this.gb_financeiro.TabIndex = 69;
-            this.gb_financeiro.TabStop = false;
-            this.gb_financeiro.Text = "Dados Financeiros";
-            // 
             // btn_consultCliente
             // 
             this.btn_consultCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.btn_consultCliente.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.pesquisa;
+            this.btn_consultCliente.BackgroundImage = global::ControlePousada.Properties.Resources.pesquisa;
             this.btn_consultCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_consultCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_consultCliente.FlatAppearance.BorderSize = 0;
@@ -455,24 +427,69 @@
             this.btn_consultCliente.UseVisualStyleBackColor = false;
             this.btn_consultCliente.Click += new System.EventHandler(this.btn_consultCliente_Click);
             // 
+            // gb_financeiro
+            // 
+            this.gb_financeiro.Controls.Add(this.txt_valor);
+            this.gb_financeiro.Controls.Add(this.txt_valorBase);
+            this.gb_financeiro.Controls.Add(this.np_desconto);
+            this.gb_financeiro.Controls.Add(this.lb_valorBase);
+            this.gb_financeiro.Controls.Add(this.lb_DataPag);
+            this.gb_financeiro.Controls.Add(this.lb_desconto);
+            this.gb_financeiro.Controls.Add(this.dtp_dataPag);
+            this.gb_financeiro.Controls.Add(this.lb_valor);
+            this.gb_financeiro.Controls.Add(this.cb_pagamento);
+            this.gb_financeiro.Controls.Add(this.lp_feriado);
+            this.gb_financeiro.Controls.Add(this.cb_feriado);
+            this.gb_financeiro.Controls.Add(this.np_qtdPessoas);
+            this.gb_financeiro.Controls.Add(this.lb_qtdPessoas);
+            this.gb_financeiro.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_financeiro.Location = new System.Drawing.Point(39, 321);
+            this.gb_financeiro.Name = "gb_financeiro";
+            this.gb_financeiro.Size = new System.Drawing.Size(759, 155);
+            this.gb_financeiro.TabIndex = 69;
+            this.gb_financeiro.TabStop = false;
+            this.gb_financeiro.Text = "Dados Financeiros";
+            // 
+            // txt_valor
+            // 
+            this.txt_valor.DecimalPlaces = 2;
+            this.txt_valor.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_valor.Location = new System.Drawing.Point(619, 111);
+            this.txt_valor.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.txt_valor.Name = "txt_valor";
+            this.txt_valor.Size = new System.Drawing.Size(100, 25);
+            this.txt_valor.TabIndex = 71;
+            this.txt_valor.ThousandsSeparator = true;
+            this.txt_valor.Value = new decimal(new int[] {
+            700,
+            0,
+            0,
+            0});
+            // 
             // txt_valorBase
             // 
             this.txt_valorBase.DecimalPlaces = 2;
             this.txt_valorBase.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_valorBase.Location = new System.Drawing.Point(16, 49);
+            this.txt_valorBase.Location = new System.Drawing.Point(191, 48);
             this.txt_valorBase.Maximum = new decimal(new int[] {
-            10000,
+            1000000,
             0,
             0,
             0});
             this.txt_valorBase.Name = "txt_valorBase";
-            this.txt_valorBase.Size = new System.Drawing.Size(120, 25);
+            this.txt_valorBase.Size = new System.Drawing.Size(155, 25);
             this.txt_valorBase.TabIndex = 70;
+            this.txt_valorBase.ThousandsSeparator = true;
             this.txt_valorBase.Value = new decimal(new int[] {
             70000,
             0,
             0,
             131072});
+            this.txt_valorBase.ValueChanged += new System.EventHandler(this.txt_valorBase_ValueChanged);
             // 
             // Frm_reservaCriar
             // 
@@ -499,6 +516,7 @@
             this.gb_gerais.PerformLayout();
             this.gb_financeiro.ResumeLayout(false);
             this.gb_financeiro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_valor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valorBase)).EndInit();
             this.ResumeLayout(false);
 
@@ -513,7 +531,6 @@
         private System.Windows.Forms.TextBox txt_telefone;
         private System.Windows.Forms.Label lb_valor;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.TextBox txt_valor;
         private System.Windows.Forms.Button btn_salvarReserva;
         private System.Windows.Forms.Label lb_valorBase;
         private System.Windows.Forms.NumericUpDown np_desconto;
@@ -540,5 +557,6 @@
         private System.Windows.Forms.GroupBox gb_gerais;
         private System.Windows.Forms.GroupBox gb_financeiro;
         private System.Windows.Forms.NumericUpDown txt_valorBase;
+        private System.Windows.Forms.NumericUpDown txt_valor;
     }
 }

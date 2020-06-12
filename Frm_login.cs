@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
 
-namespace WindowsFormsApp1
+namespace controlePousada
 {
     public partial class Frm_login : Form
     {

@@ -20,7 +20,7 @@ using System.Net.Http.Headers;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApp1
+namespace controlePousada
 {
     public partial class Frm_reservaCriar : Form
     {
@@ -29,6 +29,37 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
+
+            try
+            {
+                int i = 0;
+                string[] feriados = configuracao.retornaFeriados();
+                foreach (var element in feriados)
+                {
+                    lp_feriado.Items.Add(feriados[i]);
+                    i++;
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("O arquivo de configurações foi excluido ou está inacessivel! Por favor, feche o aplicativo e abra-o novamente.","Erro de Arquivo");
+                txt_numero.Enabled = false;
+                txt_cliente.Enabled = false;
+                txt_nome.Enabled = false;
+                txt_telefone.Enabled = false;
+                txt_cidade.Enabled = false;
+                txt_email.Enabled = false;
+                dtp_entrada.Enabled = false;
+                dtp_saida.Enabled = false;
+                np_qtdPessoas.Enabled = false;
+                cb_feriado.Enabled = false;
+                lp_feriado.Enabled = false;
+                np_desconto.Enabled = false;
+                txt_valor.Enabled = false;
+                cb_pagamento.Enabled = false;
+                dtp_dataPag.Enabled = false;
+                btn_salvarReserva.Enabled = false;
+            }
         }
         public Frm_reservaCriar(string numero)
         {
@@ -59,6 +90,7 @@ namespace WindowsFormsApp1
                 if (txt_cliente.MaskCompleted)
                 {
                     txt_cliente.Mask = "00,000,000/0000-00";
+                    txt_cliente.SelectionStart = txt_cliente.Text.Length-2;
                 }
             }
         }
@@ -70,6 +102,7 @@ namespace WindowsFormsApp1
                 if (!int.TryParse(txt_cliente.Text.Substring(13, 1), out int result2))
                 {
                     txt_cliente.Mask = "000,000,000-00";
+                    txt_cliente.SelectionStart = txt_cliente.Text.Length;
                 }
             }
         }
@@ -89,15 +122,16 @@ namespace WindowsFormsApp1
 
         private void btn_salvarReserva_Click(object sender, EventArgs e)
         {
-            NullReferenceException dadoVazio = new NullReferenceException();
+            FormatException dadoVazio = new FormatException("Preecha todos os dados!");
             FormatException erroPessoas = new FormatException("A quantidade de Pessoas não pode ser Zero!");
+
 
             try
             {
                 reserva novaReserva = new reserva();
                 novaReserva.Numero = Convert.ToInt32(txt_numero.Text);
                 novaReserva.Cliente = txt_cliente.MaskCompleted ? Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-]", "") : throw dadoVazio;
-                novaReserva.ClienteNome = txt_nome.Text;
+                novaReserva.ClienteNome = txt_nome.Text.Length > 0 ? txt_nome.Text : throw dadoVazio;
                 novaReserva.Telefone = txt_telefone.Text;
                 novaReserva.Cidade = txt_cidade.Text;
                 novaReserva.Email = txt_email.Text;
@@ -107,9 +141,9 @@ namespace WindowsFormsApp1
                 novaReserva.Feriado = cb_feriado.Checked;
                 novaReserva.FeriadoTipo = cb_feriado.Checked?lp_feriado.SelectedItem.ToString():"Nenhum";
                 novaReserva.Desconto = np_desconto.Value;
-                novaReserva.Valor = Convert.ToDouble(txt_valor.Text);
+                novaReserva.Valor = Convert.ToDouble(txt_valor.Value);
                 novaReserva.Pago = cb_pagamento.Checked;
-                novaReserva.DataPago = dtp_dataPag.Value;
+                novaReserva.DataPago = cb_pagamento.Checked ? dtp_dataPag.Value : DateTime.Parse("00/00/00");
                 reserva.salvarReserva(novaReserva);
 
 
@@ -131,9 +165,9 @@ namespace WindowsFormsApp1
 
                 MessageBox.Show("Reserva Salva com Sucesso!", "Alerta");
             }
-            catch(NullReferenceException)
+            catch(NullReferenceException erro)
             {
-                MessageBox.Show("Preencha todos os dados!", "Erro");
+                MessageBox.Show(erro.Message, "Erro");
 
             }
             catch(FormatException erro)
@@ -189,22 +223,84 @@ namespace WindowsFormsApp1
                         np_desconto.Value = client.Desconto;
                     }
                 }
+                else
+                {
+                    DialogResult info = MessageBox.Show("Cliente não cadastrado! Deseja cadastra-lo?", "Erro",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+                    if(info == DialogResult.Yes)
+                    {
+                        Frm_clienteCriar janelaCliente = new Frm_clienteCriar();
+                        janelaCliente.TopLevel = false;
+                        janelaCliente.FormBorderStyle = FormBorderStyle.None;
+                        janelaCliente.Dock = DockStyle.Fill;
+
+                        this.Parent.Controls.Add(janelaCliente);
+                        janelaCliente.Show();
+                        janelaCliente.BringToFront();
+                    }
+                }
+            }
+        }
+
+        private void np_qtdPessoas_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (np_qtdPessoas.Value > 15)
+                {
+                    txt_valor.Value = ((np_qtdPessoas.Value - 15) * 50 + txt_valorBase.Value);
+                }
+                if (np_desconto.Value > 0)
+                {
+                    txt_valor.Value = txt_valorBase.Value * (1 - (np_desconto.Value / 100));
+                }
+                else
+                {
+                    txt_valor.Value = txt_valorBase.Value;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Digite apenas números no 'Valor Base'!", "Erro");
+            }
+        }
+
+        private void lp_feriado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_valorBase.Value = configuracao.ValorBase(lp_feriado.SelectedItem.ToString());
+        }
+
+        private void txt_valorBase_ValueChanged(object sender, EventArgs e)
+        {
+            txt_valor.Value = txt_valorBase.Value;
+            if (np_qtdPessoas.Value > 15)
+            {
+                txt_valor.Value = ((np_qtdPessoas.Value - 15) * 50 + txt_valorBase.Value);
+            }
+            if (np_desconto.Value > 0)
+            {
+                txt_valor.Value = txt_valorBase.Value * (1 - (np_desconto.Value / 100));
+            }
+            else
+            {
+                txt_valor.Value = txt_valorBase.Value;
             }
         }
 
         private void np_desconto_ValueChanged(object sender, EventArgs e)
         {
-            try
+            if (np_desconto.Value > 0)
             {
-                if (np_desconto.Value > 15)
-                {
-                    txt_valor.Text = ((txt_valorBase.Value - 15) * 50 + txt_valorBase.Value).ToString() + ",00";
-                }
+                txt_valor.Value = txt_valorBase.Value * (1 - (np_desconto.Value / 100));
             }
-            catch(FormatException)
+            else
             {
-                MessageBox.Show("Digite apenas números no 'Valor Base'!", "Erro");
+                txt_valor.Value = txt_valorBase.Value;
             }
+        }
+
+        private void txt_cliente_Click(object sender, EventArgs e)
+        {
+            txt_cliente.SelectionStart = 0;
         }
     }
 }

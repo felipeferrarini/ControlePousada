@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Drawing.Imaging;
 
-namespace WindowsFormsApp1
+namespace controlePousada
 {
     public partial class Frm_clienteCriar : Form
     {

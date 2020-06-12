@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace controlePousada
 {
     partial class Frm_clienteCriar
     {

@@ -6,12 +6,27 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DE2A843A-055A-4F31-B2C4-A3E896825662}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <RootNamespace>ControlePousada</RootNamespace>
+    <AssemblyName>ControlePousada</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,10 +47,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Firebase.Auth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\FirebaseAuthentication.net.3.4.0\lib\netstandard1.1\Firebase.Auth.dll</HintPath>
-    </Reference>
     <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
       <HintPath>packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
     </Reference>
@@ -212,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cliente.cs" />
+    <Compile Include="configuracao.cs" />
     <Compile Include="Frm_clienteConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +239,24 @@
     </Compile>
     <Compile Include="Frm_clienteCriar.Designer.cs">
       <DependentUpon>Frm_clienteCriar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_config.Designer.cs">
+      <DependentUpon>Frm_config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_financeiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_financeiro.Designer.cs">
+      <DependentUpon>Frm_financeiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_inicio.Designer.cs">
+      <DependentUpon>Frm_inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_reservaConsulta.cs">
       <SubType>Form</SubType>
@@ -261,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_clienteCriar.resx">
       <DependentUpon>Frm_clienteCriar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_inicio.resx">
+      <DependentUpon>Frm_inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_login.resx">
       <DependentUpon>Frm_login.cs</DependentUpon>
@@ -343,6 +380,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pesquisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

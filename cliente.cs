@@ -11,10 +11,10 @@ using System.Reflection;
 using System.Threading;
 using Microsoft.SqlServer.Server;
 using System.Drawing.Printing;
-using WindowsFormsApp1;
+using controlePousada;
 using System.Security.Cryptography;
 
-namespace WindowsFormsApp1
+namespace controlePousada
 {
     class cliente
     {

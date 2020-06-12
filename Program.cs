@@ -12,12 +12,14 @@ using System.Threading;
 using Microsoft.SqlServer.Server;
 using System.Drawing.Printing;
 
-namespace WindowsFormsApp1
+namespace controlePousada
 {
     static class Program
     {
         public static string pathReserva = Directory.GetCurrentDirectory() + "\\Banco de dados\\baseReserva.txt";
         public static string pathClient = Directory.GetCurrentDirectory() + "\\Banco de dados\\baseClientes.txt";
+        public static string pathConfig = Directory.GetCurrentDirectory() + "\\Banco de dados\\baseConfig.txt";
+
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -40,6 +42,18 @@ namespace WindowsFormsApp1
                 x = File.CreateText(pathClient);
                 x.Close();
             }
+            if (!File.Exists(pathConfig))
+            {
+                StreamWriter x;
+                x = File.CreateText(pathConfig);
+                x.Close();
+                configuracao.configOriginal();
+            }
+            if(File.ReadAllText(pathConfig) == "")
+            {
+                configuracao.configOriginal();
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MDIMain());

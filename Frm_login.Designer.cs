@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace controlePousada
 {
     partial class Frm_login
     {
@@ -44,9 +44,9 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.baseline_person_black_48dp;
+            this.pictureBox3.BackgroundImage = global::ControlePousada.Properties.Resources.baseline_person_black_48dp;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Image = global::WindowsFormsApp1.Properties.Resources.baseline_person_black_48dp;
+            this.pictureBox3.Image = global::ControlePousada.Properties.Resources.baseline_person_black_48dp;
             this.pictureBox3.Location = new System.Drawing.Point(105, 113);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(22, 23);
@@ -55,7 +55,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.baseline_lock_black_48dp;
+            this.pictureBox4.BackgroundImage = global::ControlePousada.Properties.Resources.baseline_lock_black_48dp;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Location = new System.Drawing.Point(105, 162);
             this.pictureBox4.Name = "pictureBox4";
@@ -127,7 +127,7 @@
             // btn_close
             // 
             this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.close;
+            this.btn_close.BackgroundImage = global::ControlePousada.Properties.Resources.close;
             this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_close.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -145,7 +145,7 @@
             // btn_minimizar
             // 
             this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_minimizar.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.min;
+            this.btn_minimizar.BackgroundImage = global::ControlePousada.Properties.Resources.min;
             this.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_minimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;

@@ -10,10 +10,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace controlePousada
 {
     public partial class Frm_reservaConsulta : Form
     {
+        private string nome = "";
+        private string cidade = "";
+
         public Frm_reservaConsulta()
         {
             InitializeComponent();
@@ -43,7 +46,6 @@ namespace WindowsFormsApp1
             for(int i = 1; i < linha; i++)
             {
                 reserva dados = new reserva(reserva.retornaReserva(i));
-
                 DataRow Linha = db.NewRow();
                 Linha["Número"] = dados.Numero;
                 Linha["Nome"] = dados.ClienteNome;
@@ -57,7 +59,12 @@ namespace WindowsFormsApp1
                 Linha["Valor"] = dados.Valor;
                 Linha["Pago?"] = dados.Pago;
                 Linha["Data do Pagamento"] = dados.DataPago;
-                db.Rows.Add(Linha);
+
+                if (dados.ClienteNome.ToUpper().Contains(nome.ToUpper())&&dados.Cidade.ToUpper().Contains(cidade.ToUpper()))
+                {
+                    db.Rows.Add(Linha);
+                }
+                
             }
 
             
@@ -66,9 +73,8 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
-                textBox1.Text = dataGridView1.SelectedCells[0].Value.ToString();
 
                 Frm_reservaCriar janelaEditar = new Frm_reservaCriar(dataGridView1.SelectedCells[0].Value.ToString());
                 janelaEditar.TopLevel = false;
@@ -80,6 +86,16 @@ namespace WindowsFormsApp1
                 janelaEditar.BringToFront();
             }
             
+        }
+
+        private void txt_cidade_TextChanged(object sender, EventArgs e)
+        {
+            cidade = txt_cidade.Text;
+        }
+
+        private void txt_nome_TextChanged(object sender, EventArgs e)
+        {
+            nome = txt_nome.Text;
         }
     }
 }

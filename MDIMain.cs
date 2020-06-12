@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
+using ControlePousada;
 
-namespace WindowsFormsApp1
+namespace controlePousada
 {
     public partial class MDIMain : Form
     {
@@ -55,6 +56,12 @@ namespace WindowsFormsApp1
             btn_newCliente.Enabled = true;
             btn_cliente.Enabled = true;
             btn_config.Enabled = true;
+            btn_inicio.Enabled = true;
+
+            if (panelMenu.Controls.Count == 0)
+            {
+                AbrirFormNoPanel(new Frm_inicio());
+            }
         }
 
         ///Função para abrir outros forms no panel do form principal (MDIMain)
@@ -64,7 +71,6 @@ namespace WindowsFormsApp1
             {
                 panelForms.Controls.RemoveAt(0);
             }
-
             Form janela = janelas as Form;
             janela.TopLevel = false;
             janela.FormBorderStyle = FormBorderStyle.None;
@@ -72,6 +78,7 @@ namespace WindowsFormsApp1
             panelForms.Controls.Add(janela);
             panelForms.Tag = janela;
             janela.Show();
+                        
         }
         private void escondePanelMenu()
         {
@@ -87,7 +94,6 @@ namespace WindowsFormsApp1
 
         private void btn_novaReserva_Click(object sender, EventArgs e)
         {
-            lb_menuTitle.Text = btn_novaReserva.Text;
             escondePanelMenu();
             AbrirFormNoPanel(new Frm_reservaCriar());
             btn_cliente.Enabled = false;
@@ -95,11 +101,11 @@ namespace WindowsFormsApp1
             btn_newCliente.Enabled = false;
             btn_reserva.Enabled = false;
             btn_financeiro.Enabled = false;
+            btn_inicio.Enabled = false;
         }
 
         private void btn_newCliente_Click(object sender, EventArgs e)
         {
-            lb_menuTitle.Text = btn_newCliente.Text;
             escondePanelMenu();
             AbrirFormNoPanel(new Frm_clienteCriar());
             btn_cliente.Enabled = false;
@@ -107,18 +113,17 @@ namespace WindowsFormsApp1
             btn_novaReserva.Enabled = false;
             btn_reserva.Enabled = false;
             btn_financeiro.Enabled = false;
+            btn_inicio.Enabled = false;
         }
 
         private void btn_reserva_Click(object sender, EventArgs e)
         {
-            lb_menuTitle.Text = btn_reserva.Text;
             escondePanelMenu();
             AbrirFormNoPanel(new Frm_reservaConsulta());
         }
 
         private void btn_cliente_Click(object sender, EventArgs e)
         {
-            lb_menuTitle.Text = btn_cliente.Text;
             escondePanelMenu();
             AbrirFormNoPanel(new Frm_clienteConsulta());
         }
@@ -153,6 +158,35 @@ namespace WindowsFormsApp1
                     panelMenu.Width = i;
                 }
             }
+        }
+
+        private void MDIMain_Load(object sender, EventArgs e)
+        {
+            AbrirFormNoPanel(new Frm_inicio());
+        }
+
+        private void btn_inicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormNoPanel(new Frm_inicio());
+            if (panelMenu.Width == 242)
+            {
+                for (int i = 242; i >= 50; i = i - 24)
+                {
+                    panelMenu.Width = i;
+                }
+            }
+        }
+
+        private void btn_financeiro_Click(object sender, EventArgs e)
+        {
+            escondePanelMenu();
+            AbrirFormNoPanel(new Frm_financeiro());
+        }
+
+        private void btn_config_Click(object sender, EventArgs e)
+        {
+            escondePanelMenu();
+            AbrirFormNoPanel(new Frm_config());
         }
     }
 }
