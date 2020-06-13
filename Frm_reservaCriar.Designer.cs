@@ -496,7 +496,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(840, 550);
             this.Controls.Add(this.gb_financeiro);
@@ -508,6 +508,7 @@
             this.Name = "Frm_reservaCriar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Controle de Pousada";
+            this.Load += new System.EventHandler(this.Frm_reservaCriar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).EndInit();
             this.gb_numero.ResumeLayout(false);

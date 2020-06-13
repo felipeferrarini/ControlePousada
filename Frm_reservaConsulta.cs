@@ -9,13 +9,20 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace controlePousada
 {
     public partial class Frm_reservaConsulta : Form
     {
+        private string numero = "";
         private string nome = "";
         private string cidade = "";
+        private string dataEntrada = "";
+        private string dataSaida = "";
+        private string feriado = "";
+        private string dataPagamento = "";
+        private string mes = "";
 
         public Frm_reservaConsulta()
         {
@@ -60,11 +67,17 @@ namespace controlePousada
                 Linha["Pago?"] = dados.Pago;
                 Linha["Data do Pagamento"] = dados.DataPago;
 
-                if (dados.ClienteNome.ToUpper().Contains(nome.ToUpper())&&dados.Cidade.ToUpper().Contains(cidade.ToUpper()))
+                if (dados.Numero.ToString().ToUpper().Contains(numero.ToUpper())
+                    && dados.ClienteNome.ToUpper().Contains(nome.ToUpper())
+                    && dados.Cidade.ToUpper().Contains(cidade.ToUpper())
+                    && dados.DataEntrada.ToString().Substring(3,2).Contains(mes)
+                    && dados.FeriadoTipo.Contains(feriado)
+                    && dados.DataEntrada.ToString().Substring(0,10).Contains(dataEntrada)
+                    && dados.DataSaida.ToString().Substring(0, 10).Contains(dataSaida)
+                    && dados.DataPago.ToString().Substring(0, 10).Contains(dataPagamento))
                 {
                     db.Rows.Add(Linha);
                 }
-                
             }
 
             
@@ -96,6 +109,118 @@ namespace controlePousada
         private void txt_nome_TextChanged(object sender, EventArgs e)
         {
             nome = txt_nome.Text;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lp_mes.SelectedIndex == 0)
+            {
+                mes = "";
+            }
+            else
+            {
+                mes = (lp_mes.SelectedIndex + 1) < 10 ? "0" + (lp_mes.SelectedIndex).ToString() : (lp_mes.SelectedIndex).ToString();
+            } 
+        }
+
+        private void txt_numero_TextChanged(object sender, EventArgs e)
+        {
+            numero = txt_numero.Text;
+        }
+
+        private void Frm_reservaConsulta_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = 0;
+                string[] feriados = configuracao.retornaFeriados();
+                foreach (var element in feriados)
+                {
+                    lp_feriado.Items.Add(feriados[i]);
+                    i++;
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("O arquivo de configurações foi excluido ou está inacessivel! Por favor, feche o aplicativo e abra-o novamente.", "Erro de Arquivo");
+            }
+        }
+
+        private void lp_feriado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lp_feriado.SelectedIndex != -1)
+                feriado = lp_feriado.SelectedItem.ToString();
+        }
+
+        private void dtp_entrada_ValueChanged(object sender, EventArgs e)
+        {
+            dataEntrada = dtp_entrada.Value.ToString().Substring(0,10);
+        }
+
+        private void dtp_saida_ValueChanged(object sender, EventArgs e)
+        {
+            dataSaida = dtp_saida.Value.ToString().Substring(0, 10);
+        }
+
+        private void dtp_pagamento_ValueChanged(object sender, EventArgs e)
+        {
+            dataPagamento = dtp_pagamento.Value.ToString().Substring(0, 10);
+        }
+
+        private void cb_entrada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_entrada.Checked)
+            {
+                dtp_entrada.Enabled = true;
+            }
+            else
+            {
+                dtp_entrada.Enabled = false;
+                dataEntrada = "";
+            }
+        }
+
+        private void cb_saida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_saida.Checked)
+                dtp_saida.Enabled = true;
+            else
+            {
+                dtp_saida.Enabled = false;
+                dataSaida = "";
+            }
+        }
+
+        private void cb_pagamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_pagamento.Checked)
+                dtp_pagamento.Enabled = true;
+            else
+            {
+                dtp_pagamento.Enabled = false;
+                dataPagamento = "";
+            }
+        }
+
+        private void btn_limpa_Click(object sender, EventArgs e)
+        {
+            numero = "";
+            nome = "";
+            cidade = "";
+            mes = "";
+            feriado = "";
+            dataEntrada = "";
+            dataSaida = "";
+            dataPagamento = "";
+
+            txt_numero.Text = "";
+            txt_nome.Text = "";
+            txt_cidade.Text = "";
+            lp_mes.SelectedIndex = 0;
+            lp_feriado.SelectedIndex = -1;
+            cb_entrada.Checked = false;
+            cb_saida.Checked = false;
+            cb_pagamento.Checked = false;
         }
     }
 }

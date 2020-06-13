@@ -38,7 +38,7 @@ namespace ControlePousada
 
         private void btn_reserva_Click(object sender, EventArgs e)
         {
-            AbrirFormNoPanel(new Frm_reservaCriar());
+            AbrirFormNoPanel(new Frm_reservaConsulta());
         }
 
         private void btn_newCliente_Click(object sender, EventArgs e)

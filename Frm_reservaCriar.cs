@@ -28,38 +28,7 @@ namespace controlePousada
         public Frm_reservaCriar()
         {
             InitializeComponent();
-            txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
-
-            try
-            {
-                int i = 0;
-                string[] feriados = configuracao.retornaFeriados();
-                foreach (var element in feriados)
-                {
-                    lp_feriado.Items.Add(feriados[i]);
-                    i++;
-                }
-            }
-            catch (IndexOutOfRangeException)
-            {
-                MessageBox.Show("O arquivo de configurações foi excluido ou está inacessivel! Por favor, feche o aplicativo e abra-o novamente.","Erro de Arquivo");
-                txt_numero.Enabled = false;
-                txt_cliente.Enabled = false;
-                txt_nome.Enabled = false;
-                txt_telefone.Enabled = false;
-                txt_cidade.Enabled = false;
-                txt_email.Enabled = false;
-                dtp_entrada.Enabled = false;
-                dtp_saida.Enabled = false;
-                np_qtdPessoas.Enabled = false;
-                cb_feriado.Enabled = false;
-                lp_feriado.Enabled = false;
-                np_desconto.Enabled = false;
-                txt_valor.Enabled = false;
-                cb_pagamento.Enabled = false;
-                dtp_dataPag.Enabled = false;
-                btn_salvarReserva.Enabled = false;
-            }
+            
         }
         public Frm_reservaCriar(string numero)
         {
@@ -301,6 +270,42 @@ namespace controlePousada
         private void txt_cliente_Click(object sender, EventArgs e)
         {
             txt_cliente.SelectionStart = 0;
+        }
+
+        private void Frm_reservaCriar_Load(object sender, EventArgs e)
+        {
+            txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
+
+            try
+            {
+                int i = 0;
+                string[] feriados = configuracao.retornaFeriados();
+                foreach (var element in feriados)
+                {
+                    lp_feriado.Items.Add(feriados[i]);
+                    i++;
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("O arquivo de configurações foi excluido ou está inacessivel! Por favor, feche o aplicativo e abra-o novamente.", "Erro de Arquivo");
+                txt_numero.Enabled = false;
+                txt_cliente.Enabled = false;
+                txt_nome.Enabled = false;
+                txt_telefone.Enabled = false;
+                txt_cidade.Enabled = false;
+                txt_email.Enabled = false;
+                dtp_entrada.Enabled = false;
+                dtp_saida.Enabled = false;
+                np_qtdPessoas.Enabled = false;
+                cb_feriado.Enabled = false;
+                lp_feriado.Enabled = false;
+                np_desconto.Enabled = false;
+                txt_valor.Enabled = false;
+                cb_pagamento.Enabled = false;
+                dtp_dataPag.Enabled = false;
+                btn_salvarReserva.Enabled = false;
+            }
         }
     }
 }

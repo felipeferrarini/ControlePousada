@@ -30,6 +30,8 @@
         {
             this.panelTop = new System.Windows.Forms.Panel();
             this.lb_title = new System.Windows.Forms.Label();
+            this.btn_minimizar = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btn_inicio = new System.Windows.Forms.Button();
             this.btn_menu = new System.Windows.Forms.Button();
@@ -40,9 +42,6 @@
             this.btn_newCliente = new System.Windows.Forms.Button();
             this.btn_reserva = new System.Windows.Forms.Button();
             this.panelForms = new System.Windows.Forms.Panel();
-            this.btn_minimizar = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
@@ -73,12 +72,47 @@
             this.lb_title.TabIndex = 2;
             this.lb_title.Text = "Controle de Pousada";
             // 
+            // btn_minimizar
+            // 
+            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_minimizar.BackgroundImage = global::ControlePousada.Properties.Resources.min;
+            this.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_minimizar.FlatAppearance.BorderSize = 0;
+            this.btn_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimizar.Location = new System.Drawing.Point(829, 4);
+            this.btn_minimizar.Name = "btn_minimizar";
+            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
+            this.btn_minimizar.TabIndex = 1;
+            this.btn_minimizar.UseVisualStyleBackColor = true;
+            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_close.BackgroundImage = global::ControlePousada.Properties.Resources.close;
+            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_close.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Location = new System.Drawing.Point(865, 4);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(30, 30);
+            this.btn_close.TabIndex = 0;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // panelMenu
             // 
             this.panelMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.btn_inicio);
             this.panelMenu.Controls.Add(this.btn_menu);
             this.panelMenu.Controls.Add(this.btn_config);
@@ -270,51 +304,6 @@
             this.panelForms.TabIndex = 21;
             this.panelForms.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panelForms_ControlRemoved);
             // 
-            // btn_minimizar
-            // 
-            this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_minimizar.BackgroundImage = global::ControlePousada.Properties.Resources.min;
-            this.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_minimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_minimizar.FlatAppearance.BorderSize = 0;
-            this.btn_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimizar.Location = new System.Drawing.Point(829, 4);
-            this.btn_minimizar.Name = "btn_minimizar";
-            this.btn_minimizar.Size = new System.Drawing.Size(30, 30);
-            this.btn_minimizar.TabIndex = 1;
-            this.btn_minimizar.UseVisualStyleBackColor = true;
-            this.btn_minimizar.Click += new System.EventHandler(this.btn_minimizar_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.BackgroundImage = global::ControlePousada.Properties.Resources.close;
-            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_close.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Location = new System.Drawing.Point(865, 4);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(30, 30);
-            this.btn_close.TabIndex = 0;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "label1";
-            // 
             // MDIMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,7 +322,6 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panelMenu.ResumeLayout(false);
-            this.panelMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -354,6 +342,5 @@
         private System.Windows.Forms.Button btn_menu;
         private System.Windows.Forms.Panel panelForms;
         private System.Windows.Forms.Button btn_inicio;
-        private System.Windows.Forms.Label label1;
     }
 }
