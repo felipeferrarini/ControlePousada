@@ -296,6 +296,12 @@
     <EmbeddedResource Include="Frm_clienteCriar.resx">
       <DependentUpon>Frm_clienteCriar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_config.resx">
+      <DependentUpon>Frm_config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_financeiro.resx">
+      <DependentUpon>Frm_financeiro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_inicio.resx">
       <DependentUpon>Frm_inicio.cs</DependentUpon>
     </EmbeddedResource>
