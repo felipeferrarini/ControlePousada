@@ -56,19 +56,21 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.lb_cliente = new System.Windows.Forms.Label();
             this.txt_numero = new System.Windows.Forms.TextBox();
-            this.gb_numero = new System.Windows.Forms.GroupBox();
             this.gb_gerais = new System.Windows.Forms.GroupBox();
             this.btn_consultCliente = new System.Windows.Forms.Button();
             this.gb_financeiro = new System.Windows.Forms.GroupBox();
             this.txt_valor = new System.Windows.Forms.NumericUpDown();
             this.txt_valorBase = new System.Windows.Forms.NumericUpDown();
+            this.lb_numero = new System.Windows.Forms.Label();
+            this.txt_obs = new System.Windows.Forms.RichTextBox();
+            this.gb_obs = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).BeginInit();
-            this.gb_numero.SuspendLayout();
             this.gb_gerais.SuspendLayout();
             this.gb_financeiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valorBase)).BeginInit();
+            this.gb_obs.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_DataPag
@@ -94,10 +96,10 @@
             // cb_pagamento
             // 
             this.cb_pagamento.AutoSize = true;
-            this.cb_pagamento.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cb_pagamento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_pagamento.Location = new System.Drawing.Point(16, 88);
             this.cb_pagamento.Name = "cb_pagamento";
-            this.cb_pagamento.Size = new System.Drawing.Size(97, 20);
+            this.cb_pagamento.Size = new System.Drawing.Size(105, 20);
             this.cb_pagamento.TabIndex = 64;
             this.cb_pagamento.Text = "Valor Pago?";
             this.cb_pagamento.UseVisualStyleBackColor = true;
@@ -116,10 +118,10 @@
             // lb_valor
             // 
             this.lb_valor.AutoSize = true;
-            this.lb_valor.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_valor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_valor.Location = new System.Drawing.Point(513, 118);
             this.lb_valor.Name = "lb_valor";
-            this.lb_valor.Size = new System.Drawing.Size(100, 16);
+            this.lb_valor.Size = new System.Drawing.Size(108, 16);
             this.lb_valor.TabIndex = 61;
             this.lb_valor.Text = "Valor Total (R$):";
             // 
@@ -160,10 +162,10 @@
             // lb_valorBase
             // 
             this.lb_valorBase.AutoSize = true;
-            this.lb_valorBase.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_valorBase.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_valorBase.Location = new System.Drawing.Point(188, 28);
             this.lb_valorBase.Name = "lb_valorBase";
-            this.lb_valorBase.Size = new System.Drawing.Size(103, 16);
+            this.lb_valorBase.Size = new System.Drawing.Size(108, 16);
             this.lb_valorBase.TabIndex = 58;
             this.lb_valorBase.Text = "Valor Base (R$):";
             // 
@@ -179,17 +181,17 @@
             // lb_desconto
             // 
             this.lb_desconto.AutoSize = true;
-            this.lb_desconto.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_desconto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_desconto.Location = new System.Drawing.Point(523, 30);
             this.lb_desconto.Name = "lb_desconto";
-            this.lb_desconto.Size = new System.Drawing.Size(91, 16);
+            this.lb_desconto.Size = new System.Drawing.Size(92, 16);
             this.lb_desconto.TabIndex = 56;
             this.lb_desconto.Text = "Desconto (%):";
             // 
             // txt_cliente
             // 
             this.txt_cliente.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_cliente.Location = new System.Drawing.Point(16, 47);
+            this.txt_cliente.Location = new System.Drawing.Point(18, 47);
             this.txt_cliente.Mask = "000,000,000-00";
             this.txt_cliente.Name = "txt_cliente";
             this.txt_cliente.Size = new System.Drawing.Size(136, 25);
@@ -213,10 +215,10 @@
             // cb_feriado
             // 
             this.cb_feriado.AutoSize = true;
-            this.cb_feriado.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cb_feriado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_feriado.Location = new System.Drawing.Point(16, 26);
             this.cb_feriado.Name = "cb_feriado";
-            this.cb_feriado.Size = new System.Drawing.Size(77, 20);
+            this.cb_feriado.Size = new System.Drawing.Size(84, 20);
             this.cb_feriado.TabIndex = 53;
             this.cb_feriado.Text = "Feriado?";
             this.cb_feriado.UseVisualStyleBackColor = true;
@@ -239,20 +241,20 @@
             // lb_qtdPessoas
             // 
             this.lb_qtdPessoas.AutoSize = true;
-            this.lb_qtdPessoas.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_qtdPessoas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_qtdPessoas.Location = new System.Drawing.Point(351, 29);
             this.lb_qtdPessoas.Name = "lb_qtdPessoas";
-            this.lb_qtdPessoas.Size = new System.Drawing.Size(151, 16);
+            this.lb_qtdPessoas.Size = new System.Drawing.Size(161, 16);
             this.lb_qtdPessoas.TabIndex = 51;
             this.lb_qtdPessoas.Text = "Quantidade de Pessoas:";
             // 
             // lb_saida
             // 
             this.lb_saida.AutoSize = true;
-            this.lb_saida.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_saida.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_saida.Location = new System.Drawing.Point(283, 132);
             this.lb_saida.Name = "lb_saida";
-            this.lb_saida.Size = new System.Drawing.Size(90, 16);
+            this.lb_saida.Size = new System.Drawing.Size(98, 16);
             this.lb_saida.TabIndex = 50;
             this.lb_saida.Text = "Data de Saída";
             // 
@@ -268,10 +270,10 @@
             // lb_entrada
             // 
             this.lb_entrada.AutoSize = true;
-            this.lb_entrada.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_entrada.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_entrada.Location = new System.Drawing.Point(13, 132);
             this.lb_entrada.Name = "lb_entrada";
-            this.lb_entrada.Size = new System.Drawing.Size(102, 16);
+            this.lb_entrada.Size = new System.Drawing.Size(110, 16);
             this.lb_entrada.TabIndex = 48;
             this.lb_entrada.Text = "Data de Entrada";
             // 
@@ -307,10 +309,10 @@
             // lb_cidade
             // 
             this.lb_cidade.AutoSize = true;
-            this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cidade.Location = new System.Drawing.Point(189, 79);
             this.lb_cidade.Name = "lb_cidade";
-            this.lb_cidade.Size = new System.Drawing.Size(52, 16);
+            this.lb_cidade.Size = new System.Drawing.Size(57, 16);
             this.lb_cidade.TabIndex = 44;
             this.lb_cidade.Text = "Cidade:";
             // 
@@ -327,20 +329,20 @@
             // lb_telefone
             // 
             this.lb_telefone.AutoSize = true;
-            this.lb_telefone.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_telefone.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_telefone.Location = new System.Drawing.Point(13, 79);
             this.lb_telefone.Name = "lb_telefone";
-            this.lb_telefone.Size = new System.Drawing.Size(59, 16);
+            this.lb_telefone.Size = new System.Drawing.Size(67, 16);
             this.lb_telefone.TabIndex = 42;
             this.lb_telefone.Text = "Telefone:";
             // 
             // lb_nome
             // 
             this.lb_nome.AutoSize = true;
-            this.lb_nome.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_nome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nome.Location = new System.Drawing.Point(190, 27);
             this.lb_nome.Name = "lb_nome";
-            this.lb_nome.Size = new System.Drawing.Size(108, 16);
+            this.lb_nome.Size = new System.Drawing.Size(118, 16);
             this.lb_nome.TabIndex = 41;
             this.lb_nome.Text = "Nome do Cliente:";
             // 
@@ -357,10 +359,10 @@
             // lb_cliente
             // 
             this.lb_cliente.AutoSize = true;
-            this.lb_cliente.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lb_cliente.Location = new System.Drawing.Point(13, 28);
+            this.lb_cliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cliente.Location = new System.Drawing.Point(15, 28);
             this.lb_cliente.Name = "lb_cliente";
-            this.lb_cliente.Size = new System.Drawing.Size(75, 16);
+            this.lb_cliente.Size = new System.Drawing.Size(76, 16);
             this.lb_cliente.TabIndex = 39;
             this.lb_cliente.Text = "CPF/CNPJ:";
             // 
@@ -368,25 +370,15 @@
             // 
             this.txt_numero.BackColor = System.Drawing.Color.White;
             this.txt_numero.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_numero.Location = new System.Drawing.Point(18, 24);
+            this.txt_numero.Location = new System.Drawing.Point(179, 20);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.ReadOnly = true;
-            this.txt_numero.Size = new System.Drawing.Size(100, 25);
+            this.txt_numero.Size = new System.Drawing.Size(84, 25);
             this.txt_numero.TabIndex = 35;
-            // 
-            // gb_numero
-            // 
-            this.gb_numero.Controls.Add(this.txt_numero);
-            this.gb_numero.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.gb_numero.Location = new System.Drawing.Point(39, 34);
-            this.gb_numero.Name = "gb_numero";
-            this.gb_numero.Size = new System.Drawing.Size(759, 65);
-            this.gb_numero.TabIndex = 67;
-            this.gb_numero.TabStop = false;
-            this.gb_numero.Text = "Número da Reserva";
             // 
             // gb_gerais
             // 
+            this.gb_gerais.BackColor = System.Drawing.Color.Transparent;
             this.gb_gerais.Controls.Add(this.txt_cliente);
             this.gb_gerais.Controls.Add(this.lb_cliente);
             this.gb_gerais.Controls.Add(this.txt_nome);
@@ -402,8 +394,9 @@
             this.gb_gerais.Controls.Add(this.lb_entrada);
             this.gb_gerais.Controls.Add(this.dtp_saida);
             this.gb_gerais.Controls.Add(this.lb_saida);
-            this.gb_gerais.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.gb_gerais.Location = new System.Drawing.Point(39, 106);
+            this.gb_gerais.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_gerais.ForeColor = System.Drawing.Color.White;
+            this.gb_gerais.Location = new System.Drawing.Point(39, 58);
             this.gb_gerais.Name = "gb_gerais";
             this.gb_gerais.Size = new System.Drawing.Size(759, 206);
             this.gb_gerais.TabIndex = 68;
@@ -420,7 +413,7 @@
             this.btn_consultCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_consultCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultCliente.Font = new System.Drawing.Font("Arial", 8F);
-            this.btn_consultCliente.Location = new System.Drawing.Point(158, 46);
+            this.btn_consultCliente.Location = new System.Drawing.Point(160, 46);
             this.btn_consultCliente.Name = "btn_consultCliente";
             this.btn_consultCliente.Size = new System.Drawing.Size(25, 26);
             this.btn_consultCliente.TabIndex = 63;
@@ -429,6 +422,7 @@
             // 
             // gb_financeiro
             // 
+            this.gb_financeiro.BackColor = System.Drawing.Color.Transparent;
             this.gb_financeiro.Controls.Add(this.txt_valor);
             this.gb_financeiro.Controls.Add(this.txt_valorBase);
             this.gb_financeiro.Controls.Add(this.np_desconto);
@@ -442,8 +436,9 @@
             this.gb_financeiro.Controls.Add(this.cb_feriado);
             this.gb_financeiro.Controls.Add(this.np_qtdPessoas);
             this.gb_financeiro.Controls.Add(this.lb_qtdPessoas);
-            this.gb_financeiro.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.gb_financeiro.Location = new System.Drawing.Point(39, 321);
+            this.gb_financeiro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_financeiro.ForeColor = System.Drawing.Color.White;
+            this.gb_financeiro.Location = new System.Drawing.Point(39, 273);
             this.gb_financeiro.Name = "gb_financeiro";
             this.gb_financeiro.Size = new System.Drawing.Size(759, 155);
             this.gb_financeiro.TabIndex = 69;
@@ -491,17 +486,54 @@
             131072});
             this.txt_valorBase.ValueChanged += new System.EventHandler(this.txt_valorBase_ValueChanged);
             // 
+            // lb_numero
+            // 
+            this.lb_numero.AutoSize = true;
+            this.lb_numero.BackColor = System.Drawing.Color.Transparent;
+            this.lb_numero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lb_numero.ForeColor = System.Drawing.Color.White;
+            this.lb_numero.Location = new System.Drawing.Point(36, 24);
+            this.lb_numero.Name = "lb_numero";
+            this.lb_numero.Size = new System.Drawing.Size(137, 16);
+            this.lb_numero.TabIndex = 70;
+            this.lb_numero.Text = "Número da Reserva:";
+            // 
+            // txt_obs
+            // 
+            this.txt_obs.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.txt_obs.Location = new System.Drawing.Point(6, 18);
+            this.txt_obs.Name = "txt_obs";
+            this.txt_obs.Size = new System.Drawing.Size(442, 77);
+            this.txt_obs.TabIndex = 71;
+            this.txt_obs.Text = "";
+            // 
+            // gb_obs
+            // 
+            this.gb_obs.BackColor = System.Drawing.Color.Transparent;
+            this.gb_obs.Controls.Add(this.txt_obs);
+            this.gb_obs.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_obs.ForeColor = System.Drawing.Color.White;
+            this.gb_obs.Location = new System.Drawing.Point(39, 436);
+            this.gb_obs.Name = "gb_obs";
+            this.gb_obs.Size = new System.Drawing.Size(454, 102);
+            this.gb_obs.TabIndex = 69;
+            this.gb_obs.TabStop = false;
+            this.gb_obs.Text = "Obervações";
+            // 
             // Frm_reservaCriar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackgroundImage = global::ControlePousada.Properties.Resources.fundo2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 550);
+            this.Controls.Add(this.gb_obs);
+            this.Controls.Add(this.lb_numero);
+            this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.gb_financeiro);
             this.Controls.Add(this.gb_gerais);
-            this.Controls.Add(this.gb_numero);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_salvarReserva);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -511,15 +543,15 @@
             this.Load += new System.EventHandler(this.Frm_reservaCriar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).EndInit();
-            this.gb_numero.ResumeLayout(false);
-            this.gb_numero.PerformLayout();
             this.gb_gerais.ResumeLayout(false);
             this.gb_gerais.PerformLayout();
             this.gb_financeiro.ResumeLayout(false);
             this.gb_financeiro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valorBase)).EndInit();
+            this.gb_obs.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -554,10 +586,12 @@
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label lb_cliente;
         private System.Windows.Forms.TextBox txt_numero;
-        private System.Windows.Forms.GroupBox gb_numero;
         private System.Windows.Forms.GroupBox gb_gerais;
         private System.Windows.Forms.GroupBox gb_financeiro;
         private System.Windows.Forms.NumericUpDown txt_valorBase;
         private System.Windows.Forms.NumericUpDown txt_valor;
+        private System.Windows.Forms.Label lb_numero;
+        private System.Windows.Forms.RichTextBox txt_obs;
+        private System.Windows.Forms.GroupBox gb_obs;
     }
 }

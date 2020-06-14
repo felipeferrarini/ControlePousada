@@ -65,17 +65,19 @@
             // 
             this.btn_novaReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_novaReserva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_novaReserva.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_novaReserva.FlatAppearance.BorderSize = 0;
+            this.btn_novaReserva.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.btn_novaReserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_novaReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_novaReserva.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_novaReserva.ForeColor = System.Drawing.Color.White;
+            this.btn_novaReserva.Image = global::ControlePousada.Properties.Resources.baseline_create_new_folder_white_36dp;
+            this.btn_novaReserva.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_novaReserva.Location = new System.Drawing.Point(3, 3);
             this.btn_novaReserva.Name = "btn_novaReserva";
             this.btn_novaReserva.Size = new System.Drawing.Size(199, 130);
             this.btn_novaReserva.TabIndex = 0;
             this.btn_novaReserva.Text = "Nova Reserva";
+            this.btn_novaReserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_novaReserva.UseVisualStyleBackColor = false;
             this.btn_novaReserva.Click += new System.EventHandler(this.btn_novaReserva_Click);
             // 
@@ -83,17 +85,19 @@
             // 
             this.btn_newCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_newCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_newCliente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_newCliente.FlatAppearance.BorderSize = 0;
+            this.btn_newCliente.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.btn_newCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_newCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_newCliente.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_newCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_newCliente.Image = global::ControlePousada.Properties.Resources.cadastroCliente;
+            this.btn_newCliente.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_newCliente.Location = new System.Drawing.Point(220, 3);
             this.btn_newCliente.Name = "btn_newCliente";
             this.btn_newCliente.Size = new System.Drawing.Size(199, 130);
             this.btn_newCliente.TabIndex = 1;
             this.btn_newCliente.Text = "Cadastrar Cliente";
+            this.btn_newCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_newCliente.UseVisualStyleBackColor = false;
             this.btn_newCliente.Click += new System.EventHandler(this.btn_newCliente_Click);
             // 
@@ -101,17 +105,19 @@
             // 
             this.btn_reserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_reserva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reserva.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_reserva.FlatAppearance.BorderSize = 0;
+            this.btn_reserva.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.btn_reserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_reserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reserva.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_reserva.ForeColor = System.Drawing.Color.White;
+            this.btn_reserva.Image = global::ControlePousada.Properties.Resources.editar_reserva;
+            this.btn_reserva.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_reserva.Location = new System.Drawing.Point(3, 139);
             this.btn_reserva.Name = "btn_reserva";
             this.btn_reserva.Size = new System.Drawing.Size(199, 131);
             this.btn_reserva.TabIndex = 3;
             this.btn_reserva.Text = "Consultar/Editar Reserva";
+            this.btn_reserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_reserva.UseVisualStyleBackColor = false;
             this.btn_reserva.Click += new System.EventHandler(this.btn_reserva_Click);
             // 
@@ -119,17 +125,19 @@
             // 
             this.btn_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cliente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_cliente.FlatAppearance.BorderSize = 0;
+            this.btn_cliente.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.btn_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cliente.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_cliente.ForeColor = System.Drawing.Color.White;
+            this.btn_cliente.Image = global::ControlePousada.Properties.Resources.consultaCLinete;
+            this.btn_cliente.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_cliente.Location = new System.Drawing.Point(220, 139);
             this.btn_cliente.Name = "btn_cliente";
             this.btn_cliente.Size = new System.Drawing.Size(199, 131);
             this.btn_cliente.TabIndex = 4;
             this.btn_cliente.Text = "Consultar/Editar Cliente";
+            this.btn_cliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_cliente.UseVisualStyleBackColor = false;
             this.btn_cliente.Click += new System.EventHandler(this.btn_cliente_Click);
             // 
@@ -137,17 +145,19 @@
             // 
             this.btn_config.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_config.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_config.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_config.FlatAppearance.BorderSize = 0;
+            this.btn_config.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.btn_config.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_config.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_config.ForeColor = System.Drawing.Color.White;
+            this.btn_config.Image = global::ControlePousada.Properties.Resources.config;
+            this.btn_config.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_config.Location = new System.Drawing.Point(437, 139);
             this.btn_config.Name = "btn_config";
             this.btn_config.Size = new System.Drawing.Size(199, 131);
             this.btn_config.TabIndex = 5;
             this.btn_config.Text = "Configurações";
+            this.btn_config.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_config.UseVisualStyleBackColor = false;
             this.btn_config.Click += new System.EventHandler(this.btn_config_Click);
             // 
@@ -155,17 +165,19 @@
             // 
             this.btn_financeiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_financeiro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_financeiro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_financeiro.FlatAppearance.BorderSize = 0;
+            this.btn_financeiro.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.btn_financeiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_financeiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_financeiro.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_financeiro.ForeColor = System.Drawing.Color.White;
+            this.btn_financeiro.Image = global::ControlePousada.Properties.Resources.financeiro;
+            this.btn_financeiro.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_financeiro.Location = new System.Drawing.Point(437, 3);
             this.btn_financeiro.Name = "btn_financeiro";
             this.btn_financeiro.Size = new System.Drawing.Size(199, 130);
             this.btn_financeiro.TabIndex = 2;
             this.btn_financeiro.Text = "Financeiro";
+            this.btn_financeiro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_financeiro.UseVisualStyleBackColor = false;
             this.btn_financeiro.Click += new System.EventHandler(this.btn_financeiro_Click);
             // 

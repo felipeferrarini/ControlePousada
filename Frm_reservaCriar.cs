@@ -49,6 +49,7 @@ namespace controlePousada
             txt_valor.Text = novaReserva.Valor.ToString();
             cb_pagamento.Checked = novaReserva.Pago;
             dtp_dataPag.Value = novaReserva.DataPago;
+            txt_obs.Text = novaReserva.Obs;
 
         }
 
@@ -113,6 +114,7 @@ namespace controlePousada
                 novaReserva.Valor = Convert.ToDouble(txt_valor.Value);
                 novaReserva.Pago = cb_pagamento.Checked;
                 novaReserva.DataPago = cb_pagamento.Checked ? dtp_dataPag.Value : DateTime.Parse("00/00/00");
+                novaReserva.Obs = txt_obs.Text;
                 reserva.salvarReserva(novaReserva);
 
 
@@ -131,6 +133,7 @@ namespace controlePousada
                 txt_valor.Text = "";
                 cb_pagamento.Checked = false;
                 dtp_dataPag.Value = DateTime.Now;
+                txt_obs.Text = "";
 
                 MessageBox.Show("Reserva Salva com Sucesso!", "Alerta");
             }
@@ -305,6 +308,7 @@ namespace controlePousada
                 cb_pagamento.Enabled = false;
                 dtp_dataPag.Enabled = false;
                 btn_salvarReserva.Enabled = false;
+                txt_obs.Enabled = false;
             }
         }
     }

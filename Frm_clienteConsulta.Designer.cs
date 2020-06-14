@@ -126,6 +126,7 @@
             // 
             // gb_filtros
             // 
+            this.gb_filtros.BackColor = System.Drawing.Color.Transparent;
             this.gb_filtros.Controls.Add(this.label1);
             this.gb_filtros.Controls.Add(this.txt_documento);
             this.gb_filtros.Controls.Add(this.lb_cidade);
@@ -133,7 +134,8 @@
             this.gb_filtros.Controls.Add(this.lb_nome);
             this.gb_filtros.Controls.Add(this.txt_nome);
             this.gb_filtros.Controls.Add(this.lb_documento);
-            this.gb_filtros.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_filtros.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_filtros.ForeColor = System.Drawing.Color.White;
             this.gb_filtros.Location = new System.Drawing.Point(13, 12);
             this.gb_filtros.Name = "gb_filtros";
             this.gb_filtros.Size = new System.Drawing.Size(667, 100);
@@ -147,7 +149,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 16);
+            this.label1.Size = new System.Drawing.Size(296, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "* Duplo clique sobre o CPF/CNPJ para edição";
             // 
@@ -166,10 +168,10 @@
             // lb_cidade
             // 
             this.lb_cidade.AutoSize = true;
-            this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cidade.Location = new System.Drawing.Point(376, 27);
             this.lb_cidade.Name = "lb_cidade";
-            this.lb_cidade.Size = new System.Drawing.Size(48, 16);
+            this.lb_cidade.Size = new System.Drawing.Size(53, 16);
             this.lb_cidade.TabIndex = 5;
             this.lb_cidade.Text = "Cidade";
             // 
@@ -185,10 +187,10 @@
             // lb_nome
             // 
             this.lb_nome.AutoSize = true;
-            this.lb_nome.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_nome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nome.Location = new System.Drawing.Point(196, 27);
             this.lb_nome.Name = "lb_nome";
-            this.lb_nome.Size = new System.Drawing.Size(104, 16);
+            this.lb_nome.Size = new System.Drawing.Size(114, 16);
             this.lb_nome.TabIndex = 3;
             this.lb_nome.Text = "Nome do Cliente";
             this.lb_nome.Click += new System.EventHandler(this.lb_nome_Click);
@@ -205,10 +207,10 @@
             // lb_documento
             // 
             this.lb_documento.AutoSize = true;
-            this.lb_documento.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_documento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_documento.Location = new System.Drawing.Point(15, 27);
             this.lb_documento.Name = "lb_documento";
-            this.lb_documento.Size = new System.Drawing.Size(71, 16);
+            this.lb_documento.Size = new System.Drawing.Size(72, 16);
             this.lb_documento.TabIndex = 1;
             this.lb_documento.Text = "CPF/CNPJ";
             this.lb_documento.Click += new System.EventHandler(this.lb_documento_Click);
@@ -218,6 +220,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::ControlePousada.Properties.Resources.fundo2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 550);
             this.Controls.Add(this.gb_filtros);
             this.Controls.Add(this.btn_limpar);

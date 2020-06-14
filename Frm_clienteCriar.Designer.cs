@@ -64,7 +64,7 @@
             // rb_cpf
             // 
             this.rb_cpf.AutoSize = true;
-            this.rb_cpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_cpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_cpf.Location = new System.Drawing.Point(15, 29);
             this.rb_cpf.Name = "rb_cpf";
             this.rb_cpf.Size = new System.Drawing.Size(52, 20);
@@ -77,10 +77,10 @@
             // rb_cnpj
             // 
             this.rb_cnpj.AutoSize = true;
-            this.rb_cnpj.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_cnpj.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_cnpj.Location = new System.Drawing.Point(132, 29);
             this.rb_cnpj.Name = "rb_cnpj";
-            this.rb_cnpj.Size = new System.Drawing.Size(59, 20);
+            this.rb_cnpj.Size = new System.Drawing.Size(60, 20);
             this.rb_cnpj.TabIndex = 70;
             this.rb_cnpj.TabStop = true;
             this.rb_cnpj.Text = "CNPJ";
@@ -134,10 +134,10 @@
             // lb_email
             // 
             this.lb_email.AutoSize = true;
-            this.lb_email.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_email.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_email.Location = new System.Drawing.Point(164, 83);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(49, 16);
+            this.lb_email.Size = new System.Drawing.Size(52, 16);
             this.lb_email.TabIndex = 78;
             this.lb_email.Text = "E-mail:";
             // 
@@ -152,10 +152,10 @@
             // lb_cidade
             // 
             this.lb_cidade.AutoSize = true;
-            this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cidade.Location = new System.Drawing.Point(13, 80);
             this.lb_cidade.Name = "lb_cidade";
-            this.lb_cidade.Size = new System.Drawing.Size(52, 16);
+            this.lb_cidade.Size = new System.Drawing.Size(57, 16);
             this.lb_cidade.TabIndex = 76;
             this.lb_cidade.Text = "Cidade:";
             // 
@@ -170,30 +170,32 @@
             // lb_telefone
             // 
             this.lb_telefone.AutoSize = true;
-            this.lb_telefone.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_telefone.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_telefone.Location = new System.Drawing.Point(13, 83);
             this.lb_telefone.Name = "lb_telefone";
-            this.lb_telefone.Size = new System.Drawing.Size(59, 16);
+            this.lb_telefone.Size = new System.Drawing.Size(67, 16);
             this.lb_telefone.TabIndex = 74;
             this.lb_telefone.Text = "Telefone:";
             // 
             // lb_cliente
             // 
             this.lb_cliente.AutoSize = true;
-            this.lb_cliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cliente.Location = new System.Drawing.Point(13, 28);
             this.lb_cliente.Name = "lb_cliente";
-            this.lb_cliente.Size = new System.Drawing.Size(75, 16);
+            this.lb_cliente.Size = new System.Drawing.Size(76, 16);
             this.lb_cliente.TabIndex = 71;
             this.lb_cliente.Text = "CPF/CNPJ:";
             // 
             // lb_desconto
             // 
             this.lb_desconto.AutoSize = true;
-            this.lb_desconto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_desconto.BackColor = System.Drawing.Color.Transparent;
+            this.lb_desconto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_desconto.ForeColor = System.Drawing.Color.White;
             this.lb_desconto.Location = new System.Drawing.Point(53, 437);
             this.lb_desconto.Name = "lb_desconto";
-            this.lb_desconto.Size = new System.Drawing.Size(222, 16);
+            this.lb_desconto.Size = new System.Drawing.Size(234, 16);
             this.lb_desconto.TabIndex = 88;
             this.lb_desconto.Text = "Taxa de Desconto nas Reservas (%):";
             // 
@@ -209,10 +211,10 @@
             // lb_endereco
             // 
             this.lb_endereco.AutoSize = true;
-            this.lb_endereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_endereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_endereco.Location = new System.Drawing.Point(15, 30);
             this.lb_endereco.Name = "lb_endereco";
-            this.lb_endereco.Size = new System.Drawing.Size(76, 16);
+            this.lb_endereco.Size = new System.Drawing.Size(86, 16);
             this.lb_endereco.TabIndex = 103;
             this.lb_endereco.Text = "Logradouro:";
             // 
@@ -227,10 +229,10 @@
             // lb_bairro
             // 
             this.lb_bairro.AutoSize = true;
-            this.lb_bairro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_bairro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_bairro.Location = new System.Drawing.Point(374, 30);
             this.lb_bairro.Name = "lb_bairro";
-            this.lb_bairro.Size = new System.Drawing.Size(46, 16);
+            this.lb_bairro.Size = new System.Drawing.Size(51, 16);
             this.lb_bairro.TabIndex = 105;
             this.lb_bairro.Text = "Bairro:";
             // 
@@ -245,10 +247,10 @@
             // lb_estado
             // 
             this.lb_estado.AutoSize = true;
-            this.lb_estado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_estado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_estado.Location = new System.Drawing.Point(374, 80);
             this.lb_estado.Name = "lb_estado";
-            this.lb_estado.Size = new System.Drawing.Size(53, 16);
+            this.lb_estado.Size = new System.Drawing.Size(54, 16);
             this.lb_estado.TabIndex = 107;
             this.lb_estado.Text = "Estado:";
             // 
@@ -301,20 +303,20 @@
             // lb_nome
             // 
             this.lb_nome.AutoSize = true;
-            this.lb_nome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nome.Location = new System.Drawing.Point(164, 28);
             this.lb_nome.Name = "lb_nome";
-            this.lb_nome.Size = new System.Drawing.Size(108, 16);
+            this.lb_nome.Size = new System.Drawing.Size(118, 16);
             this.lb_nome.TabIndex = 73;
             this.lb_nome.Text = "Nome do Cliente:";
             // 
             // lb_social
             // 
             this.lb_social.AutoSize = true;
-            this.lb_social.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_social.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_social.Location = new System.Drawing.Point(444, 28);
             this.lb_social.Name = "lb_social";
-            this.lb_social.Size = new System.Drawing.Size(89, 16);
+            this.lb_social.Size = new System.Drawing.Size(96, 16);
             this.lb_social.TabIndex = 110;
             this.lb_social.Text = "Razão Social:";
             // 
@@ -338,10 +340,12 @@
             // 
             // gb_tipo
             // 
+            this.gb_tipo.BackColor = System.Drawing.Color.Transparent;
             this.gb_tipo.Controls.Add(this.rb_cnpj);
             this.gb_tipo.Controls.Add(this.rb_cpf);
             this.gb_tipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gb_tipo.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_tipo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_tipo.ForeColor = System.Drawing.Color.White;
             this.gb_tipo.Location = new System.Drawing.Point(39, 34);
             this.gb_tipo.Name = "gb_tipo";
             this.gb_tipo.Size = new System.Drawing.Size(759, 65);
@@ -351,6 +355,7 @@
             // 
             // gb_pessoal
             // 
+            this.gb_pessoal.BackColor = System.Drawing.Color.Transparent;
             this.gb_pessoal.Controls.Add(this.lb_cliente);
             this.gb_pessoal.Controls.Add(this.txt_nome);
             this.gb_pessoal.Controls.Add(this.txt_telefone);
@@ -362,7 +367,8 @@
             this.gb_pessoal.Controls.Add(this.lb_email);
             this.gb_pessoal.Controls.Add(this.txt_cliente);
             this.gb_pessoal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gb_pessoal.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_pessoal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_pessoal.ForeColor = System.Drawing.Color.White;
             this.gb_pessoal.Location = new System.Drawing.Point(39, 107);
             this.gb_pessoal.Name = "gb_pessoal";
             this.gb_pessoal.Size = new System.Drawing.Size(760, 159);
@@ -372,6 +378,7 @@
             // 
             // gb_endereco
             // 
+            this.gb_endereco.BackColor = System.Drawing.Color.Transparent;
             this.gb_endereco.Controls.Add(this.txt_logradouro);
             this.gb_endereco.Controls.Add(this.txt_cidade);
             this.gb_endereco.Controls.Add(this.lb_cidade);
@@ -381,7 +388,8 @@
             this.gb_endereco.Controls.Add(this.txt_bairro);
             this.gb_endereco.Controls.Add(this.lb_bairro);
             this.gb_endereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gb_endereco.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_endereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_endereco.ForeColor = System.Drawing.Color.White;
             this.gb_endereco.Location = new System.Drawing.Point(39, 275);
             this.gb_endereco.Name = "gb_endereco";
             this.gb_endereco.Size = new System.Drawing.Size(760, 152);
@@ -394,6 +402,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::ControlePousada.Properties.Resources.fundo2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 550);
             this.Controls.Add(this.gb_endereco);
             this.Controls.Add(this.gb_pessoal);

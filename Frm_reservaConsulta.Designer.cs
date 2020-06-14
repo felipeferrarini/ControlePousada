@@ -117,6 +117,7 @@
             // 
             // gb_filtros
             // 
+            this.gb_filtros.BackColor = System.Drawing.Color.Transparent;
             this.gb_filtros.Controls.Add(this.lp_mes);
             this.gb_filtros.Controls.Add(this.dtp_pagamento);
             this.gb_filtros.Controls.Add(this.dtp_saida);
@@ -134,7 +135,8 @@
             this.gb_filtros.Controls.Add(this.txt_cidade);
             this.gb_filtros.Controls.Add(this.lb_nome);
             this.gb_filtros.Controls.Add(this.txt_nome);
-            this.gb_filtros.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.gb_filtros.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_filtros.ForeColor = System.Drawing.Color.White;
             this.gb_filtros.Location = new System.Drawing.Point(12, 12);
             this.gb_filtros.Name = "gb_filtros";
             this.gb_filtros.Size = new System.Drawing.Size(668, 149);
@@ -206,9 +208,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 16);
+            this.label1.Size = new System.Drawing.Size(383, 16);
             this.label1.TabIndex = 20;
             this.label1.Text = "* Duplo Clique sobre o número da reserva para editar";
             // 
@@ -217,7 +220,7 @@
             this.cb_pagamento.AutoSize = true;
             this.cb_pagamento.Location = new System.Drawing.Point(494, 74);
             this.cb_pagamento.Name = "cb_pagamento";
-            this.cb_pagamento.Size = new System.Drawing.Size(142, 20);
+            this.cb_pagamento.Size = new System.Drawing.Size(153, 20);
             this.cb_pagamento.TabIndex = 19;
             this.cb_pagamento.Text = "Data de Pagamento";
             this.cb_pagamento.UseVisualStyleBackColor = true;
@@ -228,7 +231,7 @@
             this.cb_saida.AutoSize = true;
             this.cb_saida.Location = new System.Drawing.Point(337, 74);
             this.cb_saida.Name = "cb_saida";
-            this.cb_saida.Size = new System.Drawing.Size(109, 20);
+            this.cb_saida.Size = new System.Drawing.Size(117, 20);
             this.cb_saida.TabIndex = 18;
             this.cb_saida.Text = "Data da Saída";
             this.cb_saida.UseVisualStyleBackColor = true;
@@ -239,7 +242,7 @@
             this.cb_entrada.AutoSize = true;
             this.cb_entrada.Location = new System.Drawing.Point(178, 74);
             this.cb_entrada.Name = "cb_entrada";
-            this.cb_entrada.Size = new System.Drawing.Size(121, 20);
+            this.cb_entrada.Size = new System.Drawing.Size(129, 20);
             this.cb_entrada.TabIndex = 17;
             this.cb_entrada.Text = "Data da Entrada";
             this.cb_entrada.UseVisualStyleBackColor = true;
@@ -250,7 +253,7 @@
             this.lb_feriado.AutoSize = true;
             this.lb_feriado.Location = new System.Drawing.Point(17, 75);
             this.lb_feriado.Name = "lb_feriado";
-            this.lb_feriado.Size = new System.Drawing.Size(51, 16);
+            this.lb_feriado.Size = new System.Drawing.Size(57, 16);
             this.lb_feriado.TabIndex = 10;
             this.lb_feriado.Text = "Feriado";
             // 
@@ -270,7 +273,7 @@
             this.lb_numero.AutoSize = true;
             this.lb_numero.Location = new System.Drawing.Point(19, 22);
             this.lb_numero.Name = "lb_numero";
-            this.lb_numero.Size = new System.Drawing.Size(121, 16);
+            this.lb_numero.Size = new System.Drawing.Size(133, 16);
             this.lb_numero.TabIndex = 8;
             this.lb_numero.Text = "Número da Reserva";
             // 
@@ -297,7 +300,7 @@
             this.lb_cidade.AutoSize = true;
             this.lb_cidade.Location = new System.Drawing.Point(333, 22);
             this.lb_cidade.Name = "lb_cidade";
-            this.lb_cidade.Size = new System.Drawing.Size(48, 16);
+            this.lb_cidade.Size = new System.Drawing.Size(53, 16);
             this.lb_cidade.TabIndex = 3;
             this.lb_cidade.Text = "Cidade";
             // 
@@ -315,7 +318,7 @@
             this.lb_nome.AutoSize = true;
             this.lb_nome.Location = new System.Drawing.Point(175, 22);
             this.lb_nome.Name = "lb_nome";
-            this.lb_nome.Size = new System.Drawing.Size(104, 16);
+            this.lb_nome.Size = new System.Drawing.Size(114, 16);
             this.lb_nome.TabIndex = 1;
             this.lb_nome.Text = "Nome do Cliente";
             // 
@@ -350,6 +353,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::ControlePousada.Properties.Resources.fundo2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 550);
             this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.gb_filtros);

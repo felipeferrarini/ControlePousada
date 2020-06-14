@@ -36,6 +36,7 @@ namespace ControlePousada
         protected double valor;
         protected bool pago;
         protected DateTime dataPago;
+        protected string obs;
 
         ///Construto vazio (Para nova reserva)
         public reserva()
@@ -60,6 +61,7 @@ namespace ControlePousada
             Valor = Convert.ToInt32(dados[12]);
             Pago = bool.Parse(dados[13]);
             DataPago = DateTime.Parse(dados[14]);
+            Obs = dados[15];
         }
         ///Gets e sets
         public int Numero
@@ -137,6 +139,11 @@ namespace ControlePousada
             get { return dataPago; }
             set { dataPago = value; }
         }
+        public string Obs
+        {
+            get { return obs; }
+            set { obs = value; }
+        }
 
         ///Funções Staticas
         public static int getNextNumber (string path)
@@ -177,7 +184,9 @@ namespace ControlePousada
             bdW.Write(";");
             bdW.Write(dados.Pago);
             bdW.Write(";");
-            bdW.WriteLine(dados.DataPago);
+            bdW.Write(dados.DataPago);
+            bdW.Write(";");
+            bdW.WriteLine(dados.Obs);
             bdW.Close();
             return true;
         }
