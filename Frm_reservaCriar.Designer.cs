@@ -551,7 +551,6 @@
             this.Name = "Frm_reservaCriar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Controle de Pousada";
-            this.Load += new System.EventHandler(this.Frm_reservaCriar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.np_desconto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_qtdPessoas)).EndInit();
             this.gb_gerais.ResumeLayout(false);

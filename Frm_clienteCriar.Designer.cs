@@ -68,7 +68,7 @@
             this.rb_cpf.Location = new System.Drawing.Point(15, 29);
             this.rb_cpf.Name = "rb_cpf";
             this.rb_cpf.Size = new System.Drawing.Size(52, 20);
-            this.rb_cpf.TabIndex = 69;
+            this.rb_cpf.TabIndex = 1;
             this.rb_cpf.TabStop = true;
             this.rb_cpf.Text = "CPF";
             this.rb_cpf.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             this.rb_cnpj.Location = new System.Drawing.Point(132, 29);
             this.rb_cnpj.Name = "rb_cnpj";
             this.rb_cnpj.Size = new System.Drawing.Size(60, 20);
-            this.rb_cnpj.TabIndex = 70;
+            this.rb_cnpj.TabIndex = 2;
             this.rb_cnpj.TabStop = true;
             this.rb_cnpj.Text = "CNPJ";
             this.rb_cnpj.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@
             this.btn_cancelarReserva.Location = new System.Drawing.Point(666, 500);
             this.btn_cancelarReserva.Name = "btn_cancelarReserva";
             this.btn_cancelarReserva.Size = new System.Drawing.Size(132, 38);
-            this.btn_cancelarReserva.TabIndex = 100;
+            this.btn_cancelarReserva.TabIndex = 14;
             this.btn_cancelarReserva.Text = "Cancelar";
             this.btn_cancelarReserva.UseVisualStyleBackColor = false;
             this.btn_cancelarReserva.Click += new System.EventHandler(this.btn_cancelarReserva_Click);
@@ -116,7 +116,7 @@
             this.btn_salvarReserva.Location = new System.Drawing.Point(503, 500);
             this.btn_salvarReserva.Name = "btn_salvarReserva";
             this.btn_salvarReserva.Size = new System.Drawing.Size(132, 38);
-            this.btn_salvarReserva.TabIndex = 99;
+            this.btn_salvarReserva.TabIndex = 13;
             this.btn_salvarReserva.Text = "Salvar";
             this.btn_salvarReserva.UseVisualStyleBackColor = false;
             this.btn_salvarReserva.Click += new System.EventHandler(this.btn_salvar_Click);
@@ -128,7 +128,7 @@
             this.txt_cliente.Mask = "000,000,000-00";
             this.txt_cliente.Name = "txt_cliente";
             this.txt_cliente.Size = new System.Drawing.Size(140, 25);
-            this.txt_cliente.TabIndex = 87;
+            this.txt_cliente.TabIndex = 3;
             this.txt_cliente.Leave += new System.EventHandler(this.txt_cliente_Leave);
             // 
             // lb_email
@@ -147,7 +147,7 @@
             this.txt_email.Location = new System.Drawing.Point(167, 104);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(274, 25);
-            this.txt_email.TabIndex = 77;
+            this.txt_email.TabIndex = 7;
             // 
             // lb_cidade
             // 
@@ -165,7 +165,7 @@
             this.txt_cidade.Location = new System.Drawing.Point(17, 100);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(353, 25);
-            this.txt_cidade.TabIndex = 75;
+            this.txt_cidade.TabIndex = 10;
             // 
             // lb_telefone
             // 
@@ -206,7 +206,7 @@
             this.np_desconto.Location = new System.Drawing.Point(56, 457);
             this.np_desconto.Name = "np_desconto";
             this.np_desconto.Size = new System.Drawing.Size(180, 25);
-            this.np_desconto.TabIndex = 89;
+            this.np_desconto.TabIndex = 12;
             // 
             // lb_endereco
             // 
@@ -224,7 +224,7 @@
             this.txt_logradouro.Location = new System.Drawing.Point(16, 50);
             this.txt_logradouro.Name = "txt_logradouro";
             this.txt_logradouro.Size = new System.Drawing.Size(354, 25);
-            this.txt_logradouro.TabIndex = 102;
+            this.txt_logradouro.TabIndex = 8;
             // 
             // lb_bairro
             // 
@@ -242,7 +242,7 @@
             this.txt_bairro.Location = new System.Drawing.Point(376, 50);
             this.txt_bairro.Name = "txt_bairro";
             this.txt_bairro.Size = new System.Drawing.Size(345, 25);
-            this.txt_bairro.TabIndex = 104;
+            this.txt_bairro.TabIndex = 9;
             // 
             // lb_estado
             // 
@@ -289,7 +289,7 @@
             this.lp_estado.Location = new System.Drawing.Point(376, 100);
             this.lp_estado.Name = "lp_estado";
             this.lp_estado.Size = new System.Drawing.Size(345, 25);
-            this.lp_estado.TabIndex = 108;
+            this.lp_estado.TabIndex = 11;
             this.lp_estado.Text = "Selecione";
             // 
             // txt_nome
@@ -298,7 +298,7 @@
             this.txt_nome.Location = new System.Drawing.Point(166, 48);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(275, 25);
-            this.txt_nome.TabIndex = 72;
+            this.txt_nome.TabIndex = 4;
             // 
             // lb_nome
             // 
@@ -327,7 +327,7 @@
             this.txt_social.Location = new System.Drawing.Point(447, 48);
             this.txt_social.Name = "txt_social";
             this.txt_social.Size = new System.Drawing.Size(274, 25);
-            this.txt_social.TabIndex = 109;
+            this.txt_social.TabIndex = 5;
             // 
             // txt_telefone
             // 
@@ -336,7 +336,7 @@
             this.txt_telefone.Mask = "(00) 00000-0000";
             this.txt_telefone.Name = "txt_telefone";
             this.txt_telefone.Size = new System.Drawing.Size(140, 25);
-            this.txt_telefone.TabIndex = 111;
+            this.txt_telefone.TabIndex = 6;
             // 
             // gb_tipo
             // 

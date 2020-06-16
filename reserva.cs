@@ -59,7 +59,7 @@ namespace ControlePousada
             Feriado = bool.Parse(dados[9]);
             FeriadoTipo = dados[10];
             Desconto = Convert.ToDecimal(dados[11]);
-            Valor = Convert.ToInt32(dados[12]);
+            Valor = Convert.ToDouble(dados[12]);
             Pago = bool.Parse(dados[13]);
             DataPago = DateTime.Parse(dados[14]);
             Obs = dados[15];

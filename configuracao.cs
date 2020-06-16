@@ -60,9 +60,42 @@ namespace controlePousada
             return feriados;
         }
 
-        public void cadastraFeriado(string feriado, decimal valorBase)
+        public static bool editaFeriado(string feriado, decimal valorBase)
         {
+            string[] bd = File.ReadAllLines(Program.pathConfig);
 
+            string[] line = bd[0].Split(';');
+
+            for(int i= 0; i < line.Length; i++)
+            {
+                string[] valor = line[i].Split(':');
+                if (valor[0] == feriado)
+                {
+                    valor[1] = valorBase.ToString();
+                    line[i] = string.Join(":", valor);
+                    bd[0] = string.Join(";", line);
+                    File.WriteAllLines(Program.pathConfig, bd);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool cadastraFeriado(string feriado, decimal valorBase)
+        {
+            string[] bd = File.ReadAllLines(Program.pathConfig);
+            string[] linha = bd[0].Split(';');
+            foreach (var element in linha)
+            {
+                if(element.Split(':')[0] == feriado)
+                {
+                    return false;
+                }
+            }
+            bd[0] = bd[0] + ";" + feriado + ":" + valorBase;
+
+            File.WriteAllLines(Program.pathConfig, bd);
+            return true;
         }
     }
 }

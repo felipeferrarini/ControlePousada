@@ -19,11 +19,11 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ControlePousada
 {
-    class financeiro
+    class Financeiro
     {        
-        public static double[] valorMedioMensal(int ano)
+        public static double valorMedioMensal(int ano, bool real)
         {
-            double[] valor = { 0, 0, 0 };
+            double valor = 0;
 
             string[] bd = File.ReadAllLines(Program.pathReserva);
 
@@ -32,28 +32,27 @@ namespace ControlePousada
                 reserva dados = new reserva(element.Split(';'));
                 if (dados.DataEntrada.Year == ano)
                 {
-                    if (dados.Pago)
+                    if (real)
                     {
-                        valor[0] = valor[0] + dados.Valor;
+                        if(dados.Pago)
+                            valor = valor + dados.Valor;
                     }
                     else
                     {
-                        valor[1] = valor[1] + dados.Valor;
+                        valor = valor + dados.Valor;
                     }
-                    valor[2] = valor[2] + dados.Valor;
+                    
                 }
             }
 
-            valor[0] = valor[0] / 12;
-            valor[1] = valor[1] / 12;
-            valor[2] = valor[2] / 12;
+            valor = valor / 12;
 
             return valor;
         }
 
-        public static double[] ValorMensal(int mes, int ano)
+        public static double ValorMensal(int mes, int ano, bool real)
         {
-            double[] valor = { 0, 0 };
+            double valor = 0;
 
             string[] bd = File.ReadAllLines(Program.pathReserva);
 
@@ -63,13 +62,14 @@ namespace ControlePousada
 
                 if(dados.DataEntrada.Month == mes && dados.DataEntrada.Year == ano)
                 {
-                    if (dados.Pago)
+                    if (real)
                     {
-                        valor[0] = valor[0] + dados.Valor;
+                        if (dados.Pago)
+                            valor = valor + dados.Valor;
                     }
                     else
                     {
-                        valor[1] = valor[1] + dados.Valor;
+                        valor = valor + dados.Valor;
                     }
                 }
 
@@ -78,12 +78,32 @@ namespace ControlePousada
             return valor;
         }
 
-        //criar outra com o valor a receber no mes informado
+        public static double valorAnual(int ano, bool real)
+        {
+            double valor = 0;
 
-        //criar outras duas com a mesma logiva para o ano informado
+            string[] bd = File.ReadAllLines(Program.pathReserva);
 
-        //criar outras duas para o periodo informado (00/00/00 a 00/00/00)
+            foreach (var element in bd)
+            {
+                reserva dados = new reserva(element.Split(';'));
 
-        //
+                if (dados.DataEntrada.Year == ano)
+                {
+                    if (real)
+                    {
+                        if (dados.Pago)
+                            valor = valor + dados.Valor;
+                    }
+                    else
+                    {
+                        valor = valor + dados.Valor;
+                    }
+                }
+
+            }
+
+            return valor;
+        }
     }
 }

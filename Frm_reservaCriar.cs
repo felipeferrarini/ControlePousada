@@ -24,16 +24,19 @@ namespace controlePousada
 {
     public partial class Frm_reservaCriar : Form
     {
+        bool feriado = false;
 
         public Frm_reservaCriar()
         {
             InitializeComponent();
             txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
+            carregaFeriados();
 
         }
         public Frm_reservaCriar(string numero)
         {
             InitializeComponent();
+            carregaFeriados();
             reserva novaReserva = new reserva(reserva.retornaReserva(Convert.ToInt32(numero)));
             txt_numero.Text = novaReserva.Numero.ToString();
             txt_cliente.Text = novaReserva.Cliente;
@@ -45,6 +48,7 @@ namespace controlePousada
             dtp_saida.Value = novaReserva.DataSaida;
             np_qtdPessoas.Value = novaReserva.QtdPessoas;
             cb_feriado.Checked = novaReserva.Feriado;
+            feriado = true;
             lp_feriado.SelectedItem = novaReserva.FeriadoTipo;
             np_desconto.Value = novaReserva.Desconto;
             txt_valor.Text = novaReserva.Valor.ToString();
@@ -246,7 +250,15 @@ namespace controlePousada
 
         private void lp_feriado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txt_valorBase.Value = configuracao.ValorBase(lp_feriado.SelectedItem.ToString());
+            if (feriado)
+            {
+                feriado = false;
+            }
+            else
+            {
+                txt_valorBase.Value = configuracao.ValorBase(lp_feriado.SelectedItem.ToString());
+            }
+            
         }
 
         private void txt_valorBase_ValueChanged(object sender, EventArgs e)
@@ -283,9 +295,8 @@ namespace controlePousada
             txt_cliente.SelectionStart = 0;
         }
 
-        private void Frm_reservaCriar_Load(object sender, EventArgs e)
+        private void carregaFeriados()
         {
-
             try
             {
                 int i = 0;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIMain));
             this.panelTop = new System.Windows.Forms.Panel();
             this.lb_title = new System.Windows.Forms.Label();
             this.btn_minimizar = new System.Windows.Forms.Button();
@@ -66,11 +67,11 @@
             this.lb_title.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lb_title.Location = new System.Drawing.Point(42, 6);
+            this.lb_title.Location = new System.Drawing.Point(3, 6);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(215, 25);
+            this.lb_title.Size = new System.Drawing.Size(397, 25);
             this.lb_title.TabIndex = 2;
-            this.lb_title.Text = "Controle de Pousada";
+            this.lb_title.Text = "Projeto 2 - AED1 - Controle de Pousada";
             // 
             // btn_minimizar
             // 
@@ -315,6 +316,7 @@
             this.Controls.Add(this.panelTop);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MDIMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MDIMain";
