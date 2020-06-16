@@ -28,7 +28,8 @@ namespace controlePousada
         public Frm_reservaCriar()
         {
             InitializeComponent();
-            
+            txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
+
         }
         public Frm_reservaCriar(string numero)
         {
@@ -113,11 +114,18 @@ namespace controlePousada
                 novaReserva.Desconto = np_desconto.Value;
                 novaReserva.Valor = Convert.ToDouble(txt_valor.Value);
                 novaReserva.Pago = cb_pagamento.Checked;
-                novaReserva.DataPago = cb_pagamento.Checked ? dtp_dataPag.Value : DateTime.Parse("00/00/00");
+                novaReserva.DataPago = cb_pagamento.Checked ? dtp_dataPag.Value : DateTime.Parse("01/01/1900");
                 novaReserva.Obs = txt_obs.Text;
-                reserva.salvarReserva(novaReserva);
 
-
+                if (reserva.reservaExiste(novaReserva.Numero))
+                {
+                    reserva.editarReserva(novaReserva);
+                }
+                else
+                {
+                    reserva.salvarReserva(novaReserva);
+                }
+                
                 txt_numero.Text = "";
                 txt_cliente.Text = "";
                 txt_nome.Text = "";
@@ -277,7 +285,6 @@ namespace controlePousada
 
         private void Frm_reservaCriar_Load(object sender, EventArgs e)
         {
-            txt_numero.Text = Convert.ToString(reserva.getNextNumber(Program.pathReserva));
 
             try
             {

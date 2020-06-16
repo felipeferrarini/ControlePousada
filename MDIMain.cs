@@ -24,6 +24,7 @@ namespace controlePousada
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
+
         public MDIMain()
         {
             InitializeComponent();

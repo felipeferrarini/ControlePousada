@@ -85,6 +85,7 @@
             // 
             // dtp_dataPag
             // 
+            this.dtp_dataPag.CalendarMonthBackground = System.Drawing.Color.White;
             this.dtp_dataPag.Enabled = false;
             this.dtp_dataPag.Font = new System.Drawing.Font("Arial", 11.25F);
             this.dtp_dataPag.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -163,7 +164,7 @@
             // 
             this.lb_valorBase.AutoSize = true;
             this.lb_valorBase.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_valorBase.Location = new System.Drawing.Point(188, 28);
+            this.lb_valorBase.Location = new System.Drawing.Point(249, 28);
             this.lb_valorBase.Name = "lb_valorBase";
             this.lb_valorBase.Size = new System.Drawing.Size(108, 16);
             this.lb_valorBase.TabIndex = 58;
@@ -171,8 +172,9 @@
             // 
             // np_desconto
             // 
+            this.np_desconto.BackColor = System.Drawing.Color.White;
             this.np_desconto.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.np_desconto.Location = new System.Drawing.Point(526, 49);
+            this.np_desconto.Location = new System.Drawing.Point(579, 49);
             this.np_desconto.Name = "np_desconto";
             this.np_desconto.Size = new System.Drawing.Size(140, 25);
             this.np_desconto.TabIndex = 57;
@@ -182,7 +184,7 @@
             // 
             this.lb_desconto.AutoSize = true;
             this.lb_desconto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_desconto.Location = new System.Drawing.Point(523, 30);
+            this.lb_desconto.Location = new System.Drawing.Point(576, 30);
             this.lb_desconto.Name = "lb_desconto";
             this.lb_desconto.Size = new System.Drawing.Size(92, 16);
             this.lb_desconto.TabIndex = 56;
@@ -190,6 +192,7 @@
             // 
             // txt_cliente
             // 
+            this.txt_cliente.BackColor = System.Drawing.Color.White;
             this.txt_cliente.Font = new System.Drawing.Font("Arial", 11.25F);
             this.txt_cliente.Location = new System.Drawing.Point(18, 47);
             this.txt_cliente.Mask = "000,000,000-00";
@@ -202,12 +205,13 @@
             // 
             // lp_feriado
             // 
+            this.lp_feriado.BackColor = System.Drawing.Color.White;
             this.lp_feriado.Enabled = false;
             this.lp_feriado.Font = new System.Drawing.Font("Arial", 11.25F);
             this.lp_feriado.FormattingEnabled = true;
             this.lp_feriado.Location = new System.Drawing.Point(16, 48);
             this.lp_feriado.Name = "lp_feriado";
-            this.lp_feriado.Size = new System.Drawing.Size(169, 25);
+            this.lp_feriado.Size = new System.Drawing.Size(230, 25);
             this.lp_feriado.TabIndex = 54;
             this.lp_feriado.Text = "Selecione";
             this.lp_feriado.SelectedIndexChanged += new System.EventHandler(this.lp_feriado_SelectedIndexChanged);
@@ -226,15 +230,16 @@
             // 
             // np_qtdPessoas
             // 
+            this.np_qtdPessoas.BackColor = System.Drawing.Color.White;
             this.np_qtdPessoas.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.np_qtdPessoas.Location = new System.Drawing.Point(352, 48);
+            this.np_qtdPessoas.Location = new System.Drawing.Point(413, 48);
             this.np_qtdPessoas.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.np_qtdPessoas.Name = "np_qtdPessoas";
-            this.np_qtdPessoas.Size = new System.Drawing.Size(168, 25);
+            this.np_qtdPessoas.Size = new System.Drawing.Size(160, 25);
             this.np_qtdPessoas.TabIndex = 52;
             this.np_qtdPessoas.ValueChanged += new System.EventHandler(this.np_qtdPessoas_ValueChanged);
             // 
@@ -242,7 +247,7 @@
             // 
             this.lb_qtdPessoas.AutoSize = true;
             this.lb_qtdPessoas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_qtdPessoas.Location = new System.Drawing.Point(351, 29);
+            this.lb_qtdPessoas.Location = new System.Drawing.Point(412, 29);
             this.lb_qtdPessoas.Name = "lb_qtdPessoas";
             this.lb_qtdPessoas.Size = new System.Drawing.Size(161, 16);
             this.lb_qtdPessoas.TabIndex = 51;
@@ -252,7 +257,7 @@
             // 
             this.lb_saida.AutoSize = true;
             this.lb_saida.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_saida.Location = new System.Drawing.Point(283, 132);
+            this.lb_saida.Location = new System.Drawing.Point(187, 132);
             this.lb_saida.Name = "lb_saida";
             this.lb_saida.Size = new System.Drawing.Size(98, 16);
             this.lb_saida.TabIndex = 50;
@@ -260,11 +265,12 @@
             // 
             // dtp_saida
             // 
+            this.dtp_saida.CalendarMonthBackground = System.Drawing.Color.White;
             this.dtp_saida.Font = new System.Drawing.Font("Arial", 11.25F);
             this.dtp_saida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_saida.Location = new System.Drawing.Point(286, 151);
+            this.dtp_saida.Location = new System.Drawing.Point(190, 151);
             this.dtp_saida.Name = "dtp_saida";
-            this.dtp_saida.Size = new System.Drawing.Size(259, 25);
+            this.dtp_saida.Size = new System.Drawing.Size(163, 25);
             this.dtp_saida.TabIndex = 49;
             // 
             // lb_entrada
@@ -279,20 +285,21 @@
             // 
             // dtp_entrada
             // 
+            this.dtp_entrada.CalendarMonthBackground = System.Drawing.Color.White;
             this.dtp_entrada.Font = new System.Drawing.Font("Arial", 11.25F);
             this.dtp_entrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_entrada.Location = new System.Drawing.Point(16, 151);
             this.dtp_entrada.Name = "dtp_entrada";
-            this.dtp_entrada.Size = new System.Drawing.Size(264, 25);
+            this.dtp_entrada.Size = new System.Drawing.Size(168, 25);
             this.dtp_entrada.TabIndex = 47;
             // 
             // lb_email
             // 
             this.lb_email.AutoSize = true;
-            this.lb_email.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lb_email.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.lb_email.Location = new System.Drawing.Point(458, 79);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(49, 16);
+            this.lb_email.Size = new System.Drawing.Size(52, 16);
             this.lb_email.TabIndex = 46;
             this.lb_email.Text = "E-mail:";
             // 
@@ -447,6 +454,7 @@
             // 
             // txt_valor
             // 
+            this.txt_valor.BackColor = System.Drawing.Color.White;
             this.txt_valor.DecimalPlaces = 2;
             this.txt_valor.Font = new System.Drawing.Font("Arial", 11.25F);
             this.txt_valor.Location = new System.Drawing.Point(619, 111);
@@ -467,9 +475,10 @@
             // 
             // txt_valorBase
             // 
+            this.txt_valorBase.BackColor = System.Drawing.Color.White;
             this.txt_valorBase.DecimalPlaces = 2;
             this.txt_valorBase.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.txt_valorBase.Location = new System.Drawing.Point(191, 48);
+            this.txt_valorBase.Location = new System.Drawing.Point(252, 48);
             this.txt_valorBase.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -500,6 +509,7 @@
             // 
             // txt_obs
             // 
+            this.txt_obs.BackColor = System.Drawing.Color.White;
             this.txt_obs.Font = new System.Drawing.Font("Arial", 11.25F);
             this.txt_obs.Location = new System.Drawing.Point(6, 18);
             this.txt_obs.Name = "txt_obs";
@@ -522,6 +532,7 @@
             // 
             // Frm_reservaCriar
             // 
+            this.AcceptButton = this.btn_salvarReserva;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;

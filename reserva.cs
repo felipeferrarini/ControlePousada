@@ -15,6 +15,7 @@ using Microsoft.SqlServer.Server;
 using System.Drawing.Printing;
 using controlePousada;
 using Newtonsoft.Json.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace ControlePousada
 {
@@ -146,6 +147,22 @@ namespace ControlePousada
         }
 
         ///Funções Staticas
+        
+        public static bool reservaExiste(int numero)
+        {
+            string[] bd = File.ReadAllLines(Program.pathReserva);
+            foreach (var element in bd)
+            {
+                string[] line = element.Split(';');
+                if (line[0] == numero.ToString())
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public static int getNextNumber (string path)
         {
             int nextNumber = File.ReadLines(path).Count();
@@ -191,6 +208,43 @@ namespace ControlePousada
             return true;
         }
 
+        public static bool editarReserva(reserva dados)
+        {
+            int i = 0;
+            string[] bd = File.ReadAllLines(Program.pathReserva);
+            foreach (var element in bd)
+            {
+                string[] line = element.Split(';');
+                if (line[0] == dados.Numero.ToString())
+                {
+                    line[1] = dados.cliente;
+                    line[2] = dados.clienteNome;
+                    line[3] = dados.telefone;
+                    line[4] = dados.cidade;
+                    line[5] = dados.Email;
+                    line[6] = dados.dataEntrada.ToString();
+                    line[7] = dados.dataSaida.ToString();
+                    line[8] = dados.QtdPessoas.ToString();
+                    line[9] = dados.Feriado.ToString();
+                    line[10] = dados.FeriadoTipo;
+                    line[11] = dados.Desconto.ToString();
+                    line[12] = dados.Valor.ToString();
+                    line[13] = dados.Pago.ToString();
+                    line[14] = dados.DataPago.ToString();
+                    line[15] = dados.Obs;
+
+                    bd[i] = string.Join(";", line);
+
+                    File.WriteAllLines(Program.pathReserva, bd);
+
+                    return true;
+                }
+                i++;
+            }
+
+            return false;
+        }
+
         public static string[] retornaReserva(int numero)
         {
             string[] bd = File.ReadAllLines(Program.pathReserva);
@@ -205,6 +259,5 @@ namespace ControlePousada
             string[] erro = { "erro" };
             return erro;
         }
-
     }
 }

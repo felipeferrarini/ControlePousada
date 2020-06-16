@@ -162,6 +162,35 @@ namespace controlePousada
             bdW.Close();
             return true;
         }
+        public static bool editarCliente(clienteCpf cliente)
+        {
+            int i = 0;
+            string[] bd = File.ReadAllLines(Program.pathClient);
+            foreach (var element in bd)
+            {
+                string[] line = element.Split(';');
+                if (line[0] == cliente.Documento.ToString())
+                {
+                    line[1] = cliente.Tipo;
+                    line[2] = cliente.Nome;
+                    line[3] = cliente.Telefone;
+                    line[4] = cliente.Email;
+                    line[5] = cliente.Endereço;
+                    line[6] = cliente.Bairro;
+                    line[7] = cliente.Cidade;
+                    line[8] = cliente.Estado;
+
+                    bd[i] = string.Join(";", line);
+
+                    File.WriteAllLines(Program.pathClient, bd);
+
+                    return true;
+                }
+                i++;
+            }
+
+            return false;
+        }
     }
     class clienteCnpj : cliente 
     {
@@ -234,6 +263,38 @@ namespace controlePousada
             bdW.WriteLine(cliente.desconto);
             bdW.Close();
             return true;
+        }
+
+        public static bool editarCliente(clienteCnpj cliente)
+        {
+            int i = 0;
+            string[] bd = File.ReadAllLines(Program.pathClient);
+            foreach (var element in bd)
+            {
+                string[] line = element.Split(';');
+                if (line[0] == cliente.Documento.ToString())
+                {
+                    line[1] = cliente.Tipo;
+                    line[2] = cliente.Nome;
+                    line[3] = cliente.Telefone;
+                    line[4] = cliente.Email;
+                    line[5] = cliente.Endereço;
+                    line[6] = cliente.Bairro;
+                    line[7] = cliente.Cidade;
+                    line[8] = cliente.Estado;
+                    line[8] = cliente.RazaoSocial;
+                    line[8] = cliente.Desconto.ToString();
+
+                    bd[i] = string.Join(";", line);
+
+                    File.WriteAllLines(Program.pathClient, bd);
+
+                    return true;
+                }
+                i++;
+            }
+
+            return false;
         }
     }
 }

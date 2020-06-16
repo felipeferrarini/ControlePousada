@@ -28,8 +28,18 @@ namespace ControlePousada
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] meses = { "asda", "asdasds", "asdasd" };
-            int[] valor = { 20, 44, 65 };
+            int ano = Convert.ToInt32(np_ano.Value);
+            string[] meses = { "Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro" };
+            double[] valorRec = new double[12];
+            double[] valorArec = new double[12];
+            double[] valorTotal = new double[12];
+
+            for ( int i = 0; i<12; i++)
+            {
+                valorRec[i] = financeiro.ValorMensal(i + 1, ano)[0];
+                valorArec[i] = financeiro.ValorMensal(i + 1, ano)[1];
+                valorTotal[i] = financeiro.ValorMensal(i + 1, ano)[0] + financeiro.ValorMensal(i + 1, ano)[1];
+            }
 
             graficos.Palette = ChartColorPalette.Bright;
             graficos.Titles.Add("Meu ovo");
@@ -37,7 +47,7 @@ namespace ControlePousada
             for(int i = 0; i < meses.Length; i++)
             {
                 Series series = graficos.Series.Add(meses[i]);
-                series.Points.Add(valor[i]);
+                series.Points.Add(valorRec[i]);
             }
         }
 
@@ -79,6 +89,20 @@ namespace ControlePousada
                 }
             }
             dataGridView1.DataSource = db;*/
+        }
+
+        private void Frm_financeiro_Load(object sender, EventArgs e)
+        {
+            lb_medioRec2.Text ="R$ " + financeiro.valorMedioMensal(Convert.ToInt32(np_ano.Value))[0].ToString("F");
+            lb_medioArec2.Text = "R$ " + financeiro.valorMedioMensal(Convert.ToInt32(np_ano.Value))[1].ToString("F");
+            lb_medioTotal2.Text = "R$ " + financeiro.valorMedioMensal(Convert.ToInt32(np_ano.Value))[2].ToString("F");
+        }
+
+        private void np_ano_ValueChanged(object sender, EventArgs e)
+        {
+            lb_medioRec2.Text = "R$ " + financeiro.valorMedioMensal(Convert.ToInt32(np_ano.Value))[0].ToString("F");
+            lb_medioArec2.Text = "R$ " + financeiro.valorMedioMensal(Convert.ToInt32(np_ano.Value))[1].ToString("F");
+            lb_medioTotal2.Text = "R$ " + financeiro.valorMedioMensal(Convert.ToInt32(np_ano.Value))[2].ToString("F");
         }
     }
 }

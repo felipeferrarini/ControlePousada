@@ -92,33 +92,50 @@ namespace controlePousada
                 }
                 if(tipo == "CPF")
                 {
-                    clienteCpf cliente = new clienteCpf();
-                    cliente.Tipo = tipo;
-                    cliente.Documento = txt_cliente.MaskCompleted?Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-]",""):throw meuErro;
-                    cliente.Nome = txt_nome.Text.Length > 0 ? txt_nome.Text : throw meuErro;
-                    cliente.Telefone = txt_telefone.MaskCompleted? txt_telefone.Text: throw meuErro;
-                    cliente.Email = txt_email.Text.Length > 0 ? txt_email.Text : throw meuErro;
-                    cliente.Endereço = txt_logradouro.Text.Length>0? txt_logradouro.Text:throw meuErro;
-                    cliente.Bairro = txt_bairro.Text.Length > 0 ? txt_bairro.Text : throw meuErro;
-                    cliente.Cidade = txt_cidade.Text.Length > 0 ? txt_cidade.Text : throw meuErro;
-                    cliente.Estado = lp_estado.SelectedItem.ToString();
-                    clienteCpf.salvarCliente(cliente);
+                    clienteCpf client = new clienteCpf();
+                    client.Tipo = tipo;
+                    client.Documento = txt_cliente.MaskCompleted?Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-]",""):throw meuErro;
+                    client.Nome = txt_nome.Text.Length > 0 ? txt_nome.Text : throw meuErro;
+                    client.Telefone = txt_telefone.MaskCompleted? txt_telefone.Text: throw meuErro;
+                    client.Email = txt_email.Text.Length > 0 ? txt_email.Text : throw meuErro;
+                    client.Endereço = txt_logradouro.Text.Length>0? txt_logradouro.Text:throw meuErro;
+                    client.Bairro = txt_bairro.Text.Length > 0 ? txt_bairro.Text : throw meuErro;
+                    client.Cidade = txt_cidade.Text.Length > 0 ? txt_cidade.Text : throw meuErro;
+                    client.Estado = lp_estado.SelectedItem.ToString();
+
+                    if (cliente.clienteExiste(client.Documento))
+                    {
+                        clienteCpf.editarCliente(client);
+                    }
+                    else
+                    {
+                        clienteCpf.salvarCliente(client);
+                    }
+                    
                 }
                 else
                 {
-                    clienteCnpj cliente = new clienteCnpj();
-                    cliente.Tipo = tipo;
-                    cliente.Documento = txt_cliente.MaskCompleted?Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-\\/]", ""):throw meuErro;
-                    cliente.Nome = txt_nome.Text.Length > 0 ? txt_nome.Text : throw meuErro;
-                    cliente.Telefone = txt_telefone.MaskCompleted ? txt_telefone.Text : throw meuErro;
-                    cliente.Email = txt_email.Text.Length > 0 ? txt_email.Text : throw meuErro;
-                    cliente.Endereço = txt_logradouro.Text.Length > 0 ? txt_logradouro.Text : throw meuErro;
-                    cliente.Bairro = txt_bairro.Text.Length > 0 ? txt_bairro.Text : throw meuErro;
-                    cliente.Cidade = txt_cidade.Text.Length > 0 ? txt_cidade.Text : throw meuErro;
-                    cliente.Estado = lp_estado.SelectedItem.ToString();
-                    cliente.RazaoSocial = txt_social.Text.Length > 0 ? txt_social.Text : throw meuErro; ;
-                    cliente.Desconto = np_desconto.Value;
-                    clienteCnpj.salvarCliente(cliente);
+                    clienteCnpj client = new clienteCnpj();
+                    client.Tipo = tipo;
+                    client.Documento = txt_cliente.MaskCompleted?Regex.Replace(txt_cliente.Text, "[\\,\\.\\ \\-\\/]", ""):throw meuErro;
+                    client.Nome = txt_nome.Text.Length > 0 ? txt_nome.Text : throw meuErro;
+                    client.Telefone = txt_telefone.MaskCompleted ? txt_telefone.Text : throw meuErro;
+                    client.Email = txt_email.Text.Length > 0 ? txt_email.Text : throw meuErro;
+                    client.Endereço = txt_logradouro.Text.Length > 0 ? txt_logradouro.Text : throw meuErro;
+                    client.Bairro = txt_bairro.Text.Length > 0 ? txt_bairro.Text : throw meuErro;
+                    client.Cidade = txt_cidade.Text.Length > 0 ? txt_cidade.Text : throw meuErro;
+                    client.Estado = lp_estado.SelectedItem.ToString();
+                    client.RazaoSocial = txt_social.Text.Length > 0 ? txt_social.Text : throw meuErro; ;
+                    client.Desconto = np_desconto.Value;
+
+                    if (cliente.clienteExiste(client.Documento))
+                    {
+                        clienteCnpj.editarCliente(client);
+                    }
+                    else
+                    {
+                        clienteCnpj.salvarCliente(client);
+                    }
                 }
                 txt_cliente.Text = "";
                 txt_nome.Text = "";
