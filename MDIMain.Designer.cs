@@ -66,7 +66,7 @@
             this.lb_title.AutoSize = true;
             this.lb_title.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_title.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lb_title.ForeColor = System.Drawing.Color.Black;
             this.lb_title.Location = new System.Drawing.Point(3, 6);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(397, 25);

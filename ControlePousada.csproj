@@ -247,7 +247,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cliente.cs" />
-    <Compile Include="configuracao.cs" />
+    <Compile Include="Configuracao.cs" />
     <Compile Include="financeiro.cs" />
     <Compile Include="Frm_clienteConsulta.cs">
       <SubType>Form</SubType>

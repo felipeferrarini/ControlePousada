@@ -47,11 +47,11 @@ namespace controlePousada
                 StreamWriter x;
                 x = File.CreateText(pathConfig);
                 x.Close();
-                configuracao.configOriginal();
+                Configuracao.configOriginal();
             }
             if(File.ReadAllText(pathConfig) == "")
             {
-                configuracao.configOriginal();
+                Configuracao.configOriginal();
             }
 
             Application.EnableVisualStyles();

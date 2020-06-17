@@ -256,7 +256,7 @@ namespace controlePousada
             }
             else
             {
-                txt_valorBase.Value = configuracao.ValorBase(lp_feriado.SelectedItem.ToString());
+                txt_valorBase.Value = Configuracao.ValorBase(lp_feriado.SelectedItem.ToString());
             }
             
         }
@@ -300,7 +300,7 @@ namespace controlePousada
             try
             {
                 int i = 0;
-                string[] feriados = configuracao.retornaFeriados();
+                string[] feriados = Configuracao.retornaFeriados();
                 foreach (var element in feriados)
                 {
                     lp_feriado.Items.Add(feriados[i]);

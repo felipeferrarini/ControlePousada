@@ -31,20 +31,21 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.gb_cadastrarFeriado = new System.Windows.Forms.GroupBox();
-            this.gb_editarFeriado = new System.Windows.Forms.GroupBox();
-            this.lp_editaFeriado = new System.Windows.Forms.ComboBox();
-            this.np_editaFeriado = new System.Windows.Forms.NumericUpDown();
-            this.txt_novoFeriado = new System.Windows.Forms.TextBox();
-            this.np_novoFeriado = new System.Windows.Forms.NumericUpDown();
-            this.btn_cadastrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_cadastrar = new System.Windows.Forms.Button();
+            this.np_novoFeriado = new System.Windows.Forms.NumericUpDown();
+            this.txt_novoFeriado = new System.Windows.Forms.TextBox();
+            this.gb_editarFeriado = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.np_editaFeriado = new System.Windows.Forms.NumericUpDown();
+            this.lp_editaFeriado = new System.Windows.Forms.ComboBox();
+            this.btn_exlcuir = new System.Windows.Forms.Button();
             this.gb_cadastrarFeriado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.np_novoFeriado)).BeginInit();
             this.gb_editarFeriado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.np_editaFeriado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.np_novoFeriado)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_cancelar
@@ -75,7 +76,7 @@
             this.btn_salvar.ForeColor = System.Drawing.Color.White;
             this.btn_salvar.Location = new System.Drawing.Point(422, 55);
             this.btn_salvar.Name = "btn_salvar";
-            this.btn_salvar.Size = new System.Drawing.Size(132, 26);
+            this.btn_salvar.Size = new System.Drawing.Size(102, 26);
             this.btn_salvar.TabIndex = 39;
             this.btn_salvar.Text = "Salvar";
             this.btn_salvar.UseVisualStyleBackColor = false;
@@ -99,71 +100,23 @@
             this.gb_cadastrarFeriado.TabStop = false;
             this.gb_cadastrarFeriado.Text = "Cadastrar Feriado";
             // 
-            // gb_editarFeriado
+            // label2
             // 
-            this.gb_editarFeriado.BackColor = System.Drawing.Color.Transparent;
-            this.gb_editarFeriado.Controls.Add(this.label4);
-            this.gb_editarFeriado.Controls.Add(this.label3);
-            this.gb_editarFeriado.Controls.Add(this.np_editaFeriado);
-            this.gb_editarFeriado.Controls.Add(this.lp_editaFeriado);
-            this.gb_editarFeriado.Controls.Add(this.btn_salvar);
-            this.gb_editarFeriado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gb_editarFeriado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_editarFeriado.ForeColor = System.Drawing.Color.White;
-            this.gb_editarFeriado.Location = new System.Drawing.Point(68, 243);
-            this.gb_editarFeriado.Name = "gb_editarFeriado";
-            this.gb_editarFeriado.Size = new System.Drawing.Size(693, 118);
-            this.gb_editarFeriado.TabIndex = 114;
-            this.gb_editarFeriado.TabStop = false;
-            this.gb_editarFeriado.Text = "Editar Feriado";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(224, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 16);
+            this.label2.TabIndex = 117;
+            this.label2.Text = "Insira o valor base:";
             // 
-            // lp_editaFeriado
+            // label1
             // 
-            this.lp_editaFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.lp_editaFeriado.FormattingEnabled = true;
-            this.lp_editaFeriado.Location = new System.Drawing.Point(28, 55);
-            this.lp_editaFeriado.Name = "lp_editaFeriado";
-            this.lp_editaFeriado.Size = new System.Drawing.Size(169, 26);
-            this.lp_editaFeriado.TabIndex = 0;
-            this.lp_editaFeriado.SelectedIndexChanged += new System.EventHandler(this.lp_editaFeriado_SelectedIndexChanged);
-            // 
-            // np_editaFeriado
-            // 
-            this.np_editaFeriado.DecimalPlaces = 2;
-            this.np_editaFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.np_editaFeriado.Location = new System.Drawing.Point(227, 55);
-            this.np_editaFeriado.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.np_editaFeriado.Name = "np_editaFeriado";
-            this.np_editaFeriado.Size = new System.Drawing.Size(169, 24);
-            this.np_editaFeriado.TabIndex = 1;
-            this.np_editaFeriado.ThousandsSeparator = true;
-            // 
-            // txt_novoFeriado
-            // 
-            this.txt_novoFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_novoFeriado.Location = new System.Drawing.Point(28, 46);
-            this.txt_novoFeriado.Name = "txt_novoFeriado";
-            this.txt_novoFeriado.Size = new System.Drawing.Size(169, 24);
-            this.txt_novoFeriado.TabIndex = 0;
-            // 
-            // np_novoFeriado
-            // 
-            this.np_novoFeriado.DecimalPlaces = 2;
-            this.np_novoFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.np_novoFeriado.Location = new System.Drawing.Point(227, 46);
-            this.np_novoFeriado.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.np_novoFeriado.Name = "np_novoFeriado";
-            this.np_novoFeriado.Size = new System.Drawing.Size(169, 24);
-            this.np_novoFeriado.TabIndex = 1;
-            this.np_novoFeriado.ThousandsSeparator = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 16);
+            this.label1.TabIndex = 116;
+            this.label1.Text = "Digite o novo Feriado:";
             // 
             // btn_cadastrar
             // 
@@ -182,23 +135,56 @@
             this.btn_cadastrar.UseVisualStyleBackColor = false;
             this.btn_cadastrar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // np_novoFeriado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 16);
-            this.label1.TabIndex = 116;
-            this.label1.Text = "Digite o novo Feriado:";
+            this.np_novoFeriado.DecimalPlaces = 2;
+            this.np_novoFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.np_novoFeriado.Location = new System.Drawing.Point(227, 46);
+            this.np_novoFeriado.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.np_novoFeriado.Name = "np_novoFeriado";
+            this.np_novoFeriado.Size = new System.Drawing.Size(169, 24);
+            this.np_novoFeriado.TabIndex = 1;
+            this.np_novoFeriado.ThousandsSeparator = true;
             // 
-            // label2
+            // txt_novoFeriado
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 16);
-            this.label2.TabIndex = 117;
-            this.label2.Text = "Insira o valor base:";
+            this.txt_novoFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_novoFeriado.Location = new System.Drawing.Point(28, 46);
+            this.txt_novoFeriado.Name = "txt_novoFeriado";
+            this.txt_novoFeriado.Size = new System.Drawing.Size(169, 24);
+            this.txt_novoFeriado.TabIndex = 0;
+            // 
+            // gb_editarFeriado
+            // 
+            this.gb_editarFeriado.BackColor = System.Drawing.Color.Transparent;
+            this.gb_editarFeriado.Controls.Add(this.btn_exlcuir);
+            this.gb_editarFeriado.Controls.Add(this.label4);
+            this.gb_editarFeriado.Controls.Add(this.label3);
+            this.gb_editarFeriado.Controls.Add(this.np_editaFeriado);
+            this.gb_editarFeriado.Controls.Add(this.lp_editaFeriado);
+            this.gb_editarFeriado.Controls.Add(this.btn_salvar);
+            this.gb_editarFeriado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gb_editarFeriado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_editarFeriado.ForeColor = System.Drawing.Color.White;
+            this.gb_editarFeriado.Location = new System.Drawing.Point(68, 243);
+            this.gb_editarFeriado.Name = "gb_editarFeriado";
+            this.gb_editarFeriado.Size = new System.Drawing.Size(693, 118);
+            this.gb_editarFeriado.TabIndex = 114;
+            this.gb_editarFeriado.TabStop = false;
+            this.gb_editarFeriado.Text = "Editar Feriado";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(224, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 16);
+            this.label4.TabIndex = 118;
+            this.label4.Text = "Insira o novo valor base:";
             // 
             // label3
             // 
@@ -209,14 +195,47 @@
             this.label3.TabIndex = 118;
             this.label3.Text = "Escolha o Feriado:";
             // 
-            // label4
+            // np_editaFeriado
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(224, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 16);
-            this.label4.TabIndex = 118;
-            this.label4.Text = "Insira o novo valor base:";
+            this.np_editaFeriado.DecimalPlaces = 2;
+            this.np_editaFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.np_editaFeriado.Location = new System.Drawing.Point(227, 55);
+            this.np_editaFeriado.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.np_editaFeriado.Name = "np_editaFeriado";
+            this.np_editaFeriado.Size = new System.Drawing.Size(169, 24);
+            this.np_editaFeriado.TabIndex = 1;
+            this.np_editaFeriado.ThousandsSeparator = true;
+            // 
+            // lp_editaFeriado
+            // 
+            this.lp_editaFeriado.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.lp_editaFeriado.FormattingEnabled = true;
+            this.lp_editaFeriado.Location = new System.Drawing.Point(28, 55);
+            this.lp_editaFeriado.Name = "lp_editaFeriado";
+            this.lp_editaFeriado.Size = new System.Drawing.Size(169, 26);
+            this.lp_editaFeriado.TabIndex = 0;
+            this.lp_editaFeriado.SelectedIndexChanged += new System.EventHandler(this.lp_editaFeriado_SelectedIndexChanged);
+            // 
+            // btn_exlcuir
+            // 
+            this.btn_exlcuir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btn_exlcuir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exlcuir.FlatAppearance.BorderSize = 0;
+            this.btn_exlcuir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_exlcuir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exlcuir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exlcuir.ForeColor = System.Drawing.Color.White;
+            this.btn_exlcuir.Location = new System.Drawing.Point(530, 55);
+            this.btn_exlcuir.Name = "btn_exlcuir";
+            this.btn_exlcuir.Size = new System.Drawing.Size(102, 26);
+            this.btn_exlcuir.TabIndex = 119;
+            this.btn_exlcuir.Text = "Excluir";
+            this.btn_exlcuir.UseVisualStyleBackColor = false;
+            this.btn_exlcuir.Click += new System.EventHandler(this.btn_exlcuir_Click);
             // 
             // Frm_config
             // 
@@ -235,10 +254,10 @@
             this.Load += new System.EventHandler(this.Frm_config_Load);
             this.gb_cadastrarFeriado.ResumeLayout(false);
             this.gb_cadastrarFeriado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.np_novoFeriado)).EndInit();
             this.gb_editarFeriado.ResumeLayout(false);
             this.gb_editarFeriado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.np_editaFeriado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.np_novoFeriado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +277,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown np_editaFeriado;
         private System.Windows.Forms.ComboBox lp_editaFeriado;
+        private System.Windows.Forms.Button btn_exlcuir;
     }
 }

@@ -65,7 +65,7 @@
             // 
             this.btn_novaReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_novaReserva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_novaReserva.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_novaReserva.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_novaReserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_novaReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_novaReserva.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
@@ -85,7 +85,7 @@
             // 
             this.btn_newCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_newCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_newCliente.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_newCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_newCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_newCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_newCliente.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
@@ -105,7 +105,7 @@
             // 
             this.btn_reserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_reserva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reserva.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_reserva.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_reserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_reserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reserva.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
@@ -125,7 +125,7 @@
             // 
             this.btn_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cliente.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_cliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cliente.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
@@ -145,7 +145,7 @@
             // 
             this.btn_config.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_config.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_config.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_config.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_config.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_config.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
@@ -165,7 +165,7 @@
             // 
             this.btn_financeiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btn_financeiro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_financeiro.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_financeiro.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_financeiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_financeiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_financeiro.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);

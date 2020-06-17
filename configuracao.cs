@@ -9,17 +9,13 @@ using System.Threading.Tasks;
 
 namespace controlePousada
 {
-    class configuracao
+    class Configuracao
     {
-        /// <summary>
+
         /// Regras do arquivo de configurações:
         /// Linha 1 = lista de feriados e valor base de cada (ex: Natal:2000;Reveion:3000);
         /// Linha 2 = 
-        /// </summary>
-
-        //Atributos
-        protected decimal valorBase;
-        protected string feriadoTipo;
+        
 
         public static void configOriginal()
         {
@@ -96,6 +92,28 @@ namespace controlePousada
 
             File.WriteAllLines(Program.pathConfig, bd);
             return true;
+        }
+
+        public static bool excluiFeriado (string feriado)
+        {
+            string[] bd = File.ReadAllLines(Program.pathConfig);
+
+            string[] line = bd[0].Split(';');
+
+            for (int i = 0; i < line.Length; i++)
+            {
+                string[] valor = line[i].Split(':');
+                if (valor[0] == feriado)
+                {
+                    var lista = line.ToList();
+                    lista.RemoveAt(i);
+                    line = lista.ToArray();
+                    bd[0] = string.Join(";", line);
+                    File.WriteAllLines(Program.pathConfig, bd);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

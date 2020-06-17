@@ -85,7 +85,7 @@ namespace controlePousada
         {
             if (panelMenu.Width == 242)
             {
-                for (int i = 242; i >= 50; i = i - 24)
+                for (int i = 242; i >= 50; i = i - 48)
                 {
 
                     panelMenu.Width = i;
@@ -133,7 +133,7 @@ namespace controlePousada
         {
             if(panelMenu.Width == 242)
             {
-                for (int i = 242; i >= 50; i = i - 24)
+                for (int i = 242; i >= 50; i = i - 48)
                 {
 
                     panelMenu.Width = i;
@@ -171,7 +171,7 @@ namespace controlePousada
             AbrirFormNoPanel(new Frm_inicio());
             if (panelMenu.Width == 242)
             {
-                for (int i = 242; i >= 50; i = i - 24)
+                for (int i = 242; i >= 50; i = i - 48)
                 {
                     panelMenu.Width = i;
                 }

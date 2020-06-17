@@ -20,17 +20,25 @@ namespace ControlePousada
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(configuracao.cadastraFeriado(txt_novoFeriado.Text, np_novoFeriado.Value))
+            if(np_novoFeriado.Value <= 0)
             {
-                MessageBox.Show("Feriado Cadastrado com Sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                carregaLista();
+                MessageBox.Show("Valor Base não pode ser igual a Zero!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Feriado ja Cadastrado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (Configuracao.cadastraFeriado(txt_novoFeriado.Text, np_novoFeriado.Value))
+                {
+                    MessageBox.Show("Feriado Cadastrado com Sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    carregaLista();
+                }
+                else
+                {
+                    MessageBox.Show("Feriado ja Cadastrado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                txt_novoFeriado.Text = "";
+                np_novoFeriado.Value = 0;
             }
-            txt_novoFeriado.Text = "";
-            np_novoFeriado.Value = 0;
+            
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -60,7 +68,7 @@ namespace ControlePousada
             try
             {
                 int i = 0;
-                string[] feriados = configuracao.retornaFeriados();
+                string[] feriados = Configuracao.retornaFeriados();
                 foreach (var element in feriados)
                 {
                     lp_editaFeriado.Items.Add(feriados[i]);
@@ -75,15 +83,35 @@ namespace ControlePousada
 
         private void lp_editaFeriado_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if(lp_editaFeriado.SelectedIndex > 0)
-                np_editaFeriado.Value = configuracao.ValorBase(lp_editaFeriado.SelectedItem.ToString());
+                np_editaFeriado.Value = Configuracao.ValorBase(lp_editaFeriado.SelectedItem.ToString());
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            if(configuracao.editaFeriado(lp_editaFeriado.SelectedItem.ToString(), np_editaFeriado.Value))
+
+            if (np_editaFeriado.Value <= 0)
             {
-                MessageBox.Show("Feriado Editado com Sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Valor Base não pode ser igual a Zero!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (Configuracao.editaFeriado(lp_editaFeriado.SelectedItem.ToString(), np_editaFeriado.Value))
+                {
+                    MessageBox.Show("Feriado Editado com Sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lp_editaFeriado.SelectedIndex = -1;
+                    np_editaFeriado.Value = 0;
+                    carregaLista();
+                }
+            }
+        }
+
+        private void btn_exlcuir_Click(object sender, EventArgs e)
+        {
+            if (Configuracao.excluiFeriado(lp_editaFeriado.SelectedItem.ToString()))
+            {
+                MessageBox.Show("Feriado Excluido com Sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lp_editaFeriado.SelectedIndex = -1;
                 np_editaFeriado.Value = 0;
                 carregaLista();
